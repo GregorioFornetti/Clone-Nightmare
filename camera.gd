@@ -52,3 +52,8 @@ func centralizacao_de_camera():
 		emit_signal("atualizar_botao_cam")
 		return not focalizar_player
 	return focalizar_player
+
+
+func _on_BotaoCentralizarCam_pressed():
+	print('oi')
+	focalizar_player = not focalizar_player
