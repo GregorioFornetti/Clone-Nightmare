@@ -1,11 +1,12 @@
 extends KinematicBody2D
 
-const VELOCIDADE_MAX = 300
+const VELOCIDADE_MAX = 200
 
 var vetor_velocidade = Vector2.ZERO
 var alvo
 var Tiro_player = preload('res://Jogador/player_bullet.tscn')
 var mouse_position
+var quant_mortes = 0
 
 func _ready():
 	pass 
@@ -55,5 +56,8 @@ func verificar_atirar():
 			alvo = null
 
 
-func _on_Hurtbox_area_entered(_area):
-	print('game_over')
+func _on_Hurtbox_area_entered(area):
+	area.get_parent().queue_free()
+	quant_mortes += 1
+	print('player: ' + str(quant_mortes))
+	# queue_free()

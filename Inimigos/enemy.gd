@@ -1,10 +1,11 @@
 extends KinematicBody2D
 
-const VELOCIDADE_MAX = 300
+const VELOCIDADE_MAX = 200
 
 var vetor_velocidade = Vector2.ZERO
 onready var player = get_parent().get_node('Player')
 onready var Tiro_inimigo = preload('res://Inimigos/enemy_bullet.tscn')
+var quant_mortes = 0
 
 func _ready():
 	pass 
@@ -24,11 +25,13 @@ func movimentation():
 
 func _on_Hurtbox_area_entered(area):
 	area.get_parent().queue_free()
-	print('inimigo morreu')
-	#queue_free()
+	quant_mortes += 1
+	print('inimigo: ' + str(quant_mortes))
+	# queue_free()
 
 
 func verificar_atirar():
+	# Só atirar se tiver apertado o botão de atirar e o player tiver marcado algum inimigo.
 	if Input.is_action_just_pressed("ui_accept") and player.alvo:
 		var tiro_inimigo = Tiro_inimigo.instance()
 		tiro_inimigo.global_position = global_position

@@ -8,6 +8,7 @@ export (float)var limite_zoom = 1
 const LIMITE_ZOOM_IN = Vector2(0.5, 0.5)
 var LIMITE_ZOOM_OUT
 
+
 var focalizar_player = true
 signal atualizar_botao_cam
 
@@ -23,16 +24,17 @@ func _physics_process(_delta):
 	
 	
 func movimentacao_camera():
-	if Input.is_action_pressed("mouse_left_click"):
-		if not antiga_pos_mouse:
-			antiga_pos_mouse = get_viewport().get_mouse_position()
-		else:
-			move_and_slide((antiga_pos_mouse - get_viewport().get_mouse_position()) * 60)
-			antiga_pos_mouse = get_viewport().get_mouse_position()
-		return
-	elif focalizar_player:
-		global_position = Player.global_position
-	antiga_pos_mouse = null
+	if is_instance_valid(Player):
+		if Input.is_action_pressed("mouse_left_click"):
+			if not antiga_pos_mouse:
+				antiga_pos_mouse = get_viewport().get_mouse_position()
+			else:
+				move_and_slide((antiga_pos_mouse - get_viewport().get_mouse_position()) * 60)
+				antiga_pos_mouse = get_viewport().get_mouse_position()
+			return
+		elif focalizar_player:
+			global_position = Player.global_position
+		antiga_pos_mouse = null
 
 
 func zoom_camera():
@@ -55,5 +57,4 @@ func centralizacao_de_camera():
 
 
 func _on_BotaoCentralizarCam_pressed():
-	print('oi')
 	focalizar_player = not focalizar_player

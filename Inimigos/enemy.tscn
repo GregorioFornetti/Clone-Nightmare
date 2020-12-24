@@ -9,7 +9,7 @@
 extents = Vector2( 31.4624, 31.523 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 34, 34 )
+extents = Vector2( 32, 32 )
 
 [node name="Enemy" type="KinematicBody2D"]
 scale = Vector2( 0.75, 0.75 )
