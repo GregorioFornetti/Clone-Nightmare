@@ -6,9 +6,10 @@ var vetor_velocidade = Vector2.ZERO
 onready var player = get_parent().get_node('Player')
 onready var Tiro_inimigo = preload('res://Inimigos/enemy_bullet.tscn')
 var quant_mortes = 0
+var arma_carregada = true
 
 func _ready():
-	pass 
+	ReloadTimer.connect("timeout", self, '_on_BulletReloadTimer_timeout')
 
 func _physics_process(_delta):
 	movimentation()
@@ -32,8 +33,13 @@ func _on_Hurtbox_area_entered(area):
 
 func verificar_atirar():
 	# Só atirar se tiver apertado o botão de atirar e o player tiver marcado algum inimigo.
-	if Input.is_action_just_pressed("ui_accept") and player.alvo:
+	if Input.is_action_just_pressed("ui_accept") and player.alvo and arma_carregada:
 		var tiro_inimigo = Tiro_inimigo.instance()
 		tiro_inimigo.global_position = global_position
 		tiro_inimigo.alvo = player.global_position
 		get_parent().call_deferred('add_child', tiro_inimigo)
+		
+		arma_carregada = false
+
+func _on_BulletReloadTimer_timeout():
+	arma_carregada = true

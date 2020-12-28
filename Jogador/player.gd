@@ -7,9 +7,10 @@ var alvo
 var Tiro_player = preload('res://Jogador/player_bullet.tscn')
 var mouse_position
 var quant_mortes = 0
+var arma_carregada = true
 
 func _ready():
-	pass 
+	ReloadTimer.connect('timeout', self, '_on_BulletReloadTimer_timeout')
 
 func _physics_process(_delta):
 	movimentacao()
@@ -46,12 +47,15 @@ func marcar_alvo():
 
 
 func verificar_atirar():
-	if Input.is_action_just_pressed("ui_accept") and alvo:
+	if Input.is_action_just_pressed("ui_accept") and alvo and arma_carregada:
 		if is_instance_valid(alvo):
 			var tiro_player = Tiro_player.instance()
 			tiro_player.global_position = global_position
 			tiro_player.alvo = alvo.global_position
 			get_parent().call_deferred('add_child', tiro_player)
+			
+			ReloadTimer.start()
+			arma_carregada = false
 		else:
 			alvo = null
 
@@ -61,3 +65,7 @@ func _on_Hurtbox_area_entered(area):
 	quant_mortes += 1
 	print('player: ' + str(quant_mortes))
 	# queue_free()
+
+
+func _on_BulletReloadTimer_timeout():
+	arma_carregada = true

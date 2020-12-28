@@ -1,0 +1,5 @@
+[gd_scene format=2]
+
+[node name="BulletReloadTimer" type="Timer"]
+wait_time = 1.5
+one_shot = true

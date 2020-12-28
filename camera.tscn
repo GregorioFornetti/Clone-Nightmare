@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://camera.gd" type="Script" id=1]
-[ext_resource path="res://UI/icone-camera-centralizar.png" type="Texture" id=2]
-[ext_resource path="res://UI/BotaoCentralizarCam.gd" type="Script" id=3]
+[ext_resource path="res://UI/UI.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -17,30 +16,7 @@ shape = SubResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="UI" type="Control" parent="CanvasLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -1.0
-margin_bottom = -1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BotaoCentralizarCam" type="Button" parent="CanvasLayer/UI"]
-margin_left = 968.0
-margin_top = 560.0
-margin_right = 1012.0
-margin_bottom = 598.0
-focus_mode = 0
-toggle_mode = true
-pressed = true
-enabled_focus_mode = 0
-icon = ExtResource( 2 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-[connection signal="atualizar_botao_cam" from="." to="CanvasLayer/UI/BotaoCentralizarCam" method="_on_camera_atualizar_botao_cam"]
+[node name="CanvasLayer" parent="." instance=ExtResource( 2 )]
 [connection signal="pressed" from="CanvasLayer/UI/BotaoCentralizarCam" to="." method="_on_BotaoCentralizarCam_pressed"]
+
+[editable path="CanvasLayer"]
