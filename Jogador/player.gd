@@ -9,6 +9,8 @@ var mouse_position
 var quant_mortes = 0
 var arma_carregada = true
 
+signal player_atirou(bullet)
+
 func _ready():
 	ReloadTimer.connect('timeout', self, '_on_BulletReloadTimer_timeout')
 
@@ -23,7 +25,7 @@ func movimentacao():
 	vetor_velocidade.y = Input.get_action_strength('ui_down') - Input.get_action_strength('ui_up')
 	vetor_velocidade = vetor_velocidade.normalized()
 	
-	vetor_velocidade = move_and_slide(vetor_velocidade * VELOCIDADE_MAX)
+	move_and_slide(vetor_velocidade * VELOCIDADE_MAX)
 
 
 func marcar_alvo():
@@ -53,6 +55,8 @@ func verificar_atirar():
 			tiro_player.global_position = global_position
 			tiro_player.alvo = alvo.global_position
 			get_parent().call_deferred('add_child', tiro_player)
+			
+			emit_signal("player_atirou", tiro_player)
 			
 			ReloadTimer.start()
 			arma_carregada = false

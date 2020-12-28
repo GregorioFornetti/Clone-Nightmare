@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/icone-camera-centralizar.png" type="Texture" id=1]
+[ext_resource path="res://UI/BotaoCentralizarCam.gd" type="Script" id=2]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="BotaoCentralizarCam" type="Button" parent="."]
+margin_left = 968.0
+margin_top = 560.0
+margin_right = 1012.0
+margin_bottom = 598.0
+focus_mode = 0
+toggle_mode = true
+pressed = true
+enabled_focus_mode = 0
+icon = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -14,7 +14,7 @@ signal atualizar_botao_cam
 
 func _ready():
 	LIMITE_ZOOM_OUT = Vector2(limite_zoom, limite_zoom)
-	connect("atualizar_botao_cam", get_node("CanvasLayer").get_node("UI").get_node("BotaoCentralizarCam"), "_on_camera_atualizar_botao_cam")
+	connect("atualizar_botao_cam", get_node("CanvasLayer").get_node("BotaoCentralizarCam"), "_on_camera_atualizar_botao_cam")
 	$CollisionShape2D.shape.extents = tamanho_colision_inicial
 
 
