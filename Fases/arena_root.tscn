@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Jogador/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://BulletReloadTimer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Fases/tilemap-placeholder.tscn" type="PackedScene" id=3]
 [ext_resource path="res://camera.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GameStats.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Pause.gd" type="Script" id=6]
 
 [node name="Arena_root" type="Node2D"]
 
@@ -22,3 +23,23 @@ position = Vector2( -512, -304 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 
 [node name="BulletReloadTimer" parent="." instance=ExtResource( 2 )]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause" type="Control" parent="CanvasLayer"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.305882 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

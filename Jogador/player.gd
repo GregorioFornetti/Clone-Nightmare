@@ -5,6 +5,7 @@ const VELOCIDADE_MAX = 200
 var vetor_velocidade = Vector2.ZERO
 var alvo
 var Tiro_player = preload('res://Jogador/player_bullet.tscn')
+onready var GameStats = get_parent().get_node("GameStats")
 var mouse_position
 var quant_mortes = 0
 var arma_carregada = true
@@ -49,7 +50,7 @@ func marcar_alvo():
 
 
 func verificar_atirar():
-	if Input.is_action_just_pressed("ui_accept") and alvo and arma_carregada:
+	if Input.is_action_just_pressed("ui_accept") and alvo and arma_carregada and GameStats.quant_atual_bullets > 0:
 		if is_instance_valid(alvo):
 			var tiro_player = Tiro_player.instance()
 			tiro_player.global_position = global_position
