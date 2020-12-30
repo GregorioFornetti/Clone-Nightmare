@@ -5,7 +5,7 @@
 [ext_resource path="res://Fases/tilemap-placeholder.tscn" type="PackedScene" id=3]
 [ext_resource path="res://camera.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GameStats.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Pause.gd" type="Script" id=6]
+[ext_resource path="res://menus/Pause.gd" type="Script" id=6]
 
 [node name="Arena_root" type="Node2D"]
 
@@ -36,10 +36,77 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Pause"]
+[node name="BackGround" type="ColorRect" parent="CanvasLayer/Pause"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.305882 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TituloPause" type="Label" parent="CanvasLayer/Pause"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -156.0
+margin_bottom = -142.0
+rect_scale = Vector2( 2, 2 )
+text = "Jogo pausado"
+align = 1
+
+[node name="MotivoMorte" type="Label" parent="CanvasLayer/Pause"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -101.23
+margin_right = 170.666
+margin_bottom = -87.23
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Motivo morte..."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_Prox" type="Button" parent="CanvasLayer/Pause"]
+visible = false
+margin_left = 432.948
+margin_top = 237.103
+margin_right = 582.948
+margin_bottom = 257.103
+text = "Ir para a próxima fase"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_Reiniciar" type="Button" parent="CanvasLayer/Pause"]
+margin_left = 432.324
+margin_top = 295.087
+margin_right = 582.324
+margin_bottom = 315.087
+text = "Reiniciar fase"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_Voltar" type="Button" parent="CanvasLayer/Pause"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -91.0
+margin_top = 48.0
+margin_right = 89.0
+margin_bottom = 68.0
+text = "Voltar para menu principal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="acabou_inimigos" from="GameStats" to="CanvasLayer/Pause" method="_on_GameStats_acabou_inimigos"]
+[connection signal="acabou_municao" from="GameStats" to="CanvasLayer/Pause" method="_on_GameStats_acabou_municao"]
+[connection signal="player_morreu" from="Player" to="CanvasLayer/Pause" method="_on_Player_player_morreu"]

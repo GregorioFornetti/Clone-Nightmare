@@ -11,6 +11,7 @@ var quant_mortes = 0
 var arma_carregada = true
 
 signal player_atirou(bullet)
+signal player_morreu()
 
 func _ready():
 	ReloadTimer.connect('timeout', self, '_on_BulletReloadTimer_timeout')
@@ -69,6 +70,7 @@ func _on_Hurtbox_area_entered(area):
 	area.get_parent().queue_free()
 	quant_mortes += 1
 	print('player: ' + str(quant_mortes))
+	emit_signal("player_morreu")
 	# queue_free()
 
 

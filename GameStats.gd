@@ -9,13 +9,16 @@ onready var LabelBullets = get_node("CanvasLayer").get_node("LabelBullets")
 var tiro_player_atual
 var parar = false
 
+signal acabou_municao()
+signal acabou_inimigos()
+
 func _ready():
 	atualizar_label_bullets()
 	atualizar_label_inimigo()
 
 func _process(_delta):
 	if quant_atual_bullets == 0 and not is_instance_valid(tiro_player_atual) and not parar:
-		print('PERDEEEEEEEEEEU')
+		emit_signal("acabou_municao")
 		parar = true
 
 func _on_Player_player_atirou(bullet):
@@ -26,7 +29,7 @@ func _on_Player_player_atirou(bullet):
 func _on_Enemy_die():
 	quant_atual_inimigos -= 1
 	if quant_atual_inimigos == 0:
-		print('GANHOU EEEEEEEEE')
+		emit_signal("acabou_inimigos")
 	atualizar_label_inimigo()
 
 

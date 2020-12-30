@@ -25,3 +25,6 @@ collision_mask = 0
 [node name="CollisionPolygon2D" parent="StaticBody2D" index="0"]
 polygon = PoolVector2Array( 704, -496, 832, -640, 832, 448, -648, 448, -640, -640, 824, -640, 784, -592, 696, -496, -512, -496, -512, 304, 704, 304 )
 [connection signal="player_atirou" from="Player" to="GameStats" method="_on_Player_player_atirou"]
+[connection signal="pressed" from="CanvasLayer/Pause/Btn_Prox" to="CanvasLayer/Pause" method="_on_Btn_Prox_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause/Btn_Reiniciar" to="CanvasLayer/Pause" method="_on_Btn_Reiniciar_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause/Btn_Voltar" to="CanvasLayer/Pause" method="_on_Btn_Voltar_pressed"]
