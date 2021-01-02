@@ -44,8 +44,10 @@ func _on_Btn_Prox_pressed():
 
 
 func _on_Btn_Reiniciar_pressed():
-	print('reiniciar')
+	get_tree().paused = false
+	get_tree().reload_current_scene()
 
 
 func _on_Btn_Voltar_pressed():
-	print('Voltar')
+	get_tree().paused = false
+	get_tree().change_scene("res://menus/Menu_fases.tscn")

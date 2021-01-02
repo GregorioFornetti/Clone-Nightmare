@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://menus/Menu_fases.gd" type="Script" id=1]
+
+[node name="Menu_fases" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.36041
+margin_bottom = -1.36041
+color = Color( 0.0823529, 0.0784314, 0.0784314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Voltar" type="Button" parent="."]
+margin_left = 49.0
+margin_top = 536.849
+margin_right = 102.0
+margin_bottom = 556.849
+text = "Voltar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
