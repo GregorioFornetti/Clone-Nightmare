@@ -16,12 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Jogo Teste"
-run/main_scene="res://Fases/arena_root.tscn"
+run/main_scene="res://menus/Menu_principal.tscn"
 config/icon="res://UI/icon.png"
 
 [autoload]
 
 ReloadTimer="*res://BulletReloadTimer.tscn"
+SaveStats="*res://SaveStats.tscn"
 
 [display]
 

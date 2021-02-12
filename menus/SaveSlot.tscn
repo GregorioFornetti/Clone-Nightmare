@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://menus/SaveSlot.gd" type="Script" id=1]
+
+[node name="SaveSlot" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -844.0
+margin_bottom = -389.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.254902, 0.231373, 0.231373, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titulo_slot" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -19.7438
+margin_top = 41.4473
+margin_right = 20.2562
+margin_bottom = 55.4473
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info_slot" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -19.1169
+margin_top = 65.6992
+margin_right = 20.8831
+margin_bottom = 79.6992
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_comecar" type="Button" parent="."]
+margin_left = 22.9966
+margin_top = 122.091
+margin_right = 158.997
+margin_bottom = 142.091
+text = "Começar novo save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_continuar" type="Button" parent="."]
+margin_left = 53.9375
+margin_top = 99.9307
+margin_right = 126.937
+margin_bottom = 119.931
+text = "Continuar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_apagar" type="Button" parent="."]
+margin_left = 64.3905
+margin_top = 143.833
+margin_right = 119.39
+margin_bottom = 163.833
+text = "Apagar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Btn_comecar" to="." method="_on_Btn_comecar_pressed"]
+[connection signal="pressed" from="Btn_continuar" to="." method="_on_Btn_continuar_pressed"]
+[connection signal="pressed" from="Btn_apagar" to="." method="_on_Btn_apagar_pressed"]

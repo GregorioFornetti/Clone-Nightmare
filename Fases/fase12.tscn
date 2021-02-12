@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Inimigos/enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Fases/arena_root.tscn" type="PackedScene" id=2]
+
+[node name="Fase12" instance=ExtResource( 2 )]
+
+[node name="GameStats" parent="." index="0"]
+QUANT_INICIAL_BULLETS = 5
+QUANT_INICIAL_INIMIGOS = 1
+FASE_ATUAL = 12
+
+[node name="TileMap" parent="." index="2"]
+tile_data = PoolIntArray( 262172, 0, 0, 262174, 0, 0, 262176, 0, 0, 262178, 0, 0, 262180, 0, 0, 393244, 0, 0, 393246, 0, 0, 393248, 0, 0, 393250, 0, 0, 393252, 0, 0, 524316, 0, 0, 524318, 0, 0, 983081, 1, 0, 983082, 1, 0, 983083, 1, 0, 983084, 1, 0, 983085, 1, 0, 983086, 1, 0, 983087, 1, 0, 983088, 1, 0, 1048624, 1, 0, 1114160, 1, 0, 1179696, 1, 0, 1245232, 1, 0, 1310768, 1, 0, 1376304, 1, 0, 1441840, 1, 0, 1507369, 1, 0, 1507370, 1, 0, 1507371, 1, 0, 1507372, 1, 0, 1507373, 1, 0, 1507374, 1, 0, 1507375, 1, 0, 1507376, 1, 0 )
+
+[node name="Player" parent="." index="3"]
+position = Vector2( -200, 0 )
+
+[node name="Enemy" parent="." index="4" instance=ExtResource( 1 )]
+position = Vector2( 200, 0 )
+
+[node name="StaticBody2D" parent="." index="5"]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+position = Vector2( 0, 3.34033 )
+[connection signal="player_atirou" from="Player" to="GameStats" method="_on_Player_player_atirou"]
+[connection signal="pressed" from="CanvasLayer/Pause/Btn_Prox" to="CanvasLayer/Pause" method="_on_Btn_Prox_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause/Btn_Reiniciar" to="CanvasLayer/Pause" method="_on_Btn_Reiniciar_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause/Btn_Voltar" to="CanvasLayer/Pause" method="_on_Btn_Voltar_pressed"]

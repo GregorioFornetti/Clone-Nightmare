@@ -2,6 +2,7 @@ extends Node2D
 
 export var QUANT_INICIAL_BULLETS = 0
 export var QUANT_INICIAL_INIMIGOS = 0
+export var FASE_ATUAL = 0
 onready var quant_atual_inimigos = QUANT_INICIAL_INIMIGOS
 onready var quant_atual_bullets = QUANT_INICIAL_BULLETS
 onready var LabelInimigo = get_node("CanvasLayer").get_node("LabelInim")

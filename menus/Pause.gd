@@ -2,6 +2,7 @@ extends Control
 
 var pausado = false
 var fase_acabou = false
+onready var FASE_ATUAL = get_parent().get_parent().get_node("GameStats").FASE_ATUAL
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel") and not fase_acabou:
@@ -11,7 +12,8 @@ func _input(event):
 
 
 func _on_GameStats_acabou_inimigos():
-	if not fase_acabou:
+	if not fase_acabou:   # Player ganhou !
+		SaveStats.passar_fase(FASE_ATUAL)
 		prender_no_menu()
 		$Btn_Prox.visible = true
 		$TituloPause.text = 'Você ganhou !'
@@ -40,7 +42,8 @@ func adicionar_elementos_derrota(motivo_derrota):
 
 
 func _on_Btn_Prox_pressed():
-	print('prox fase')
+	get_tree().paused = false
+	get_tree().change_scene("res://Fases/fase" + str(FASE_ATUAL + 1) + ".tscn")
 
 
 func _on_Btn_Reiniciar_pressed():

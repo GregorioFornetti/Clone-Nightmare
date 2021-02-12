@@ -5,19 +5,28 @@ onready var Botao_fase = preload('res://menus/Botao_fase.tscn')
 
 func _ready():
 	# Criar os 20 botoes de fases.
-	var current_y = 150
+	var y = 150
 	for i in range(4):
-		var current_x = 275
+		var x = 275
 		for j in range(1, 6):
 			var botao = Botao_fase.instance()
-			botao.text = 'Fase' + str(i * 5 + j)
-			botao.rect_position = Vector2(current_x, current_y)
-			botao.connect('pressed', self, '_on_Botao_fase_pressionado', [botao.text])
+			var fase_atual = i * 5 + j
+			botao.text = 'Fase ' + str(fase_atual)
+			botao.rect_position = Vector2(x, y)
+			botao.connect('pressed', self, '_on_Botao_fase_pressionado', [fase_atual])
+			
+			if SaveStats.ultima_fase_liberada < fase_atual:
+				botao.disabled = true
 			add_child(botao)
 			
-			current_x += 100
-		current_y += 50
+			x += 100
+		y += 50
 			
 
 func _on_Botao_fase_pressionado(fase):
 	print(fase)
+	get_tree().change_scene("res://Fases/fase" + str(fase) + ".tscn")
+
+
+func _on_Voltar_pressed():
+	get_tree().change_scene("res://menus/Menu_saves.tscn")
