@@ -73,17 +73,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Btn_Prox" type="Button" parent="CanvasLayer/Pause"]
-visible = false
-margin_left = 432.948
-margin_top = 237.103
-margin_right = 582.948
-margin_bottom = 257.103
-text = "Ir para a próxima fase"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Btn_Reiniciar" type="Button" parent="CanvasLayer/Pause"]
 margin_left = 432.324
 margin_top = 295.087
@@ -104,6 +93,15 @@ margin_top = 48.0
 margin_right = 89.0
 margin_bottom = 68.0
 text = "Voltar para menu de fases"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Transicao" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0823529, 0.0784314, 0.0784314, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

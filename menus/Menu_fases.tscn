@@ -20,13 +20,35 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Voltar" type="Button" parent="."]
-margin_left = 49.0
-margin_top = 536.849
-margin_right = 102.0
-margin_bottom = 556.849
+[node name="Btn_voltar" type="Button" parent="."]
+margin_left = 50.0
+margin_top = 540.0
+margin_right = 103.0
+margin_bottom = 560.0
 text = "Voltar"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
+
+[node name="Btn_tutorial" type="Button" parent="."]
+margin_left = 250.0
+margin_top = 540.0
+margin_right = 342.0
+margin_bottom = 560.0
+text = "Jogar tutorial"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_dialogos" type="Button" parent="."]
+margin_left = 450.0
+margin_top = 540.0
+margin_right = 584.0
+margin_bottom = 560.0
+text = "Galeria de dialogos"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Btn_voltar" to="." method="_on_Btn_voltar_pressed"]
+[connection signal="pressed" from="Btn_tutorial" to="." method="_on_Btn_tutorial_pressed"]
+[connection signal="pressed" from="Btn_dialogos" to="." method="_on_Btn_dialogos_pressed"]

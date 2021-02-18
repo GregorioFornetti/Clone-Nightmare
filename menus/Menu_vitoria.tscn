@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://menus/Menu_vitoria.gd" type="Script" id=1]
+
+[node name="Menu_vitoria" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.47937
+margin_bottom = -0.47937
+color = Color( 0.0823529, 0.0784314, 0.0784314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -89.0
+margin_top = -125.0
+margin_bottom = -111.0
+rect_scale = Vector2( 2, 2 )
+text = "Você ganhou !"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_prox" type="Button" parent="."]
+margin_left = 460.0
+margin_top = 245.0
+margin_right = 554.0
+margin_bottom = 265.0
+text = "Próxima fase"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_reiniciar" type="Button" parent="."]
+margin_left = 458.0
+margin_top = 290.0
+margin_right = 555.0
+margin_bottom = 310.0
+text = "Reiniciar fase"
+
+[node name="Btn_voltar" type="Button" parent="."]
+margin_left = 421.76
+margin_top = 334.762
+margin_right = 599.76
+margin_bottom = 354.762
+text = "Voltar para menu de fases"
+[connection signal="pressed" from="Btn_prox" to="." method="_on_Btn_prox_pressed"]
+[connection signal="pressed" from="Btn_reiniciar" to="." method="_on_Btn_reiniciar_pressed"]
+[connection signal="pressed" from="Btn_voltar" to="." method="_on_Btn_voltar_pressed"]

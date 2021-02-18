@@ -14,6 +14,7 @@ signal acabou_municao()
 signal acabou_inimigos()
 
 func _ready():
+	SaveStats.fase_atual = FASE_ATUAL
 	atualizar_label_bullets()
 	atualizar_label_inimigo()
 
