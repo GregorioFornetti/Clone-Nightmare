@@ -31,7 +31,10 @@ func _ready():
 	atualizar_box_dialogo(dics_dialogos[0])
 
 func retorna_dics_dialogos():
-	pass
+	# OBS: para editar os textos do dialogo, abra a pasta "Dialogos" em algum editor de código para acessar os arquivos JSON.
+	var file = File.new()
+	file.open("res://Cutscenes/Dialogos/dialogo" + str(SaveStats.num_dialogo_atual) + ".json", file.READ)
+	return parse_json(file.get_as_text())
 
 func _process(_delta):
 	if Input.is_action_just_pressed("N"):
@@ -76,15 +79,16 @@ func atualizar_box_dialogo(dic_dialogo):
 	# Atualizar textos/labels
 	lb_dialogo.percent_visible = 0
 	lb_dialogo.text = dic_dialogo.texto
-	lb_nome.text = dic_dialogo.nome
 	
 	# Atualizar posições das sprites e da label de nome (para que fique mais facil de saber quem está falando no momento)
 	personagem.position.x = 0
 	silhueta.position.x = ProjectSettings.get_setting("display/window/size/width")
-	if dic_dialogo.nome == NOME_PLAYER:
+	if dic_dialogo.nome == "player":
+		lb_nome.text = NOME_PLAYER
 		lb_nome.rect_position.x = POSIC_ESQ_NOME
 		silhueta.position.x += 100
 	else:
+		lb_nome.text = NOME_SILHUETA
 		lb_nome.rect_position.x = POSIC_DIR_NOME
 		personagem.position.x -= 100
 	

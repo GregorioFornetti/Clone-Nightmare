@@ -6,7 +6,8 @@ func _ready():
 
 func _on_Botao_pressionado(fase):  # Algum botão de fase foi selecionado (carregar tal fase)
 	SaveStats.fase_atual = 0
-	get_tree().change_scene("res://Cutscenes/Dialogo" + str(fase) + ".tscn")
+	SaveStats.num_dialogo_atual = fase
+	get_tree().change_scene("res://Cutscenes/Dialogo-root.tscn")
 
 
 func _on_Btn_voltar_pressed():

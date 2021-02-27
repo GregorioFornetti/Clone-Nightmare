@@ -1,0 +1,17 @@
+[
+    {
+        "nome" : "player",
+        "humor" : "normal",
+        "texto" : "Texto do dialogo 9 ....... sadas dasdas dasdasdasd"
+    },
+    {
+        "nome" : "silhueta",
+        "humor" : "normal",
+        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
+    },
+    {
+        "nome" : "silhueta",
+        "humor" : "raiva",
+        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
+    }
+]
