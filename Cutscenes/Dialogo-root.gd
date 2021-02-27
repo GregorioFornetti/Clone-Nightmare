@@ -97,13 +97,12 @@ func atualizar_box_dialogo(dic_dialogo):
 		lb_nome.text = NOME_SILHUETA
 		lb_nome.rect_position.x = POSIC_DIR_NOME
 		personagem.position.x -= 100
-	
+		
+	# Aplicar efeitos do humor:
 	var dic_humor = DIC_HUMORES[dic_dialogo['humor']]
 	lb_dialogo.add_font_override("font", dic_humor.fonte)
 	lb_dialogo.add_color_override("font_color", dic_humor.cor)
-	print(1.0 / dic_humor.velocidade)
 	timer_letras.wait_time = 1.0 / dic_humor.velocidade
-	
 	
 	if dialogo_atual == 0:
 		btn_ant.disabled = true

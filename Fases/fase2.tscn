@@ -26,6 +26,5 @@ collision_mask = 0
 [node name="CollisionPolygon2D" parent="StaticBody2D" index="0"]
 position = Vector2( 0, 3.34033 )
 [connection signal="player_atirou" from="Player" to="GameStats" method="_on_Player_player_atirou"]
-[connection signal="pressed" from="CanvasLayer/Pause/Btn_Prox" to="CanvasLayer/Pause" method="_on_Btn_Prox_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Btn_Reiniciar" to="CanvasLayer/Pause" method="_on_Btn_Reiniciar_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Btn_Voltar" to="CanvasLayer/Pause" method="_on_Btn_Voltar_pressed"]

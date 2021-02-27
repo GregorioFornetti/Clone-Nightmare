@@ -7,7 +7,6 @@ var alvo
 var Tiro_player = preload('res://Jogador/player_bullet.tscn')
 onready var GameStats = get_parent().get_node("GameStats")
 var mouse_position
-var quant_mortes = 0
 var arma_carregada = true
 
 signal player_atirou(bullet)
@@ -68,8 +67,6 @@ func verificar_atirar():
 
 func _on_Hurtbox_area_entered(area):
 	area.get_parent().queue_free()
-	quant_mortes += 1
-	print('player: ' + str(quant_mortes))
 	emit_signal("player_morreu")
 	# queue_free()
 
