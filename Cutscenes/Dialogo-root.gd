@@ -6,13 +6,19 @@ const NOME_CONSCIENCIA = "Consciência"
 const IMG_PERSONAGEM = "res://Sprites/silhueta1-teste.png"
 const POSIC_ESQ_NOME = 65
 const POSIC_DIR_NOME = 550
-const FONTE_NORMAL = preload("res://fontes/fonte_normal.tres")
-const FONTE_RAIVA = preload("res://fontes/fonte_raiva.tres")
-const TEMPO_NORMAL = 0.1
-const TEMPO_RAIVA = 0.01
-const COR_NORMAL = Color(0.9, 0.9, 0.9, 1)
-const COR_RAIVA = Color(0.7, 0, 0, 1)
 
+const DIC_HUMORES = {
+	"normal" : {
+		"fonte" : preload("res://fontes/fonte_normal.tres"),
+		"velocidade" : 20,
+		"cor" : Color(0.9, 0.9, 0.9, 1)
+	},
+	"raiva" : {
+		"fonte" : preload("res://fontes/fonte_raiva.tres"),
+		"velocidade" : 100,
+		"cor" : Color(0.7, 0, 0, 1)
+	}
+}
 var dialogo_atual = 0
 
 onready var lb_nome = $"Box-dialogo/Lb_nome"
@@ -92,14 +98,12 @@ func atualizar_box_dialogo(dic_dialogo):
 		lb_nome.rect_position.x = POSIC_DIR_NOME
 		personagem.position.x -= 100
 	
-	if dic_dialogo.humor == 'normal':
-		lb_dialogo.add_font_override("font", FONTE_NORMAL)
-		lb_dialogo.add_color_override("font_color", COR_NORMAL)
-		timer_letras.wait_time = TEMPO_NORMAL
-	elif dic_dialogo.humor == 'raiva':
-		lb_dialogo.add_font_override("font", FONTE_RAIVA)
-		lb_dialogo.add_color_override("font_color", COR_RAIVA)
-		timer_letras.wait_time = TEMPO_RAIVA
+	var dic_humor = DIC_HUMORES[dic_dialogo['humor']]
+	lb_dialogo.add_font_override("font", dic_humor.fonte)
+	lb_dialogo.add_color_override("font_color", dic_humor.cor)
+	print(1.0 / dic_humor.velocidade)
+	timer_letras.wait_time = 1.0 / dic_humor.velocidade
+	
 	
 	if dialogo_atual == 0:
 		btn_ant.disabled = true
