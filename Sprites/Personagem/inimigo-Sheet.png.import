@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/target.png-e75289d9868ebd23dadaf7d24414bcbd.stex"
+path="res://.import/inimigo-Sheet.png-5d50a4712141ec3a82ca61d78218b3f1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inimigos/target.png"
-dest_files=[ "res://.import/target.png-e75289d9868ebd23dadaf7d24414bcbd.stex" ]
+source_file="res://Sprites/Personagem/inimigo-Sheet.png"
+dest_files=[ "res://.import/inimigo-Sheet.png-5d50a4712141ec3a82ca61d78218b3f1.stex" ]
 
 [params]
 

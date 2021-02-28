@@ -13,7 +13,10 @@ func _process(_delta):
 		opacidade += 0.03
 		background_transicao.color = Color(0.08, 0.08, 0.08, opacidade)
 		if opacidade >= 1:
-			get_tree().change_scene("res://Cutscenes/Dialogo-root.tscn")
+			if FASE_ATUAL == 0:
+				get_tree().change_scene("res://Tutorial/Menu_final_tutorial.tscn")
+			else:
+				get_tree().change_scene("res://Cutscenes/Dialogo-root.tscn")
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel") and not fase_acabou:

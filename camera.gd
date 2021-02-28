@@ -6,7 +6,7 @@ onready var Player = get_parent().get_node('Player')
 onready var camera_node = $Camera2D
 
 export (float)var limite_zoom = 1
-const LIMITE_ZOOM_IN = Vector2(0.5, 0.5)
+const LIMITE_ZOOM_IN = Vector2(0.3, 0.3)
 var LIMITE_ZOOM_OUT
 
 

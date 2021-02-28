@@ -4,7 +4,7 @@ onready var label_principal = $Label
 onready var elemento_anterior = $Label
 onready var lista_tutorial = [
 	"Olá, seja bem vindo ao tutorial ! Aperte ESPAÇO ou clique no botão PRÓXIMO para continuar",
-	"Iremos começar vendo um pouco sobre a interface do jogo, então vamos lá !",
+	"Iremos começar vendo um pouco sobre a interface do jogo.",
 	$Tut_municao,
 	$Tut_inimigos,
 	$Tut_botao

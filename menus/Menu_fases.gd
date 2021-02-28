@@ -13,8 +13,7 @@ func _on_Btn_voltar_pressed():
 
 
 func _on_Btn_tutorial_pressed():
-	pass # Replace with function body.
-
+	get_tree().change_scene("res://Tutorial/Tutorial.tscn")
 
 func _on_Btn_dialogos_pressed():
 	get_tree().change_scene("res://Cutscenes/Menu_dialogos.tscn")

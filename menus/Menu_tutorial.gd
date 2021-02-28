@@ -3,7 +3,7 @@ extends Control
 
 func _on_Btn_sim_pressed():
 	# Iniciar tutorial
-	pass
+	get_tree().change_scene("res://Tutorial/Tutorial.tscn")
 
 func _on_Btn_nao_pressed():
 	# Ir para o menu de fases

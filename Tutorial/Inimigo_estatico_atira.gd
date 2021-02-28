@@ -1,8 +1,5 @@
-extends KinematicBody2D
+extends StaticBody2D
 
-const VELOCIDADE_MAX = 200
-
-var vetor_velocidade = Vector2.ZERO
 onready var Player = get_parent().get_node('Player')
 onready var Tiro_inimigo = preload('res://Inimigos/enemy_bullet.tscn')
 
@@ -12,14 +9,6 @@ func _ready():
 	Player.connect("player_atirou", self, '_on_Player_shoot')
 	connect("inimigo_morreu", Player, '_on_Enemy_death', [self])
 	connect("inimigo_morreu", get_parent().get_node('GameStats'), '_on_Enemy_die')
-
-
-func _physics_process(_delta):
-	movimentation()
-
-
-func movimentation():
-	move_and_slide(-Player.vetor_velocidade * VELOCIDADE_MAX)
 
 
 func _on_Hurtbox_area_entered(area):
@@ -34,4 +23,3 @@ func _on_Player_shoot(_bullet):
 	tiro_inimigo.global_position = global_position
 	tiro_inimigo.alvo = Player.global_position
 	get_parent().call_deferred('add_child', tiro_inimigo)
-

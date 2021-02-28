@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Tutorial/Menu_final_tutorial.gd" type="Script" id=1]
+
+[node name="Menu_final_tut" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -217.549
+margin_top = 173.369
+margin_right = 0.450989
+margin_bottom = 221.369
+rect_scale = Vector2( 2, 2 )
+text = "Você acabou o tutorial. Agora, você já está preparado para começar a jogar de verdade !"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -161.093
+margin_top = 77.5462
+margin_right = 1.90741
+margin_bottom = 97.5462
+rect_scale = Vector2( 2, 2 )
+text = "Ir para o menu de fases"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

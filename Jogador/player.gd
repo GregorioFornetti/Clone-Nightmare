@@ -37,7 +37,7 @@ func marcar_alvo():
 		if colisao and colisao[0]['collider'].name.begins_with('Enemy'):
 			# O jogador clicou em um inimigo.
 			if alvo == colisao[0]['collider']:
-				# Se ele clicou no mesmo inimigo que le ja tinga clicado antes, desmarca-lo
+				# Se ele clicou no mesmo inimigo que ele ja tinha clicado antes, desmarca-lo
 				alvo.get_node('target').visible = false
 				alvo = null
 				return
@@ -70,6 +70,10 @@ func _on_Hurtbox_area_entered(area):
 	emit_signal("player_morreu")
 	# queue_free()
 
-
 func _on_BulletReloadTimer_timeout():
 	arma_carregada = true
+
+func _on_Enemy_death(inimigo):
+	# desmarcar inimigo que morreu
+	if inimigo == alvo:
+		alvo = null
