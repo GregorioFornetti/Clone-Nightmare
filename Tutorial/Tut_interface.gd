@@ -10,6 +10,7 @@ onready var lista_tutorial = [
 	$Tut_botao
 ]
 var indice_elemento_atual = 0
+signal acabou_tutorial_interface
 
 
 func _ready():
@@ -24,6 +25,7 @@ func _input(event):
 func prox_tutorial():
 	if indice_elemento_atual >= len(lista_tutorial):
 		get_tree().paused = false
+		emit_signal("acabou_tutorial_interface")
 		get_parent().queue_free()
 		return
 		
@@ -35,3 +37,7 @@ func prox_tutorial():
 		elemento_atual.visible = true
 		elemento_anterior = elemento_atual
 	indice_elemento_atual += 1
+
+
+func _on_Btn_proximo_pressed():
+	prox_tutorial()

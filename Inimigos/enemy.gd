@@ -24,10 +24,8 @@ func movimentation():
 
 func _on_Hurtbox_area_entered(area):
 	area.get_parent().queue_free()
-	quant_mortes += 1
-	print('inimigo: ' + str(quant_mortes))
 	emit_signal("inimigo_morreu")
-	# queue_free()
+	queue_free()
 
 
 func _on_Player_shoot(_bullet):

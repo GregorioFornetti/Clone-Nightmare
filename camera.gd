@@ -3,6 +3,7 @@ extends KinematicBody2D
 onready var antiga_pos_mouse
 onready var tamanho_colision_inicial = $Camera2D.get_viewport_rect().size / 2
 onready var Player = get_parent().get_node('Player')
+onready var camera_node = $Camera2D
 
 export (float)var limite_zoom = 1
 const LIMITE_ZOOM_IN = Vector2(0.5, 0.5)
@@ -40,11 +41,11 @@ func movimentacao_camera():
 
 func zoom_camera():
 	if Input.is_action_pressed("ctrl") and Input.is_action_just_released("zoom_in"):
-		if $Camera2D.zoom > LIMITE_ZOOM_IN:
-			$Camera2D.zoom -= Vector2(0.1, 0.1)
+		if camera_node.zoom > LIMITE_ZOOM_IN:
+			camera_node.zoom -= Vector2(0.1, 0.1)
 	elif Input.is_action_pressed("ctrl") and Input.is_action_just_released("zoom_out"):
-		if $Camera2D.zoom < LIMITE_ZOOM_OUT:
-			$Camera2D.zoom += Vector2(0.1, 0.1)
+		if camera_node.zoom < LIMITE_ZOOM_OUT:
+			camera_node.zoom += Vector2(0.1, 0.1)
 	$CollisionShape2D.shape.extents = tamanho_colision_inicial * $Camera2D.zoom
 	move_and_collide(Vector2.ZERO)
 
