@@ -6,10 +6,14 @@ var vetor_velocidade = Vector2.ZERO
 var alvo
 var Tiro_player = preload('res://Jogador/player_bullet.tscn')
 onready var GameStats = get_parent().get_node("GameStats")
+onready var PlayerSprite = $Sprite
 var mouse_position
 var arma_carregada = true
+var rotation_fix = PI / 2
 
 signal player_atirou(bullet)
+signal player_marcou()
+signal player_desmarcou()
 signal player_morreu()
 
 func _ready():
@@ -18,6 +22,7 @@ func _ready():
 func _physics_process(_delta):
 	movimentacao()
 	marcar_alvo()
+	rotacionar()
 	verificar_atirar()
 	
 
@@ -29,6 +34,12 @@ func movimentacao():
 	move_and_slide(vetor_velocidade * VELOCIDADE_MAX)
 
 
+func rotacionar():
+	if alvo:
+		rotation = position.angle_to_point(alvo.position) - rotation_fix
+	elif vetor_velocidade != Vector2.ZERO:
+		rotation = vetor_velocidade.angle() + rotation_fix
+
 func marcar_alvo():
 	# Verifica se o botão esquerdo do mouse foi clicado
 	if Input.is_action_just_pressed("mouse_right_click"):
@@ -38,15 +49,19 @@ func marcar_alvo():
 			# O jogador clicou em um inimigo.
 			if alvo == colisao[0]['collider']:
 				# Se ele clicou no mesmo inimigo que ele ja tinha clicado antes, desmarca-lo
+				emit_signal("player_desmarcou")
 				alvo.get_node('target').visible = false
 				alvo = null
+				PlayerSprite.frame = 0
 				return
 			
+			emit_signal("player_marcou")
 			if alvo and is_instance_valid(alvo):
 				alvo.get_node('target').visible = false  # Desmarcar inimigo antigo que havia sido marcado,
 			# Marcar novo inimigo
 			alvo = colisao[0]['collider']
 			alvo.get_node('target').visible = true
+			PlayerSprite.frame = 1
 
 
 func verificar_atirar():
@@ -76,4 +91,6 @@ func _on_BulletReloadTimer_timeout():
 func _on_Enemy_death(inimigo):
 	# desmarcar inimigo que morreu
 	if inimigo == alvo:
+		emit_signal("player_desmarcou")
+		PlayerSprite.frame = 0
 		alvo = null

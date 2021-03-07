@@ -43,7 +43,7 @@ func retorna_dics_dialogos():
 	return parse_json(file.get_as_text())
 
 func _process(_delta):
-	if Input.is_action_just_pressed("N"):
+	if Input.is_action_just_pressed("ui_accept"):
 		avancar_proximo()
 	if Input.is_action_just_pressed("ui_cancel"):
 		menu_pular.visible = true
