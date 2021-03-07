@@ -2,6 +2,7 @@ extends StaticBody2D
 
 onready var Player = get_parent().get_node('Player')
 onready var Tiro_inimigo = preload('res://Inimigos/enemy_bullet.tscn')
+var tiro_inimigo
 
 signal inimigo_morreu
 
@@ -14,9 +15,10 @@ func _ready():
 
 
 func _on_Hurtbox_area_entered(area):
-	area.get_parent().queue_free()
-	emit_signal("inimigo_morreu")
-	queue_free()
+	if area.get_parent() != tiro_inimigo:
+		area.get_parent().queue_free()
+		emit_signal("inimigo_morreu")
+		queue_free()
 
 func _physics_process(_delta):
 	if Player.alvo:
@@ -24,7 +26,7 @@ func _physics_process(_delta):
 
 func _on_Player_shoot(_bullet):
 	# Inimigo só atira no player quando o player também atirar.
-	var tiro_inimigo = Tiro_inimigo.instance()
+	tiro_inimigo = Tiro_inimigo.instance()
 	tiro_inimigo.global_position = global_position
 	tiro_inimigo.alvo = Player.global_position
 	get_parent().call_deferred('add_child', tiro_inimigo)
