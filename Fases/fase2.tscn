@@ -236,7 +236,7 @@ position = Vector2( 451.687, 331.49 )
 position = Vector2( -318.107, 327.807 )
 
 [node name="StaticBody2D" parent="." index="6"]
-collision_layer = 32
+collision_layer = 33
 collision_mask = 0
 
 [node name="CollisionPolygon2D" parent="StaticBody2D" index="0"]
