@@ -81,7 +81,7 @@ func verificar_atirar():
 
 
 func _on_Hurtbox_area_entered(area):
-	area.get_parent().queue_free()
+	area.get_parent().acabar_com_bala()
 	emit_signal("player_morreu")
 	# queue_free()
 

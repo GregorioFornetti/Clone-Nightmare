@@ -35,7 +35,7 @@ func movimentation():
 
 func _on_Hurtbox_area_entered(area):
 	if area.get_parent() != tiro_inimigo:
-		area.get_parent().queue_free()
+		area.get_parent().acabar_com_bala()
 		emit_signal("inimigo_morreu")
 		queue_free()
 

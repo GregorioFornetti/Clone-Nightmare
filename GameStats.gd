@@ -7,8 +7,8 @@ onready var quant_atual_inimigos = QUANT_INICIAL_INIMIGOS
 onready var quant_atual_bullets = QUANT_INICIAL_BULLETS
 onready var LabelInimigo = get_node("CanvasLayer").get_node("LabelInim")
 onready var LabelBullets = get_node("CanvasLayer").get_node("LabelBullets")
-var tiro_player_atual
-var parar = false
+var quant_balas_em_jogo = 0
+var jogo_acabou = false
 
 signal acabou_municao()
 signal acabou_inimigos()
@@ -20,13 +20,14 @@ func _ready():
 	atualizar_label_inimigo()
 
 func _process(_delta):
-	if quant_atual_bullets == 0 and not is_instance_valid(tiro_player_atual) and not parar:
+	if quant_atual_bullets == 0 and quant_balas_em_jogo == 0 and not jogo_acabou:
 		emit_signal("acabou_municao")
-		parar = true
+		jogo_acabou = true
 
 func _on_Player_player_atirou(bullet):
 	quant_atual_bullets -= 1
-	tiro_player_atual = bullet
+	quant_balas_em_jogo += quant_atual_inimigos + 1  # Considerando que todos os inimigos irão atirar e o player também.
+	print(quant_balas_em_jogo)
 	atualizar_label_bullets()
 
 func _on_Enemy_die():
@@ -41,3 +42,9 @@ func atualizar_label_inimigo():
 
 func atualizar_label_bullets():
 	LabelBullets.text = 'Munição restante: ' + str(quant_atual_bullets)
+
+
+func on_Bala_em_jogo_acabou():
+	print("bala acabou")
+	quant_balas_em_jogo -= 1 
+	print(quant_balas_em_jogo)
