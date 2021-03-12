@@ -215,6 +215,7 @@ resource_local_to_scene = true
 2/z_index = 0
 
 [node name="Fase4" instance=ExtResource( 2 )]
+script = null
 
 [node name="GameStats" parent="." index="0"]
 QUANT_INICIAL_BULLETS = 1

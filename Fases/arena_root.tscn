@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Jogador/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://BulletReloadTimer.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://menus/Pause.gd" type="Script" id=6]
 [ext_resource path="res://Sprites/Tilesets/tileset1.png" type="Texture" id=7]
 [ext_resource path="res://Fases/TilesetPlaceHolder.png" type="Texture" id=8]
+[ext_resource path="res://UI/GameInterface.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -223,6 +224,8 @@ resource_local_to_scene = true
 [node name="GameStats" parent="." instance=ExtResource( 5 )]
 position = Vector2( -0.949951, 1.89999 )
 
+[node name="GameInterface" parent="." instance=ExtResource( 10 )]
+
 [node name="camera" parent="." instance=ExtResource( 4 )]
 
 [node name="TileMap" parent="." instance=ExtResource( 3 )]
@@ -322,6 +325,9 @@ __meta__ = {
 }
 [connection signal="acabou_inimigos" from="GameStats" to="CanvasLayer/Pause" method="_on_GameStats_acabou_inimigos"]
 [connection signal="acabou_municao" from="GameStats" to="CanvasLayer/Pause" method="_on_GameStats_acabou_municao"]
+[connection signal="pressed" from="GameInterface/Control/Btn_centralizar" to="camera" method="_on_Btn_centralizar_pressed"]
 [connection signal="player_morreu" from="Player" to="CanvasLayer/Pause" method="_on_Player_player_morreu"]
+
+[editable path="GameInterface"]
 
 [editable path="camera"]

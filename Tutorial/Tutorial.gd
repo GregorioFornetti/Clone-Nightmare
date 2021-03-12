@@ -55,7 +55,7 @@ func _process(_delta):
 				zoom_out_alcancado = true
 			
 			if zoom_in_alcancado and zoom_out_alcancado:
-				label_tutorial.text = "Um inimigo acabou de aparecer no centro do mapa, vamos eliminá-lo ! Primeiro, clique com o botão direito em cima dela para marcá-lo."
+				label_tutorial.text = "Um clone acabou de aparecer no centro do mapa, vamos eliminá-lo ! Primeiro, clique com o botão direito em cima dele para marcá-lo. Observação: os inimigos possuem contorno em vermelho"
 				criar_inimigo(Inimigo_parado_sem_atirar)
 				estado_atual = ESPERANDO_MARCA
 		
@@ -72,7 +72,7 @@ func _process(_delta):
 				
 		ESPERANDO_VITORIA_INIMIGO_PARADO:
 			if not is_instance_valid(inimigo) and not esperando_inimigo_nascer:
-				label_tutorial.text = "Incrível ! Agora vamos para o seu desafio final, mais um clone aparecerá no centro do mapa, só que dessa vez ele irá se movimentar. Dica: procure bloquear ele em algum lugar."
+				label_tutorial.text = "Incrível ! Agora vamos para o seu desafio final, mais um clone aparecerá no centro do mapa, só que dessa vez ele irá replicar seus movimentos. Dica: procure bloquear ele nas mesas estão no canto superior esquerdo do mapa."
 				$TimerSpawnInimigoComum.start()
 				estado_atual = null
 
@@ -84,6 +84,7 @@ func criar_inimigo(node_inimigo):
 
 func _ready():
 	get_tree().paused = true
+	$GameStats.quant_balas_em_jogo = -5
 
 func _on_Timer_comecar_timeout():
 	label_tutorial.text = "Vamos nos movimentar. Para se mover utilize as teclas WASD."

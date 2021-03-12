@@ -15,14 +15,13 @@ signal atualizar_botao_cam
 
 func _ready():
 	LIMITE_ZOOM_OUT = Vector2(limite_zoom, limite_zoom)
-	connect("atualizar_botao_cam", get_node("CanvasLayer").get_node("BotaoCentralizarCam"), "_on_camera_atualizar_botao_cam")
 	$CollisionShape2D.shape.extents = tamanho_colision_inicial
 
 
 func _physics_process(_delta):
 	movimentacao_camera()
 	zoom_camera()
-	focalizar_player = centralizacao_de_camera()
+	centralizacao_de_camera()
 	
 	
 func movimentacao_camera():
@@ -54,10 +53,7 @@ func centralizacao_de_camera():
 	# Inverte o valor booleano de focalizar player se a tecla "C" for clicada.
 	if Input.is_action_just_pressed("camera_center"):
 		emit_signal("atualizar_botao_cam")
-		return not focalizar_player
-	return focalizar_player
+		focalizar_player = not focalizar_player
 
-
-func _on_BotaoCentralizarCam_pressed():
+func _on_Btn_centralizar_pressed():
 	focalizar_player = not focalizar_player
-

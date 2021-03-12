@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 const VELOCIDADE_MAX = 200
+const LARGURA_BALA = 5
 
 var vetor_velocidade = Vector2.ZERO
 var alvo
@@ -10,6 +11,8 @@ onready var PlayerSprite = $Sprite
 var mouse_position
 var arma_carregada = true
 var rotation_fix = PI / 2
+var result
+
 
 signal player_atirou(bullet)
 signal player_marcou()
@@ -20,11 +23,35 @@ func _ready():
 	ReloadTimer.connect('timeout', self, '_on_BulletReloadTimer_timeout')
 
 func _physics_process(_delta):
+	update()
 	movimentacao()
 	marcar_alvo()
 	rotacionar()
 	verificar_atirar()
-	
+	if alvo:
+		var spacestate = get_world_2d().direct_space_state
+		for i in range(-LARGURA_BALA, LARGURA_BALA + 1, LARGURA_BALA):
+			result = spacestate.intersect_ray(global_position + Vector2(i, 0).rotated(rotation), alvo.global_position + Vector2(i, 0).rotated(rotation), [self], collision_mask)
+			if result and not "Enemy" in result.collider.name:
+				return
+		result = alvo
+
+func verificar_intersec():
+	# Utiliza o intersect ray para verificar se há algo bloqueando o caminho da bala até o alvo
+	# Nesse caso, 3 intersect rays são criados para verificar se a bala é bloqueada (nos cantos e pelo centro)
+	if alvo:
+		var spacestate = get_world_2d().direct_space_state
+		for i in range(-LARGURA_BALA, LARGURA_BALA + 1, LARGURA_BALA):
+			result = spacestate.intersect_ray(global_position + Vector2(i, 0).rotated(rotation), alvo.global_position + Vector2(i, 0).rotated(rotation), [self], collision_mask)
+			if result and not "Enemy" in result.collider.name:
+				return
+		result = alvo
+
+func _draw():
+	if result and alvo:  # desenhar o resultado da intersecção.
+		draw_line(Vector2.ZERO, (result.position - position).rotated(-rotation), ColorN("green"))
+		draw_line(Vector2(LARGURA_BALA,0).rotated(rotation), (alvo.position - position).rotated(-rotation) + Vector2(LARGURA_BALA,0).rotated(rotation), ColorN("yellow"))
+		draw_line(Vector2(-LARGURA_BALA,0).rotated(rotation), (alvo.position - position).rotated(-rotation) + Vector2(-LARGURA_BALA,0).rotated(rotation), ColorN("yellow"))
 
 func movimentacao():
 	vetor_velocidade.x = Input.get_action_strength('ui_right') - Input.get_action_strength('ui_left')

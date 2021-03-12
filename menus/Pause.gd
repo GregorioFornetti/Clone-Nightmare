@@ -2,14 +2,20 @@ extends Control
 
 var pausado = false
 var fase_acabou = false
+var player_perdeu = false
+onready var GameStats = get_parent().get_parent().get_node("GameStats")
 onready var FASE_ATUAL = get_parent().get_parent().get_node("GameStats").FASE_ATUAL
 onready var background_transicao = get_parent().get_node("Transicao")
-var player_ganhou = false
+var acabou_inimigos = false
 var opacidade = 0
 
 func _process(_delta):
-	if player_ganhou:
+	if acabou_inimigos and not player_perdeu and GameStats.quant_balas_em_jogo == 0:
 		# Fazer uma transição para cutscene
+		if not fase_acabou:
+			fase_acabou = true
+			SaveStats.passar_fase()
+			background_transicao.visible = true
 		opacidade += 0.03
 		background_transicao.color = Color(0.08, 0.08, 0.08, opacidade)
 		if opacidade >= 1:
@@ -26,21 +32,18 @@ func _input(event):
 
 
 func _on_GameStats_acabou_inimigos():
-	if not fase_acabou:   # Player ganhou !
-		SaveStats.passar_fase()
-		player_ganhou = true
-		background_transicao.visible = true
+	acabou_inimigos = true
 
 func _on_GameStats_acabou_municao():
-	if not player_ganhou:
+	if not acabou_inimigos:
 		prender_no_menu()
 		adicionar_elementos_derrota('Acabou a sua munição !')
 
 
 func _on_Player_player_morreu():
-	if not player_ganhou:
-		prender_no_menu()
-		adicionar_elementos_derrota('Você tomou um tiro !')
+	player_perdeu = true
+	prender_no_menu()
+	adicionar_elementos_derrota('Você tomou um tiro !')
 
 
 func prender_no_menu():
