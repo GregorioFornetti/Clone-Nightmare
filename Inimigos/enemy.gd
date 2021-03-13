@@ -44,6 +44,7 @@ func _on_Player_shoot(_bullet):
 	# Inimigo só atira no player quando o player também atirar.
 	tiro_inimigo = Tiro_inimigo.instance()
 	tiro_inimigo.global_position = global_position
+	tiro_inimigo.rotation = rotation
 	tiro_inimigo.alvo = Player.global_position
 	get_parent().call_deferred('add_child', tiro_inimigo)
 

@@ -47,3 +47,4 @@ func _on_Botao_portal_pressed():
 
 func trocar_visibilidade_linhas():
 	Linha_interligacao.visible = not Linha_interligacao.visible
+
