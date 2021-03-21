@@ -30,12 +30,13 @@ func _physics_process(_delta):
 	marcar_alvo()
 	rotacionar()
 	verificar_atirar()
-	criar_lista_linhas()
+	#criar_lista_linhas()
+	if alvo:
+		Draw_node.desenhar_intersec(position, alvo.position, self, bullet_mask, "Enemy")
 
 func criar_lista_linhas():
 	# Utiliza o intersect ray para verificar se há algo bloqueando o caminho da bala até o alvo
 	# Nesse caso, 3 intersect rays são criados para verificar se a bala é bloqueada (nos cantos e pelo centro)
-	Draw_node.posicoes_linhas = []
 	if alvo:
 		verificar_intersec(position, alvo.position, self)
 
@@ -44,7 +45,7 @@ func verificar_intersec(posicao, posicao_alvo, teste):
 		return
 	resultados = []
 	var spacestate = get_world_2d().direct_space_state
-	for i in range(-LARGURA_BALA, LARGURA_BALA + 1, LARGURA_BALA):
+	for i in range(-LARGURA_BALA, LARGURA_BALA + 1, LARGURA_BALA * 2):
 		resultados.append(spacestate.intersect_ray(posicao + Vector2(i, 0).rotated(rotation), (posicao_alvo + Vector2(i, 0).rotated(rotation)), [teste], bullet_mask))
 	ordenar_resultados(posicao, resultados)
 	for resultado in resultados:
@@ -62,18 +63,12 @@ func verificar_intersec(posicao, posicao_alvo, teste):
 
 
 func ordenar_resultados(posicao_atual, resultados):
-	# Ordena os resultados do intersect ray. As linhas que tiverem menor tamanho terão prioridade. Resultados não encontrados vão para o fim da lista.
-	for i in range(2):
-		for j in range(2 - i):
-			if not resultados[j]:
-				swap(resultados, j)
-			elif not resultados[j+1]:
-				continue
-			else:
-				var dist1 = abs(resultados[j].position.x - posicao_atual.x) + abs(resultados[j].position.y - posicao_atual.y)
-				var dist2 = abs(resultados[j+1].position.x - posicao_atual.x) + abs(resultados[j+1].position.y - posicao_atual.y)
-				if dist1 > dist2:
-					swap(resultados, j)
+	# Ordena os resultados do intersect ray. As linhas que tiverem menor tamanho terão prioridade.
+	if resultados[0] and resultados[1]:
+		var dist1 = abs(resultados[0].position.x - posicao_atual.x) + abs(resultados[0].position.y - posicao_atual.y)
+		var dist2 = abs(resultados[1].position.x - posicao_atual.x) + abs(resultados[1].position.y - posicao_atual.y)
+		if dist1 > dist2:
+			swap(resultados, 0)
 			
 func swap(resultados, indice):
 	var temp = resultados[indice]

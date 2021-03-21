@@ -3,7 +3,7 @@ extends Control
 const NOME_PLAYER = "Personagem"
 const NOME_SILHUETA = "???????????"
 const NOME_CONSCIENCIA = "Consciência"
-const IMG_PERSONAGEM = "res://Sprites/silhueta1-teste.png"
+const IMG_PERSONAGEM = "res://Sprites/Personagem/cientista-portrait.png"
 const POSIC_ESQ_NOME = 65
 const POSIC_DIR_NOME = 550
 
@@ -92,11 +92,11 @@ func atualizar_box_dialogo(dic_dialogo):
 	if dic_dialogo.nome == "player":
 		lb_nome.text = NOME_PLAYER
 		lb_nome.rect_position.x = POSIC_ESQ_NOME
-		silhueta.position.x += 100
+		silhueta.position.x += 50
 	else:
 		lb_nome.text = NOME_SILHUETA
 		lb_nome.rect_position.x = POSIC_DIR_NOME
-		personagem.position.x -= 100
+		personagem.position.x -= 50
 		
 	# Aplicar efeitos do humor:
 	var dic_humor = DIC_HUMORES[dic_dialogo['humor']]

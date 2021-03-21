@@ -5,12 +5,15 @@ const VELOCIDADE_MAX = 200
 var vetor_velocidade = Vector2.ZERO
 onready var Player = get_parent().get_node('Player')
 onready var Tiro_inimigo = preload('res://Inimigos/enemy_bullet.tscn')
+onready var Draw_node = get_parent().get_node("Aim_line")
+onready var bullet_mask = pow(2, 7)
 var rotation_fix = PI / 2
 var tiro_inimigo
 
 signal inimigo_morreu
 
 func _ready():
+	bullet_mask += collision_mask
 	Player.connect("player_marcou", self, "_on_Player_marcou")
 	Player.connect("player_desmarcou", self, "_on_Player_desmarcou")
 	Player.connect("player_atirou", self, '_on_Player_shoot')
@@ -21,6 +24,8 @@ func _ready():
 func _physics_process(_delta):
 	movimentation()
 	rotacionar()
+	if Player.alvo:
+		Draw_node.desenhar_intersec(position, Player.position, self, bullet_mask, "Player")
 
 func rotacionar():
 	if Player.alvo:
