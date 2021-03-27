@@ -8,4 +8,5 @@ func _input(event):
 		get_tree().paused = true
 
 func _on_Button_pressed():
+	get_tree().paused = false
 	get_tree().change_scene("res://menus/Menu_fases.tscn")

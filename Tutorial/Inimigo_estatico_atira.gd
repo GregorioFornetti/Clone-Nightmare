@@ -16,6 +16,7 @@ func _ready():
 
 func _on_Hurtbox_area_entered(area):
 	if area.get_parent() != tiro_inimigo:
+		Sist_som.play("Morte_inimigo")
 		area.get_parent().queue_free()
 		emit_signal("inimigo_morreu")
 		queue_free()

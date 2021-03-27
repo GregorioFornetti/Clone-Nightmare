@@ -11,12 +11,14 @@ const DIC_HUMORES = {
 	"normal" : {
 		"fonte" : preload("res://fontes/fonte_normal.tres"),
 		"velocidade" : 20,
-		"cor" : Color(0.9, 0.9, 0.9, 1)
+		"cor" : Color(0.9, 0.9, 0.9, 1),
+		"som": "Dialogo_normal"
 	},
 	"raiva" : {
 		"fonte" : preload("res://fontes/fonte_raiva.tres"),
 		"velocidade" : 100,
-		"cor" : Color(0.7, 0, 0, 1)
+		"cor" : Color(0.7, 0, 0, 1),
+		"som": "Dialogo_raiva"
 	}
 }
 var dialogo_atual = 0
@@ -31,6 +33,7 @@ onready var silhueta = $Silhueta
 onready var menu_pular = $Menu_pular
 
 var dics_dialogos
+var dic_humor
 
 func _ready():
 	dics_dialogos = retorna_dics_dialogos()
@@ -46,6 +49,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		avancar_proximo()
 	if Input.is_action_just_pressed("ui_cancel"):
+		Sist_som.stop(dic_humor.som)
 		menu_pular.visible = true
 		get_tree().paused = true
 
@@ -54,12 +58,14 @@ func _on_Btn_prox_pressed():
 
 func _on_Btn_ant_pressed():
 	dialogo_atual -= 1
+	Sist_som.stop(dic_humor.som)
 	atualizar_box_dialogo(dics_dialogos[dialogo_atual])
 
 func _on_Timer_letras_timeout():
 	if lb_dialogo.percent_visible != 1:
 		lb_dialogo.visible_characters += 1
 	else:
+		Sist_som.stop(dic_humor.som)
 		btn_prox.text = 'Próximo'
 		timer_letras.stop()
 
@@ -99,10 +105,11 @@ func atualizar_box_dialogo(dic_dialogo):
 		personagem.position.x -= 50
 		
 	# Aplicar efeitos do humor:
-	var dic_humor = DIC_HUMORES[dic_dialogo['humor']]
+	dic_humor = DIC_HUMORES[dic_dialogo['humor']]
 	lb_dialogo.add_font_override("font", dic_humor.fonte)
 	lb_dialogo.add_color_override("font_color", dic_humor.cor)
 	timer_letras.wait_time = 1.0 / dic_humor.velocidade
+	Sist_som.play(dic_humor.som)
 	
 	if dialogo_atual == 0:
 		btn_ant.disabled = true

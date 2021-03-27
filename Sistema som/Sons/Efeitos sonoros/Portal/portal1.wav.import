@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/portal1.wav-6c847475c1a3a59fc6eeba13a8d2d5fa.sample"
+
+[deps]
+
+source_file="res://Sistema som/Sons/Efeitos sonoros/Portal/portal1.wav"
+dest_files=[ "res://.import/portal1.wav-6c847475c1a3a59fc6eeba13a8d2d5fa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -3,6 +3,7 @@
 [ext_resource path="res://Demo_acabou.gd" type="Script" id=1]
 
 [node name="Demo_acabou" type="CanvasLayer"]
+pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="Background" type="ColorRect" parent="."]

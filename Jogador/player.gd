@@ -10,6 +10,7 @@ onready var GameStats = get_parent().get_node("GameStats")
 onready var bullet_mask = pow(2, 7)
 onready var PlayerSprite = $Sprite
 onready var Draw_node = get_parent().get_node("Aim_line")
+onready var arma = $Position2D
 var mouse_position
 var arma_carregada = true
 var rotation_fix = PI / 2
@@ -32,48 +33,7 @@ func _physics_process(_delta):
 	verificar_atirar()
 	#criar_lista_linhas()
 	if alvo:
-		Draw_node.desenhar_intersec(position, alvo.position, self, bullet_mask, "Enemy")
-
-func criar_lista_linhas():
-	# Utiliza o intersect ray para verificar se há algo bloqueando o caminho da bala até o alvo
-	# Nesse caso, 3 intersect rays são criados para verificar se a bala é bloqueada (nos cantos e pelo centro)
-	if alvo:
-		verificar_intersec(position, alvo.position, self)
-
-func verificar_intersec(posicao, posicao_alvo, teste):
-	if len(Draw_node.posicoes_linhas) >= 5:  # Limitar quantidade de linhas (para evitar loop infinito)
-		return
-	resultados = []
-	var spacestate = get_world_2d().direct_space_state
-	for i in range(-LARGURA_BALA, LARGURA_BALA + 1, LARGURA_BALA * 2):
-		resultados.append(spacestate.intersect_ray(posicao + Vector2(i, 0).rotated(rotation), (posicao_alvo + Vector2(i, 0).rotated(rotation)), [teste], bullet_mask))
-	ordenar_resultados(posicao, resultados)
-	for resultado in resultados:
-		if resultado:
-			if "Portal" in resultado.collider.name:  # Tiro irá bater no portal, verificar rastro a partir do outro portal também
-				var posic_portal_oposto = resultado.collider.retorna_portal_posic_oposto()
-				Draw_node.posicoes_linhas.append({"posic_inicial": posicao, "alvo": resultado.position})
-				verificar_intersec(posic_portal_oposto, posic_portal_oposto + ((posicao_alvo - posicao).normalized()) * 10000, resultado.collider.portal_oposto)
-				return
-			elif not "Enemy" in resultado.collider.name:  # Tiro irá bater na parede, parar por aqui
-				Draw_node.posicoes_linhas.append({"posic_inicial": posicao, "alvo": resultado.position})
-				return
-	# Se chegar até aqui, o tiro conseguirá acertar o alvo
-	Draw_node.posicoes_linhas.append({"posic_inicial": posicao, "alvo": posicao_alvo})
-
-
-func ordenar_resultados(posicao_atual, resultados):
-	# Ordena os resultados do intersect ray. As linhas que tiverem menor tamanho terão prioridade.
-	if resultados[0] and resultados[1]:
-		var dist1 = abs(resultados[0].position.x - posicao_atual.x) + abs(resultados[0].position.y - posicao_atual.y)
-		var dist2 = abs(resultados[1].position.x - posicao_atual.x) + abs(resultados[1].position.y - posicao_atual.y)
-		if dist1 > dist2:
-			swap(resultados, 0)
-			
-func swap(resultados, indice):
-	var temp = resultados[indice]
-	resultados[indice] = resultados[indice + 1]
-	resultados[indice + 1] = temp
+		Draw_node.desenhar_intersec(global_position, arma.global_position, alvo.position, self, bullet_mask, "Enemy")
 
 func movimentacao():
 	vetor_velocidade.x = Input.get_action_strength('ui_right') - Input.get_action_strength('ui_left')
@@ -117,12 +77,14 @@ func verificar_atirar():
 	if Input.is_action_just_pressed("ui_accept") and alvo and arma_carregada and GameStats.quant_atual_bullets > 0:
 		if is_instance_valid(alvo):
 			var tiro_player = Tiro_player.instance()
-			tiro_player.global_position = global_position
+			tiro_player.global_position = arma.global_position
 			tiro_player.rotation = rotation
 			tiro_player.alvo = alvo.global_position
 			get_parent().call_deferred('add_child', tiro_player)
 			
 			emit_signal("player_atirou", tiro_player)
+			
+			Sist_som.play("Tiro")
 			
 			ReloadTimer.start()
 			arma_carregada = false
@@ -132,6 +94,7 @@ func verificar_atirar():
 
 func _on_Hurtbox_area_entered(area):
 	area.get_parent().acabar_com_bala()
+	Sist_som.play("Player_perdeu")
 	emit_signal("player_morreu")
 	# queue_free()
 

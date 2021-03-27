@@ -1,10 +1,15 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Inimigos/enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Fases/arena_root.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/Tilesets/tileset1.png" type="Texture" id=3]
 [ext_resource path="res://Fases/TilesetPlaceHolder.png" type="Texture" id=4]
-[ext_resource path="res://Demo_acabou.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Portais/Portal_inimigos.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Portais/Portal_player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Portais/Portal_geral.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Portais/Portal_balas.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Portais/Portal_player&inimigos.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Demo_acabou.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -247,8 +252,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Demo_acabou" parent="." index="11" instance=ExtResource( 5 )]
-pause_mode = 2
+[node name="Portal_player&inimigos" parent="." index="11" instance=ExtResource( 9 )]
+position = Vector2( 224.82, 204.773 )
+
+[node name="Portal_balas" parent="." index="12" instance=ExtResource( 8 )]
+position = Vector2( 45.8232, 326.491 )
+
+[node name="Portal_geral" parent="." index="13" instance=ExtResource( 7 )]
+position = Vector2( -206.205, 319.331 )
+
+[node name="Portal_player" parent="." index="14" instance=ExtResource( 6 )]
+position = Vector2( -305.011, 193.317 )
+
+[node name="Portal_inimigos" parent="." index="15" instance=ExtResource( 5 )]
+position = Vector2( -30.0715, 211.932 )
+
+[node name="Demo_acabou" parent="." index="16" instance=ExtResource( 10 )]
 [connection signal="player_atirou" from="Player" to="GameStats" method="_on_Player_player_atirou"]
 [connection signal="pressed" from="CanvasLayer/Pause/Btn_Reiniciar" to="CanvasLayer/Pause" method="_on_Btn_Reiniciar_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Btn_Voltar" to="CanvasLayer/Pause" method="_on_Btn_Voltar_pressed"]
@@ -256,5 +275,3 @@ pause_mode = 2
 [editable path="GameInterface"]
 
 [editable path="camera"]
-
-[editable path="Demo_acabou"]

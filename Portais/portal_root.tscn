@@ -1,19 +1,30 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Portais/portal_root.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18, 18 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=2]
+radius = 40.0
+
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 18, 18 )
 
+[sub_resource type="CircleShape2D" id=4]
+radius = 40.0
+
 [node name="Portal_root" type="Node2D"]
+position = Vector2( 1, 0 )
 script = ExtResource( 1 )
 
-[node name="Portal1" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 0
+[node name="Linha_interligacao" type="Line2D" parent="."]
+visible = false
+position = Vector2( 0.107727, 0 )
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 5.0
+
+[node name="Portal1" type="Node2D" parent="."]
 __meta__ = {
 "_edit_group_": true
 }
@@ -28,13 +39,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal1"]
-shape = SubResource( 1 )
-
-[node name="Portal2" type="Area2D" parent="."]
-position = Vector2( 80, 0 )
+[node name="Portal1_enter" type="Area2D" parent="Portal1"]
 collision_layer = 0
 collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal1/Portal1_enter"]
+shape = SubResource( 1 )
+
+[node name="Portal1_exit" type="Area2D" parent="Portal1"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal1/Portal1_exit"]
+shape = SubResource( 2 )
+
+[node name="Portal2" type="Node2D" parent="."]
+position = Vector2( 80, 0 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -49,15 +72,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal2"]
-shape = SubResource( 2 )
+[node name="Portal2_enter" type="Area2D" parent="Portal2"]
+collision_layer = 0
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Linha_interligacao" type="Line2D" parent="."]
-visible = false
-position = Vector2( 0.107727, 0 )
-points = PoolVector2Array( 0, 0, 0, 0 )
-width = 5.0
-[connection signal="body_entered" from="Portal1" to="." method="_on_Portal1_body_entered"]
-[connection signal="body_exited" from="Portal1" to="." method="_on_Portal1_body_exited"]
-[connection signal="body_entered" from="Portal2" to="." method="_on_Portal2_body_entered"]
-[connection signal="body_exited" from="Portal2" to="." method="_on_Portal2_body_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal2/Portal2_enter"]
+shape = SubResource( 3 )
+
+[node name="Portal2_exit" type="Area2D" parent="Portal2"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal2/Portal2_exit"]
+shape = SubResource( 4 )
+[connection signal="body_entered" from="Portal1/Portal1_enter" to="." method="_on_Portal1_enter_body_entered"]
+[connection signal="body_exited" from="Portal1/Portal1_exit" to="." method="_on_Portal1_exit_body_exited"]
+[connection signal="body_entered" from="Portal2/Portal2_enter" to="." method="_on_Portal2_enter_body_entered"]
+[connection signal="body_exited" from="Portal2/Portal2_exit" to="." method="_on_Portal2_exit_body_exited"]

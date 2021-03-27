@@ -23,10 +23,9 @@ func _process(_delta):
 		emit_signal("acabou_municao")
 		jogo_acabou = true
 
-func _on_Player_player_atirou(bullet):
+func _on_Player_player_atirou(_bullet):
 	quant_atual_bullets -= 1
 	quant_balas_em_jogo += quant_atual_inimigos + 1  # Considerando que todos os inimigos irão atirar e o player também.
-	print(quant_balas_em_jogo)
 	GameInterface.atualizar_label_bullets(quant_atual_bullets)
 
 func _on_Enemy_die():
