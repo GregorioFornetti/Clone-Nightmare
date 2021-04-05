@@ -46,8 +46,9 @@ func movimentacao():
 func rotacionar():
 	if alvo:
 		rotation = position.angle_to_point(alvo.position) - rotation_fix
-	elif vetor_velocidade != Vector2.ZERO:
-		rotation = vetor_velocidade.angle() + rotation_fix
+	else:
+		rotation = position.angle_to_point(get_global_mouse_position()) - rotation_fix
+
 
 func marcar_alvo():
 	# Verifica se o botão esquerdo do mouse foi clicado
@@ -61,7 +62,6 @@ func marcar_alvo():
 				emit_signal("player_desmarcou")
 				alvo.get_node('target').visible = false
 				alvo = null
-				PlayerSprite.frame = 0
 				return
 			
 			emit_signal("player_marcou")
@@ -70,7 +70,6 @@ func marcar_alvo():
 			# Marcar novo inimigo
 			alvo = colisao[0]['collider']
 			alvo.get_node('target').visible = true
-			PlayerSprite.frame = 1
 
 
 func verificar_atirar():
@@ -105,5 +104,4 @@ func _on_Enemy_death(inimigo):
 	# desmarcar inimigo que morreu
 	if inimigo == alvo:
 		emit_signal("player_desmarcou")
-		PlayerSprite.frame = 0
 		alvo = null

@@ -33,6 +33,9 @@ func desenhar_intersec(posicao_entidade_atual, posicao_arma, posicao_alvo, entid
 					posicoes_linhas.append(posicoes_linhas_atual.duplicate())
 					posicoes_linhas_atual = []
 					return
+				else:
+					# Evita que a mira vá além do alvo quando encontra-lo através de um portal
+					posicao_alvo = resultado.collider.position
 		# Se chegar até aqui, o tiro conseguirá acertar o alvo
 		posicoes_linhas_atual.append({"posic_inicial": posicao_arma, "alvo": posicao_alvo, "nome_alvo": nome_alvo})
 		posicoes_linhas.append(posicoes_linhas_atual.duplicate())

@@ -18,6 +18,8 @@ func _ready():
 	GameInterface.Btn_portal.connect("pressed", self, "_on_Botao_portal_pressed")
 
 func _process(_delta):
+	limpar_lista(lista_corpos_portal1)
+	limpar_lista(lista_corpos_portal2)
 	update()
 
 func _draw():
@@ -73,5 +75,11 @@ func draw_circle_arc(center, radius, angle_from, angle_to, color):
 
 	for index_point in range(nb_points):
 		draw_line(points_arc[index_point], points_arc[index_point + 1], color, 2.0)
+
+func limpar_lista(lista_corpos_portal):
+	# Remove inimigos/balas que já acabaram das listas.
+	for corpo in lista_corpos_portal:
+		if not is_instance_valid(corpo):
+			lista_corpos_portal.erase(corpo)
 
 
