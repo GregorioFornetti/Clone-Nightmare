@@ -1,4 +1,5 @@
 extends Button
 
-func _on_camera_atualizar_botao_cam():
-	self.pressed = not self.pressed
+func _input(event):
+	if event.get_action_strength("camera_center"):
+		pressed = not pressed
