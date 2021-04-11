@@ -4,7 +4,10 @@ func _ready():
 	# Criar os 20 botoes de fases.
 	criar_botoes("Fase", SaveStats.ultima_fase_liberada)
 
-func _on_Botao_pressionado(fase):  # Algum botão de fase foi selecionado (carregar tal fase)
+func _on_Botao_pressionado(fase):  # Algum botão de fase foi selecionado (carregar tal fase)]
+	Sist_som.stop("Musica_menu")
+	Sist_som.comecar_musica_fase(fase)
+	
 	get_tree().change_scene("res://Fases/fase" + str(fase) + ".tscn")
 
 
@@ -13,6 +16,7 @@ func _on_Btn_voltar_pressed():
 
 
 func _on_Btn_tutorial_pressed():
+	Sist_som.stop("Musica_menu")
 	get_tree().change_scene("res://Tutorial/Tutorial.tscn")
 
 func _on_Btn_dialogos_pressed():

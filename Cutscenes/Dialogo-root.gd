@@ -83,6 +83,8 @@ func avancar_proximo():
 
 func mudar_menu():
 	if SaveStats.fase_atual == 0:  # Jogador está acessando pela galeria
+		Sist_som.stop("Musica_cutscene")
+		Sist_som.play("Musica_menu")
 		get_tree().change_scene("res://Cutscenes/Menu_dialogos.tscn")
 	else:  # Jogador está acessando pela cutscene automática após vitória
 		get_tree().change_scene("res://menus/Menu_vitoria.tscn") # Acabou os dialogos, ir para o menu de vitória.

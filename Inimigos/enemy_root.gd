@@ -6,6 +6,7 @@ var vetor_velocidade = Vector2.ZERO
 onready var Player = get_parent().get_node('Player')
 onready var Tiro_inimigo = preload('res://Inimigos/enemy_bullet.tscn')
 onready var Draw_node = get_parent().get_node("Aim_line")
+onready var GameStats = get_parent().get_node("GameStats")
 onready var bullet_mask = pow(2, 7)
 onready var arma = $Position2D
 var rotation_fix = PI / 2

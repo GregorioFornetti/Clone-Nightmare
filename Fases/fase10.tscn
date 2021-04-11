@@ -259,19 +259,19 @@ position = Vector2( -13.0107, 33.0667 )
 position = Vector2( -780.841, -126.457 )
 
 [node name="Portal1" parent="Portal_balas" index="0"]
-position = Vector2( -140, -72 )
+position = Vector2( -140, -140.495 )
 
 [node name="Portal2" parent="Portal_balas" index="1"]
-position = Vector2( -23, 108 )
+position = Vector2( -20.4153, -19.9439 )
 
 [node name="Portal_balas2" parent="." index="8" instance=ExtResource( 5 )]
 position = Vector2( 551.577, -131.626 )
 
 [node name="Portal1" parent="Portal_balas2" index="0"]
-position = Vector2( 106, 108 )
+position = Vector2( 114.069, 33.5764 )
 
 [node name="Portal2" parent="Portal_balas2" index="1"]
-position = Vector2( 230, -71 )
+position = Vector2( 228.62, -134.361 )
 
 [node name="Portal_balas3" parent="." index="9" instance=ExtResource( 5 )]
 position = Vector2( 551.577, -131.626 )
@@ -280,19 +280,16 @@ position = Vector2( 551.577, -131.626 )
 position = Vector2( -1444.73, 320.298 )
 
 [node name="Portal2" parent="Portal_balas3" index="1"]
-position = Vector2( 43.6863, 107.836 )
+position = Vector2( 114.629, -21.6317 )
 
 [node name="Portal_balas4" parent="." index="10" instance=ExtResource( 5 )]
 position = Vector2( 551.577, -131.626 )
 
 [node name="Portal1" parent="Portal_balas4" index="0"]
-position = Vector2( -1291.34, 113.339 )
+position = Vector2( -1350.79, 40.9667 )
 
 [node name="Portal2" parent="Portal_balas4" index="1"]
 position = Vector2( 196.763, 318.517 )
-
-[node name="Player" parent="." index="11"]
-position = Vector2( -78.0768, 10.0211 )
 
 [node name="Enemy" parent="." index="12" instance=ExtResource( 2 )]
 position = Vector2( -737.297, -80.262 )
@@ -300,7 +297,10 @@ position = Vector2( -737.297, -80.262 )
 [node name="Enemy2" parent="." index="13" instance=ExtResource( 2 )]
 position = Vector2( 618.78, -91.7178 )
 
-[node name="StaticBody2D" parent="." index="15"]
+[node name="Player" parent="." index="14"]
+position = Vector2( -78.0768, 10.0211 )
+
+[node name="StaticBody2D" parent="." index="16"]
 collision_mask = 0
 
 [node name="CollisionPolygon2D" parent="StaticBody2D" index="0"]
@@ -311,8 +311,6 @@ polygon = PoolVector2Array( -959.985, 252.995, 816.114, 252.666, 815.856, -819.4
 [connection signal="pressed" from="CanvasLayer/Pause/Btn_Voltar" to="CanvasLayer/Pause" method="_on_Btn_Voltar_pressed"]
 
 [editable path="GameInterface"]
-
-[editable path="camera"]
 
 [editable path="Portal_inimigos"]
 
@@ -327,3 +325,5 @@ polygon = PoolVector2Array( -959.985, 252.995, 816.114, 252.666, 815.856, -819.4
 [editable path="Portal_balas3"]
 
 [editable path="Portal_balas4"]
+
+[editable path="camera"]

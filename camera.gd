@@ -30,7 +30,7 @@ func movimentacao_camera():
 			if not antiga_pos_mouse:
 				antiga_pos_mouse = get_viewport().get_mouse_position()
 			else:
-				move_and_slide((antiga_pos_mouse - get_viewport().get_mouse_position()) * 60)
+				move_and_slide(((antiga_pos_mouse - get_viewport().get_mouse_position()) * 60))
 				antiga_pos_mouse = get_viewport().get_mouse_position()
 			return
 		elif focalizar_player:

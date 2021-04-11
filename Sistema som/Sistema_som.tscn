@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Sistema som/Sons/Efeitos sonoros/Tiro/tiro1.wav" type="AudioStream" id=1]
 [ext_resource path="res://Sistema som/Sons/Efeitos sonoros/Tiro/tiro4.wav" type="AudioStream" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Sistema som/Sons/Efeitos sonoros/Portal/portal3.wav" type="AudioStream" id=12]
 [ext_resource path="res://Sistema som/Sons/Efeitos sonoros/Dialogo/dialogo_normal.wav" type="AudioStream" id=13]
 [ext_resource path="res://Sistema som/Sons/Efeitos sonoros/Dialogo/dialogo_raiva.wav" type="AudioStream" id=14]
+[ext_resource path="res://Sistema som/Sons/Musicas/menu.wav" type="AudioStream" id=15]
 
 [node name="Sistema_som" type="Node"]
 pause_mode = 2
@@ -72,3 +73,9 @@ volume_db = -20.0
 stream = ExtResource( 14 )
 volume_db = -20.0
 pitch_scale = 1.1
+
+[node name="Musica_menu" type="Node" parent="."]
+
+[node name="Musica_menu" type="AudioStreamPlayer" parent="Musica_menu"]
+stream = ExtResource( 15 )
+volume_db = -19.185

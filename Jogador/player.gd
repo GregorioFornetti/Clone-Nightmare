@@ -40,7 +40,7 @@ func movimentacao():
 	vetor_velocidade.y = Input.get_action_strength('ui_down') - Input.get_action_strength('ui_up')
 	vetor_velocidade = vetor_velocidade.normalized()
 	
-	move_and_slide(vetor_velocidade * VELOCIDADE_MAX)
+	move_and_slide(vetor_velocidade * VELOCIDADE_MAX * GameStats.multiplicador_vel)
 
 
 func rotacionar():

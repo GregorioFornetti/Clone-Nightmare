@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/BotaoCentralizarCam.gd" type="Script" id=1]
 [ext_resource path="res://UI/ReloadProgressBar.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://UI/icone-camera-centralizar.png" type="Texture" id=4]
 [ext_resource path="res://UI/icone_btn_portal.png" type="Texture" id=5]
 [ext_resource path="res://UI/GameInterface.gd" type="Script" id=6]
+[ext_resource path="res://Sprites/Slow.png" type="Texture" id=7]
+[ext_resource path="res://UI/Btn_slow.gd" type="Script" id=8]
 
 [node name="GameInterface" type="CanvasLayer"]
 script = ExtResource( 6 )
@@ -78,3 +80,14 @@ toggle_mode = true
 enabled_focus_mode = 0
 icon = ExtResource( 5 )
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_slow" type="Button" parent="Control"]
+margin_left = 854.288
+margin_top = 560.573
+margin_right = 898.288
+margin_bottom = 598.573
+icon = ExtResource( 7 )
+script = ExtResource( 8 )

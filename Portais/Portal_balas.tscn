@@ -1,29 +1,42 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Portais/Portal_geral.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/Novossprites/teleporter3-2.png" type="Texture" id=2]
 
 [node name="Portal_balas" instance=ExtResource( 1 )]
 
-[node name="ColorRect" parent="Portal1" index="0"]
-color = Color( 0.741176, 0.792157, 0.129412, 1 )
+[node name="Sprite" parent="Portal1" index="0"]
+texture = ExtResource( 2 )
 
 [node name="Portal1_enter" parent="Portal1" index="1"]
 collision_mask = 64
 
+[node name="CollisionShape2D" parent="Portal1/Portal1_enter" index="0"]
+visible = false
+
 [node name="Portal1_exit" parent="Portal1" index="2"]
 collision_mask = 64
+
+[node name="CollisionShape2D" parent="Portal1/Portal1_exit" index="0"]
+visible = false
 
 [node name="Portal2" parent="." index="1"]
 position = Vector2( 80, -0.135277 )
 
-[node name="ColorRect" parent="Portal2" index="0"]
-color = Color( 0.741176, 0.792157, 0.129412, 1 )
+[node name="Sprite" parent="Portal2" index="0"]
+texture = ExtResource( 2 )
 
 [node name="Portal2_enter" parent="Portal2" index="1"]
 collision_mask = 64
 
+[node name="CollisionShape2D" parent="Portal2/Portal2_enter" index="0"]
+visible = false
+
 [node name="Portal2_exit" parent="Portal2" index="2"]
 collision_mask = 64
+
+[node name="CollisionShape2D" parent="Portal2/Portal2_exit" index="0"]
+visible = false
 
 [node name="Linha_interligacao" parent="." index="2"]
 default_color = Color( 0.94902, 1, 0, 1 )

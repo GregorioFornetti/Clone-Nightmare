@@ -1,6 +1,7 @@
 extends Node2D
 
 const LARGURA_BALA = 5
+const ALTURA_BALA  = 7
 
 var posicoes_linhas
 var posicoes_linhas_atual = []
@@ -17,6 +18,18 @@ func desenhar_intersec(posicao_entidade_atual, posicao_arma, posicao_alvo, entid
 			posicoes_linhas.append(posicoes_linhas_atual.duplicate())
 			posicoes_linhas_atual = []
 			return
+		
+		# Evitar problemas de não detecção do portal quando ele está na ponta da arma. É necessário verificar nos quatro canto da bala.
+		var colisao_posic_arma
+		for i in range(-LARGURA_BALA, LARGURA_BALA + 1, LARGURA_BALA * 2):
+			for j in range(-ALTURA_BALA, ALTURA_BALA + 1, ALTURA_BALA * 2):
+				colisao_posic_arma = spacestate.intersect_point(posicao_arma + Vector2(i,j).rotated(entidade_atual.rotation), 1, [entidade_atual], bullet_mask)
+				if colisao_posic_arma and "Portal" in colisao_posic_arma[0].collider.name:
+					var portal = colisao_posic_arma[0].collider
+					var posic_portal_oposto = portal.retorna_portal_posic_oposto()
+					desenhar_intersec(posic_portal_oposto, posic_portal_oposto, posic_portal_oposto + ((posicao_alvo - posicao_arma).normalized()) * 10000, portal.portal_oposto, bullet_mask, nome_alvo)
+					return
+		
 		resultados = []
 		for i in range(-LARGURA_BALA, LARGURA_BALA + 1, LARGURA_BALA * 2):
 			resultados.append(spacestate.intersect_ray(posicao_arma + Vector2(i, 0).rotated(entidade_atual.rotation), (posicao_alvo + Vector2(i, 0).rotated(entidade_atual.rotation)), [entidade_atual], bullet_mask))

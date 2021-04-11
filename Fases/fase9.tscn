@@ -238,10 +238,10 @@ position = Vector2( 90, 0 )
 [node name="Enemy" parent="." index="5" instance=ExtResource( 1 )]
 position = Vector2( 258.193, 14.9319 )
 
-[node name="Player" parent="." index="6"]
+[node name="Player" parent="." index="7"]
 position = Vector2( -58.7344, 13.8315 )
 
-[node name="StaticBody2D" parent="." index="8"]
+[node name="StaticBody2D" parent="." index="9"]
 collision_mask = 0
 
 [node name="CollisionPolygon2D" parent="StaticBody2D" index="0"]
@@ -253,6 +253,6 @@ polygon = PoolVector2Array( 624.033, -307.372, -512.197, -307.245, -512.268, 348
 
 [editable path="GameInterface"]
 
-[editable path="camera"]
-
 [editable path="Portal_inimigos"]
+
+[editable path="camera"]
