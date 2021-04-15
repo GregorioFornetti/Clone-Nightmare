@@ -4,6 +4,7 @@ const VELOCIDADE_MAX = 200
 const LARGURA_BALA = 5
 
 var vetor_velocidade = Vector2.ZERO
+var mult_esteira = 1
 var alvo
 var Tiro_player = preload('res://Jogador/player_bullet.tscn')
 onready var GameStats = get_parent().get_node("GameStats")
@@ -40,7 +41,7 @@ func movimentacao():
 	vetor_velocidade.y = Input.get_action_strength('ui_down') - Input.get_action_strength('ui_up')
 	vetor_velocidade = vetor_velocidade.normalized()
 	
-	move_and_slide(vetor_velocidade * VELOCIDADE_MAX * GameStats.multiplicador_vel)
+	move_and_slide(vetor_velocidade * VELOCIDADE_MAX * GameStats.multiplicador_vel * mult_esteira)
 
 
 func rotacionar():

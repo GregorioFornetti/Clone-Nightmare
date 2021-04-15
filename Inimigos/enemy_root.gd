@@ -3,10 +3,11 @@ extends KinematicBody2D
 const VELOCIDADE_MAX = 200
 
 var vetor_velocidade = Vector2.ZERO
+var mult_esteira = 1
 onready var Player = get_parent().get_node('Player')
-onready var Tiro_inimigo = preload('res://Inimigos/enemy_bullet.tscn')
 onready var Draw_node = get_parent().get_node("Aim_line")
 onready var GameStats = get_parent().get_node("GameStats")
+onready var Tiro_inimigo
 onready var bullet_mask = pow(2, 7)
 onready var arma = $Position2D
 var rotation_fix = PI / 2
@@ -20,6 +21,11 @@ func _ready():
 	Player.connect("player_atirou", self, '_on_Player_shoot')
 	connect("inimigo_morreu", Player, '_on_Enemy_death', [self])
 	connect("inimigo_morreu", get_parent().get_node('GameStats'), '_on_Enemy_die')
+	on_ready()
+
+
+func on_ready():
+	pass
 
 
 func _physics_process(_delta):
