@@ -21,6 +21,7 @@ func _on_Area2D_body_entered(_body):
 func acabar_com_bala():
 	# A bala colidiu com algo, avisar que ela acabou.
 	if not municao_ja_acabou:  # Verificação para evitar dupla colisão e erro na contagem.
+		Sist_som.play("Tiro_parede")
 		emit_signal("bullet_acabou")
 		queue_free()
 		municao_ja_acabou = true

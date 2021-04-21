@@ -66,5 +66,8 @@
 
 [node name="TileMap-Esteiras" type="TileMap"]
 tile_set = SubResource( 1 )
+collision_layer = 0
+collision_mask = 6
 format = 1
+tile_data = PoolIntArray( 327871, 3, 0 )
 script = ExtResource( 1 )

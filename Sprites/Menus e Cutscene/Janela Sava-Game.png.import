@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/JogoSalvo2.png-efbe3aa4deb650fe5633ed654e80abe7.stex"
+path="res://.import/Janela Sava-Game.png-9429b82db4efe3d4cb11c89703fd2885.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Menus e Cutscene/JogoSalvo2.png"
-dest_files=[ "res://.import/JogoSalvo2.png-efbe3aa4deb650fe5633ed654e80abe7.stex" ]
+source_file="res://Sprites/Menus e Cutscene/Janela Sava-Game.png"
+dest_files=[ "res://.import/Janela Sava-Game.png-9429b82db4efe3d4cb11c89703fd2885.stex" ]
 
 [params]
 

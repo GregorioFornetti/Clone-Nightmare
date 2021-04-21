@@ -12,13 +12,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.254902, 0.231373, 0.231373, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Background2" type="Sprite" parent="."]
+position = Vector2( 89.9029, 110.392 )
+scale = Vector2( 1.55005, 1.65746 )
 
 [node name="Titulo_slot" type="Label" parent="."]
 anchor_left = 0.5
@@ -34,19 +30,19 @@ __meta__ = {
 [node name="Info_slot" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -19.1169
-margin_top = 65.6992
-margin_right = 20.8831
-margin_bottom = 79.6992
+margin_left = -20.738
+margin_top = 78.6678
+margin_right = 19.262
+margin_bottom = 92.6678
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Btn_comecar" type="Button" parent="."]
-margin_left = 22.9966
-margin_top = 122.091
-margin_right = 158.997
-margin_bottom = 142.091
+margin_left = 23.537
+margin_top = 131.277
+margin_right = 159.537
+margin_bottom = 151.277
 text = "Começar novo save"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -54,19 +50,19 @@ __meta__ = {
 
 [node name="Btn_continuar" type="Button" parent="."]
 margin_left = 53.9375
-margin_top = 99.9307
-margin_right = 126.937
-margin_bottom = 119.931
+margin_top = 109.117
+margin_right = 126.938
+margin_bottom = 129.117
 text = "Continuar"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Btn_apagar" type="Button" parent="."]
-margin_left = 64.3905
-margin_top = 143.833
-margin_right = 119.39
-margin_bottom = 163.833
+margin_left = 63.3098
+margin_top = 152.479
+margin_right = 118.31
+margin_bottom = 172.479
 text = "Apagar"
 __meta__ = {
 "_edit_use_anchors_": false

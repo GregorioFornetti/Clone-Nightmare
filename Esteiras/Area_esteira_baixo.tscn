@@ -4,4 +4,5 @@
 [ext_resource path="res://Esteiras/Area_esteira_baixo.gd" type="Script" id=2]
 
 [node name="Area_esteira_baixo" instance=ExtResource( 1 )]
+collision_layer = 0
 script = ExtResource( 2 )

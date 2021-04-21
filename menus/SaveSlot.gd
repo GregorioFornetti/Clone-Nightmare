@@ -16,7 +16,7 @@ onready var menu_apagar = get_parent().get_node("Menu_apagar")
 
 
 func _ready():
-	get_node("Titulo_slot").text = "Slot " + str(slot_number)
+	# get_node("Titulo_slot").text = "Slot " + str(slot_number)
 	save_path = "user://save" + str(slot_number) + ".dat"
 	var file = File.new()
 	
