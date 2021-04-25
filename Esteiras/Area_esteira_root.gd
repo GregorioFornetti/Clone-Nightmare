@@ -27,7 +27,10 @@ func aplicar_multiplicador_esteira(entidade, val_a_verificar):
 
 func _on_Area_esteira_root_body_entered(body):
 	corpos_na_esteira.append(body)
+	body.qnt_esteiras_pisando += 1
 
 func _on_Area_esteira_root_body_exited(body):
-	body.mult_esteira = 1
+	body.qnt_esteiras_pisando -= 1
+	if body.qnt_esteiras_pisando == 0:  # Se não estiver pisando em mais nenhuma esteira, voltar a velocidade padrao.
+		body.mult_esteira = 1
 	corpos_na_esteira.erase(body)

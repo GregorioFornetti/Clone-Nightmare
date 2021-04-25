@@ -4,6 +4,7 @@ const VELOCIDADE_MAX = 200
 
 var vetor_velocidade = Vector2.ZERO
 var mult_esteira = 1
+var qnt_esteiras_pisando = 0
 onready var Player = get_parent().get_node('Player')
 onready var Draw_node = get_parent().get_node("Aim_line")
 onready var GameStats = get_parent().get_node("GameStats")

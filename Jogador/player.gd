@@ -5,6 +5,7 @@ const LARGURA_BALA = 5
 
 var vetor_velocidade = Vector2.ZERO
 var mult_esteira = 1
+var qnt_esteiras_pisando = 0
 var alvo
 var Tiro_player = preload('res://Jogador/player_bullet.tscn')
 onready var GameStats = get_parent().get_node("GameStats")
