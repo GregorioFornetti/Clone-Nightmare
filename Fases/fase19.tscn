@@ -6,6 +6,7 @@
 [ext_resource path="res://Portais/Portal_balas.tscn" type="PackedScene" id=5]
 
 [node name="Fase19" instance=ExtResource( 2 )]
+position = Vector2( 0, 1 )
 
 [node name="GameStats" parent="." index="0"]
 QUANT_INICIAL_BULLETS = 2
