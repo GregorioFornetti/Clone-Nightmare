@@ -1,11 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://menus/Menu_principal.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Menus e Cutscene/Menu-Principal-sheet.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
-resource_name = "BackgroundAnim"
-length = 5.5
+resource_name = "TransicaoParaConsciencia"
+length = 1.9
 tracks/0/type = "value"
 tracks/0/path = NodePath("Background:frame")
 tracks/0/interp = 1
@@ -13,10 +13,26 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.6, 1.2, 1.8, 2.4, 3, 3.6, 4.2, 4.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.6, 1.2, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 1, 2, 2, 2, 3, 3, 3, 0 ]
+"values": [ 1, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "TransicaoParaPlayer"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 1, 0 ]
 }
 
 [node name="Menu_principal" type="Control"]
@@ -62,7 +78,8 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 1.5
-anims/BackgroundAnim = SubResource( 1 )
+anims/TransicaoParaConsciencia = SubResource( 1 )
+anims/TransicaoParaPlayer = SubResource( 2 )
 
 [node name="Timer_animacao" type="Timer" parent="."]
 wait_time = 20.0
