@@ -51,3 +51,4 @@ func alterar_velocidade():
 
 func _on_Btn_slow_pressed():
 	alterar_velocidade()
+

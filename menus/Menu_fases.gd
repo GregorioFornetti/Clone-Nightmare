@@ -17,6 +17,7 @@ func _on_Btn_voltar_pressed():
 
 func _on_Btn_tutorial_pressed():
 	Sist_som.stop("Musica_menu")
+	Sist_som.comecar_musica_fase(1)
 	get_tree().change_scene("res://Tutorial/Tutorial.tscn")
 
 func _on_Btn_dialogos_pressed():

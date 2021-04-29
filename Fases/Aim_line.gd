@@ -7,7 +7,6 @@ var posicoes_linhas
 var posicoes_linhas_atual = []
 var resultados
 
-
 func desenhar_intersec(posicao_entidade_atual, posicao_arma, posicao_alvo, entidade_atual, bullet_mask, nome_alvo):
 	# Criará um vetor com as posições de entradas e batidas do raio laser do player e inimigos.
 	var spacestate = get_world_2d().direct_space_state
