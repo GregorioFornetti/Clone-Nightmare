@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Inimigos/enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tutoriais_fases/Tutorial fases 6-10.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Fases/Control.gd" type="Script" id=4]
 [ext_resource path="res://Portais/Portal_inimigos.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Fases/arena_root.tscn" type="PackedScene" id=6]
@@ -106,6 +107,8 @@ rect_scale = Vector2( 2, 2 )
 text = "A demonstração acabou ! Muito obrigado por jogar até aqui"
 align = 1
 autowrap = true
+
+[node name="Tutorial fases 6-10" parent="." index="16" instance=ExtResource( 2 )]
 [connection signal="player_atirou" from="Player" to="GameStats" method="_on_Player_player_atirou"]
 [connection signal="pressed" from="CanvasLayer2/Control/Button" to="CanvasLayer2/Control" method="_on_Button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Btn_Reiniciar" to="CanvasLayer/Pause" method="_on_Btn_Reiniciar_pressed"]

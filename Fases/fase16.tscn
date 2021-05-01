@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Inimigos/enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Fases/arena_root.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Esteiras/TileMap-Esteiras.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Portais/Portal_balas.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Inimigos/Enemy_mov_igual.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Tutoriais_fases/Tutorial fases 16-20.tscn" type="PackedScene" id=6]
 
 [node name="Fase16" instance=ExtResource( 2 )]
 
@@ -95,6 +96,8 @@ collision_mask = 0
 [node name="CollisionPolygon2D" parent="StaticBody2D" index="0"]
 position = Vector2( 0, 3.34033 )
 polygon = PoolVector2Array( 464, -275.34, -271.197, -277.435, -272, 268.66, 464, 268.66, 464, -275.34, 1041.28, -926.719, 1055.95, 793.726, -882.022, 806.089, -880, -931.34, 1040, -923.34 )
+
+[node name="Controlador_tutorial" parent="." index="21" instance=ExtResource( 6 )]
 [connection signal="player_atirou" from="Player" to="GameStats" method="_on_Player_player_atirou"]
 [connection signal="pressed" from="CanvasLayer/Pause/Btn_Reiniciar" to="CanvasLayer/Pause" method="_on_Btn_Reiniciar_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Btn_Voltar" to="CanvasLayer/Pause" method="_on_Btn_Voltar_pressed"]
@@ -112,3 +115,5 @@ polygon = PoolVector2Array( 464, -275.34, -271.197, -277.435, -272, 268.66, 464,
 [editable path="Portal_balas5"]
 
 [editable path="camera"]
+
+[editable path="Controlador_tutorial"]

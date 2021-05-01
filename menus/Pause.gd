@@ -3,6 +3,7 @@ extends Control
 var pausado = false
 var fase_acabou = false
 var player_perdeu = false
+var desabilitado = false
 onready var GameStats = get_parent().get_parent().get_node("GameStats")
 onready var FASE_ATUAL = get_parent().get_parent().get_node("GameStats").FASE_ATUAL
 onready var background_transicao = get_parent().get_node("Transicao")
@@ -28,7 +29,7 @@ func _process(_delta):
 				get_tree().change_scene("res://Cutscenes/Dialogo-root.tscn")
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel") and not fase_acabou:
+	if event.is_action_pressed("ui_cancel") and not fase_acabou and not desabilitado:
 		pausado = not pausado
 		get_tree().paused = pausado
 		visible = pausado

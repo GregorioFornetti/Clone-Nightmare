@@ -1,0 +1,90 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Tutoriais_fases/Controlador_tutorial.gd" type="Script" id=1]
+
+[node name="Controlador_tutorial" type="CanvasLayer"]
+pause_mode = 2
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lista_tutoriais" type="Node" parent="Control"]
+
+[node name="BackGround" type="ColorRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_pular" type="Label" parent="Control"]
+margin_left = 412.49
+margin_top = 561.44
+margin_right = 621.49
+margin_bottom = 575.44
+text = "Aperte espaço para pular tutorial"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_titulo" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -209.0
+margin_top = 20.0
+margin_bottom = 34.0
+rect_scale = Vector2( 2, 2 )
+text = "Nova mecânica"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_exit" type="Button" parent="Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -65.15
+margin_top = 21.0213
+margin_right = -45.15
+margin_bottom = 41.0213
+rect_scale = Vector2( 2, 2 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_voltar" type="Button" parent="Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -824.0
+margin_top = 550.0
+margin_right = -775.0
+margin_bottom = 570.0
+rect_scale = Vector2( 2, 2 )
+disabled = true
+text = "Voltar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_proximo" type="Button" parent="Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -324.0
+margin_top = 550.0
+margin_right = -259.0
+margin_bottom = 570.0
+rect_scale = Vector2( 2, 2 )
+text = "Próximo"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Control/Btn_exit" to="Control" method="_on_Btn_exit_pressed"]
+[connection signal="pressed" from="Control/Btn_voltar" to="Control" method="_on_Btn_voltar_pressed"]
+[connection signal="pressed" from="Control/Btn_proximo" to="Control" method="_on_Btn_proximo_pressed"]
