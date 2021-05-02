@@ -22,10 +22,10 @@ margin_left = 196.193
 margin_top = 50.5886
 margin_right = 737.193
 margin_bottom = 281.589
-text = "Agora as fases vão possuiir esteiras !
+text = "Agora as fases vão possuir esteiras !
 Todas esteiras terão setas indicando a direção em que você será mais rápido utilizando 
 ela, e se você se movimentar no sentido oposto, você irá mais devagar.
-Se você movimentar na esteira e não for nem na direção oposta e nem na mesma
+Se você se  movimentar na esteira e não for nem na direção oposta e nem na mesma
 direção da esteira, você terá o movimento padrão.
 Exemplo: se a esteira apontar para a direita, você será mais rapido ao pisar nela
 se você for para a direita, caso você vá para esquerda em cima dessa esteira,

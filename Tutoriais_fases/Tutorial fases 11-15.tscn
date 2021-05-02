@@ -22,7 +22,7 @@ margin_right = 759.193
 margin_bottom = 281.589
 text = "Um novo tipo de inimigo acabou de aparecer !
 Esse novo inimigo possui borda/contorno laranja, e diferente do outro inimigo que
-copia os seus movimentos de forma oposta, ele replicará literalmente os seus movimentos,
+copia os seus movimentos de forma oposta, ele replicará literalmente os seus movimentos.
 Exemplo: se você se movimentar para a direita, o novo inimigo também se
 movimentará para a direita."
 align = 1
