@@ -2,16 +2,11 @@
     {
         "nome" : "player",
         "humor" : "normal",
-        "texto" : "Texto do dialogo 11 ....... sadas dasdas dasdasdasd"
+        "texto" : "Dia 15 de agosto de 2017."
     },
     {
-        "nome" : "silhueta",
+        "nome" : "player",
         "humor" : "normal",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
-    },
-    {
-        "nome" : "silhueta",
-        "humor" : "raiva",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
+        "texto" : "\"Pessoas que foram clonadas sem saber ?..."
     }
 ]

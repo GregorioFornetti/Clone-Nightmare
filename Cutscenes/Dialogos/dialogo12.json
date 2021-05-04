@@ -2,16 +2,16 @@
     {
         "nome" : "player",
         "humor" : "normal",
-        "texto" : "Texto do dialogo 12 ....... sadas dasdas dasdasdasd"
+        "texto" : "...Daniel, professor de artes marciais de 27 anos, conta que foi sequestrado enquanto dormia ..."
     },
     {
-        "nome" : "silhueta",
+        "nome" : "player",
         "humor" : "normal",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
+        "texto" : " ... , pois, um dia qualquer, ele simplesmente acordou dentro de uma cela, não fazendo ideia de onde estava..."
     },
     {
-        "nome" : "silhueta",
-        "humor" : "raiva",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
+        "nome" : "player",
+        "humor" : "normal",
+        "texto" : "... ele conta que nesse lugar havia várias celas, e várias pessoas também estavam presas..."
     }
 ]

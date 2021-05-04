@@ -21,10 +21,10 @@ tile_data = PoolIntArray( -851975, 6, 0, -786438, 5, 0, -720864, 4, 0, -655329, 
 position = Vector2( 62.6521, 10.4069 )
 
 [node name="Portal1" parent="Portal_inimigos" index="1"]
-position = Vector2( -10, 0 )
+position = Vector2( -49.6223, -1.88677 )
 
 [node name="Portal2" parent="Portal_inimigos" index="2"]
-position = Vector2( 90, 0 )
+position = Vector2( 99.0565, -3.01884 )
 
 [node name="Enemy" parent="." index="5" instance=ExtResource( 1 )]
 position = Vector2( 258.193, 14.9319 )

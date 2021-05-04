@@ -2,16 +2,16 @@
     {
         "nome" : "player",
         "humor" : "normal",
-        "texto" : "Texto do dialogo 5 ....... sadas dasdas dasdasdasd"
+        "texto" : "Já se passaram 6 meses e até agora nada aconteceu."
+    },
+    {
+        "nome" : "player",
+        "humor" : "normal",
+        "texto" : "Se continuar assim, nunca irão descobrir."
     },
     {
         "nome" : "silhueta",
         "humor" : "normal",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
-    },
-    {
-        "nome" : "silhueta",
-        "humor" : "raiva",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
+        "texto" : "Mas é realmente isso que importa ?"
     }
 ]

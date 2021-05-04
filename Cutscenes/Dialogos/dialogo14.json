@@ -2,16 +2,26 @@
     {
         "nome" : "player",
         "humor" : "normal",
-        "texto" : "Texto do dialogo 14 ....... sadas dasdas dasdasdasd"
+        "texto" : "... Mas, um dia todas essas pessoas seriam transferidas para outro local ..."
     },
     {
-        "nome" : "silhueta",
+        "nome" : "player",
         "humor" : "normal",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
+        "texto" : "... durante o processo de transferência, Daniel conseguiu escapar ..."
     },
     {
-        "nome" : "silhueta",
-        "humor" : "raiva",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
+        "nome" : "player",
+        "humor" : "normal",
+        "texto" : " ... ele denunciou tudo para a polícia ..."
+    },
+    {
+        "nome" : "player",
+        "humor" : "normal",
+        "texto" : "... mas quando a polícia chegou no local, já não havia mais nada lá ..."
+    },
+    {
+        "nome" : "player",
+        "humor" : "normal",
+        "texto" : "... só que havia um detalhe, quem Daniel dizia ser, na verdade, nunca tinha sido sequestrado nem desaparecido ..."
     }
 ]

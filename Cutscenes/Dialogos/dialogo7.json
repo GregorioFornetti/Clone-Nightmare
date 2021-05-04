@@ -2,16 +2,11 @@
     {
         "nome" : "player",
         "humor" : "normal",
-        "texto" : "Texto do dialogo 7 ....... sadas dasdas dasdasdasd"
+        "texto" : "O rastreador ainda não foi descoberto… Eu posso ir lá e ver o que estão fazendo."
     },
     {
         "nome" : "silhueta",
         "humor" : "normal",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
-    },
-    {
-        "nome" : "silhueta",
-        "humor" : "raiva",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
+        "texto" : "É muito arriscado, se me encontrarem lá, eles irão me matar."
     }
 ]

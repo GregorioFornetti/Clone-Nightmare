@@ -1,17 +1,17 @@
 [
     {
         "nome" : "player",
-        "humor" : "normal",
-        "texto" : "Texto do dialogo 20 ....... sadas dasdas dasdasdasd"
-    },
-    {
-        "nome" : "silhueta",
-        "humor" : "normal",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
+        "humor" : "raiva",
+        "texto" : "Estou ficando louco !"
     },
     {
         "nome" : "silhueta",
         "humor" : "raiva",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
+        "texto" : "Esses pesadelos estão me atormentando, a minha família já desconfia de mim, sabem que tem algo de errado."
+    },
+    {
+        "nome" : "silhueta",
+        "humor" : "raiva",
+        "texto" : "Preciso tomar uma atitude !"
     }
 ]

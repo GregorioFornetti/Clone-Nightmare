@@ -2,16 +2,16 @@
     {
         "nome" : "player",
         "humor" : "normal",
-        "texto" : "Texto do dialogo 15 ....... sadas dasdas dasdasdasd"
+        "texto" : "Foi exatamente nessa data uma ano atrás que eu vendi a máquina de clones."
     },
     {
-        "nome" : "silhueta",
+        "nome" : "player",
         "humor" : "normal",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
+        "texto" : "Será que essa história é real ?"
     },
     {
-        "nome" : "silhueta",
-        "humor" : "raiva",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
+        "nome" : "player",
+        "humor" : "normal",
+        "texto" : "Será que esse fórum é confiável ?"
     }
 ]

@@ -2,16 +2,16 @@
     {
         "nome" : "player",
         "humor" : "normal",
-        "texto" : "Texto do dialogo 2 ....... sadas dasdas dasdasdasd"
+        "texto" : "Nós precisávamos desse dinheiro, íamos perder tudo."
     },
     {
         "nome" : "silhueta",
         "humor" : "normal",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
+        "texto" : "Possivelmente. Mas talvez se esperasse mais um pouco, conseguiria um outro emprego. "
     },
     {
         "nome" : "silhueta",
-        "humor" : "raiva",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
+        "humor" : "normal",
+        "texto" : "Seria mais difícil, porém, mais seguro."
     }
 ]

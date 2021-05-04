@@ -1,17 +1,12 @@
 [
     {
         "nome" : "player",
-        "humor" : "normal",
-        "texto" : "Texto do dialogo 18 ....... sadas dasdas dasdasdasd"
-    },
-    {
-        "nome" : "silhueta",
-        "humor" : "normal",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
+        "humor" : "raiva",
+        "texto" : "Eu nunca deveria ter falado aquilo !"
     },
     {
         "nome" : "silhueta",
         "humor" : "raiva",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
+        "texto" : "Comercializar as máquinas de clones realmente não foi uma boa ideia."
     }
 ]

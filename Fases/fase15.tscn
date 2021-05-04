@@ -242,10 +242,10 @@ position = Vector2( 144.241, 328.313 )
 position = Vector2( 314.914, 208.777 )
 
 [node name="Portal1" parent="Portal_balas6" index="0"]
-position = Vector2( 664.641, 239.083 )
+position = Vector2( 690.48, 304.727 )
 
 [node name="Portal2" parent="Portal_balas6" index="1"]
-position = Vector2( 583.987, 107.303 )
+position = Vector2( 575.386, 96.8279 )
 
 [node name="Portal_balas7" parent="." index="28" instance=ExtResource( 7 )]
 position = Vector2( 314.914, 208.777 )
@@ -254,7 +254,7 @@ position = Vector2( 314.914, 208.777 )
 position = Vector2( 584.662, 238.355 )
 
 [node name="Portal2" parent="Portal_balas7" index="1"]
-position = Vector2( 668.595, 127.143 )
+position = Vector2( 686.053, 129.238 )
 
 [node name="Enemy" parent="." index="29" instance=ExtResource( 1 )]
 position = Vector2( 1246.99, -31.2701 )

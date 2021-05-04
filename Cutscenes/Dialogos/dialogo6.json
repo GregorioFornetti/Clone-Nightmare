@@ -1,17 +1,12 @@
 [
     {
-        "nome" : "player",
-        "humor" : "normal",
-        "texto" : "Texto do dialogo 6 ....... sadas dasdas dasdasdasd"
-    },
-    {
         "nome" : "silhueta",
         "humor" : "normal",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
+        "texto" : "Por que eles queriam essa máquina ?"
     },
     {
         "nome" : "silhueta",
         "humor" : "raiva",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
+        "texto" : "O que eles estão fazendo com ela ???"
     }
 ]

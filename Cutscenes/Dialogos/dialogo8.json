@@ -2,16 +2,11 @@
     {
         "nome" : "player",
         "humor" : "normal",
-        "texto" : "Texto do dialogo 8 ....... sadas dasdas dasdasdasd"
+        "texto" : "Esses pesadelos estão me atormentando."
     },
     {
         "nome" : "silhueta",
         "humor" : "normal",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
-    },
-    {
-        "nome" : "silhueta",
-        "humor" : "raiva",
-        "texto" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet lorem neque."
+        "texto" : "Mas eu sei muito bem o motivo deles estarem acontecendo..."
     }
 ]
