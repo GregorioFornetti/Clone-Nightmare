@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/Personagem/cientista-portrait.png" type="Texture" id=1]
-[ext_resource path="res://Sprites/silhueta1-teste.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Novossprites/consciencia-1.png" type="Texture" id=2]
 [ext_resource path="res://Cutscenes/Dialogo-root.gd" type="Script" id=3]
 [ext_resource path="res://fontes/fonte_normal.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Cutscenes/Menu_pular.gd" type="Script" id=5]
+[ext_resource path="res://Sprites/Menus e Cutscene/boxdialogo.png" type="Texture" id=6]
 
 [node name="Dialogo-root" type="Control"]
 anchor_right = 1.0
@@ -36,23 +37,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="ColorRect" parent="Box-dialogo"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -0.663452
-margin_top = -0.630249
-margin_right = -0.663452
-margin_bottom = -0.630249
-color = Color( 0, 0, 0, 0.486275 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Sprite" type="Sprite" parent="Box-dialogo"]
+position = Vector2( 357.761, 114.765 )
+scale = Vector2( 1.75683, 0.983341 )
+texture = ExtResource( 6 )
+hframes = 2
 
 [node name="Lb_nome" type="Label" parent="Box-dialogo"]
-margin_left = 500.0
-margin_top = 11.328
-margin_right = 579.0
-margin_bottom = 25.328
+margin_left = 299.481
+margin_top = 59.5507
+margin_right = 378.481
+margin_bottom = 73.5507
 rect_scale = Vector2( 1.5, 1.5 )
 text = "Personagem"
 __meta__ = {
@@ -60,10 +55,10 @@ __meta__ = {
 }
 
 [node name="Lb_dialogo" type="Label" parent="Box-dialogo"]
-margin_left = 90.0
-margin_top = 37.0
-margin_right = 628.0
-margin_bottom = 122.0
+margin_left = 29.0
+margin_top = 84.0
+margin_right = 621.0
+margin_bottom = 150.0
 custom_fonts/font = ExtResource( 4 )
 text = "dasdasdasdasdasdasdadsadasasddasdasdasdasdas"
 autowrap = true
@@ -72,10 +67,10 @@ __meta__ = {
 }
 
 [node name="Lb_info" type="Label" parent="Box-dialogo"]
-margin_left = 253.14
-margin_top = 130.109
-margin_right = 453.14
-margin_bottom = 161.109
+margin_left = 254.122
+margin_top = 154.852
+margin_right = 454.122
+margin_bottom = 185.852
 text = "Pressione ESC para pular
 Pressione ESPAÇO para avançar"
 align = 1
@@ -84,10 +79,10 @@ __meta__ = {
 }
 
 [node name="Btn_prox" type="Button" parent="Box-dialogo"]
-margin_left = 535.382
-margin_top = 134.0
-margin_right = 600.382
-margin_bottom = 154.0
+margin_left = 541.369
+margin_top = 156.752
+margin_right = 606.369
+margin_bottom = 176.752
 focus_mode = 0
 enabled_focus_mode = 0
 text = "Avançar"
@@ -96,10 +91,10 @@ __meta__ = {
 }
 
 [node name="Btn_ant" type="Button" parent="Box-dialogo"]
-margin_left = 106.148
-margin_top = 134.0
-margin_right = 118.148
-margin_bottom = 154.0
+margin_left = 120.518
+margin_top = 159.746
+margin_right = 184.518
+margin_bottom = 179.746
 focus_mode = 0
 enabled_focus_mode = 0
 text = "Anterior"
@@ -108,15 +103,13 @@ __meta__ = {
 }
 
 [node name="Personagem" type="Sprite" parent="."]
-position = Vector2( 1.22943, 508.994 )
-scale = Vector2( 0.8, 1 )
+position = Vector2( 0, 528.587 )
 texture = ExtResource( 1 )
 centered = false
 offset = Vector2( 0, -200 )
 
 [node name="Silhueta" type="Sprite" parent="."]
-position = Vector2( 1024, 608 )
-scale = Vector2( 0.8, 1 )
+position = Vector2( 1123.06, 531.577 )
 texture = ExtResource( 2 )
 centered = false
 offset = Vector2( -300, -200 )

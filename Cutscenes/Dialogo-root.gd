@@ -4,8 +4,6 @@ const NOME_PLAYER = "Personagem"
 const NOME_SILHUETA = "???????????"
 const NOME_CONSCIENCIA = "Consciência"
 const IMG_PERSONAGEM = "res://Sprites/Personagem/cientista-portrait.png"
-const POSIC_ESQ_NOME = 65
-const POSIC_DIR_NOME = 550
 
 const DIC_HUMORES = {
 	"normal" : {
@@ -24,6 +22,7 @@ const DIC_HUMORES = {
 var dialogo_atual = 0
 
 onready var lb_nome = $"Box-dialogo/Lb_nome"
+onready var sprite_box_dialogo = $"Box-dialogo/Sprite"
 onready var lb_dialogo = $"Box-dialogo/Lb_dialogo"
 onready var timer_letras = $"Timer_letras"
 onready var btn_prox = $"Box-dialogo/Btn_prox"
@@ -94,17 +93,10 @@ func atualizar_box_dialogo(dic_dialogo):
 	lb_dialogo.percent_visible = 0
 	lb_dialogo.text = dic_dialogo.texto
 	
-	# Atualizar posições das sprites e da label de nome (para que fique mais facil de saber quem está falando no momento)
-	personagem.position.x = 0
-	silhueta.position.x = ProjectSettings.get_setting("display/window/size/width")
 	if dic_dialogo.nome == "player":
 		lb_nome.text = NOME_PLAYER
-		lb_nome.rect_position.x = POSIC_ESQ_NOME
-		silhueta.position.x += 50
 	else:
 		lb_nome.text = NOME_SILHUETA
-		lb_nome.rect_position.x = POSIC_DIR_NOME
-		personagem.position.x -= 50
 		
 	# Aplicar efeitos do humor:
 	dic_humor = DIC_HUMORES[dic_dialogo['humor']]
@@ -114,8 +106,10 @@ func atualizar_box_dialogo(dic_dialogo):
 	Sist_som.play(dic_humor.som)
 	
 	if dialogo_atual == 0:
+		sprite_box_dialogo.frame = 1
 		btn_ant.disabled = true
 	else:
+		sprite_box_dialogo.frame = 0
 		btn_ant.disabled = false
 	
 	timer_letras.start()
