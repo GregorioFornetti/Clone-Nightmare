@@ -115,7 +115,30 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label_resolucao" type="Label" parent="."]
+margin_left = 91.1709
+margin_top = 296.804
+margin_right = 217.171
+margin_bottom = 310.804
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Resolução da janela"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dropdown_resolucao" type="OptionButton" parent="."]
+margin_left = 83.8173
+margin_top = 324.019
+margin_right = 224.818
+margin_bottom = 344.019
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Resolução da tela"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Btn_fechar" to="." method="_on_Btn_fechar_pressed"]
 [connection signal="value_changed" from="Slider_geral" to="." method="_on_Slider_geral_value_changed"]
 [connection signal="value_changed" from="Slider_musica" to="." method="_on_Slider_musica_value_changed"]
 [connection signal="value_changed" from="Slider_efeitos_sonoros" to="." method="_on_Slider_efeitos_sonoros_value_changed"]
+[connection signal="item_selected" from="Dropdown_resolucao" to="." method="_on_Dropdown_resolucao_item_selected"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/alarme.wav-41f67733563b5cf9f286108e6a597538.sample"
+
+[deps]
+
+source_file="res://Sistema som/Sons/Efeitos sonoros/alarme.wav"
+dest_files=[ "res://.import/alarme.wav-41f67733563b5cf9f286108e6a597538.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -8,13 +8,15 @@ const DIC_HUMORES = {
 		"fonte" : preload("res://fontes/fonte_normal.tres"),
 		"velocidade" : 20,
 		"cor" : Color(0.9, 0.9, 0.9, 1),
-		"som": "Dialogo_normal"
+		"som": "Dialogo_normal",
+		"musica": "Musica_cutscene_normal"
 	},
 	"raiva" : {
 		"fonte" : preload("res://fontes/fonte_raiva.tres"),
 		"velocidade" : 100,
 		"cor" : Color(0.7, 0, 0, 1),
-		"som": "Dialogo_raiva"
+		"som": "Dialogo_raiva",
+		"musica": "Musica_cutscene_raiva"
 	}
 }
 var dialogo_atual = 0
@@ -73,6 +75,7 @@ func _on_Btn_prox_pressed():
 func _on_Btn_ant_pressed():
 	dialogo_atual -= 1
 	Sist_som.stop(dic_humor.som)
+	Sist_som.stop(dic_humor.musica)
 	atualizar_box_dialogo(dics_dialogos[dialogo_atual])
 
 func _on_Timer_letras_timeout():
@@ -89,6 +92,7 @@ func avancar_proximo():
 	if lb_dialogo.percent_visible != 1:
 		lb_dialogo.percent_visible = 1
 	else:
+		Sist_som.stop(dic_humor.musica)
 		dialogo_atual += 1
 		if dialogo_atual == len(dics_dialogos):
 			mudar_menu()
@@ -96,9 +100,9 @@ func avancar_proximo():
 			atualizar_box_dialogo(dics_dialogos[dialogo_atual])
 
 func mudar_menu():
+	Sist_som.parar_sons_cutscene()
+	Sist_som.play("Musica_menu")
 	if SaveStats.fase_atual == 0:  # Jogador está acessando pela galeria
-		Sist_som.stop("Musica_cutscene")
-		Sist_som.play("Musica_menu")
 		get_tree().change_scene("res://Cutscenes/Menu_dialogos.tscn")
 	else:  # Jogador está acessando pela cutscene automática após vitória
 		get_tree().change_scene("res://menus/Menu_vitoria.tscn") # Acabou os dialogos, ir para o menu de vitória.
@@ -121,6 +125,7 @@ func atualizar_box_dialogo(dic_dialogo):
 	lb_dialogo.add_color_override("font_color", dic_humor.cor)
 	timer_letras.wait_time = 1.0 / dic_humor.velocidade
 	Sist_som.play(dic_humor.som)
+	Sist_som.play(dic_humor.musica)
 	
 	if dialogo_atual == 0:
 		btn_ant.disabled = true

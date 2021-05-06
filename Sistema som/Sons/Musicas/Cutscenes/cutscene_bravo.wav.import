@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cutscene_bravo.wav-ea7925e3bac2c1eb14377da7667bc41c.sample"
+
+[deps]
+
+source_file="res://Sistema som/Sons/Musicas/Cutscenes/cutscene_bravo.wav"
+dest_files=[ "res://.import/cutscene_bravo.wav-ea7925e3bac2c1eb14377da7667bc41c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

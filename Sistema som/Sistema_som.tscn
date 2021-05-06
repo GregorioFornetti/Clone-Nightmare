@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Sistema som/Sons/Efeitos sonoros/Tiro/tiro1.wav" type="AudioStream" id=1]
 [ext_resource path="res://Sistema som/Sons/Efeitos sonoros/Tiro/tiro4.wav" type="AudioStream" id=2]
@@ -16,7 +16,11 @@
 [ext_resource path="res://Sistema som/Sons/Efeitos sonoros/Dialogo/dialogo_raiva.wav" type="AudioStream" id=14]
 [ext_resource path="res://Sistema som/Sons/Musicas/menu.wav" type="AudioStream" id=15]
 [ext_resource path="res://Sistema som/Sons/Efeitos sonoros/Tiro/tiro_parede.wav" type="AudioStream" id=16]
-[ext_resource path="res://Sistema som/Sons/Musicas/Fase_pt1.wav" type="AudioStream" id=17]
+[ext_resource path="res://Sistema som/Sons/Musicas/Fases/Fase_pt1.wav" type="AudioStream" id=17]
+[ext_resource path="res://Sistema som/Sons/Musicas/Fases/Fase_pt2.wav" type="AudioStream" id=18]
+[ext_resource path="res://Sistema som/Sons/Musicas/Fases/Fase_pt3.wav" type="AudioStream" id=19]
+[ext_resource path="res://Sistema som/Sons/Musicas/Cutscenes/cutscene.wav" type="AudioStream" id=20]
+[ext_resource path="res://Sistema som/Sons/Musicas/Cutscenes/cutscene_bravo.wav" type="AudioStream" id=21]
 
 [node name="Sistema_som" type="Node"]
 pause_mode = 2
@@ -104,4 +108,28 @@ bus = "Musica"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Musica_fases_1-5"]
 stream = ExtResource( 17 )
+bus = "Musica"
+
+[node name="Musica_fases_6-10" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Musica_fases_6-10"]
+stream = ExtResource( 18 )
+bus = "Musica"
+
+[node name="Musica_fases_11-15" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Musica_fases_11-15"]
+stream = ExtResource( 19 )
+bus = "Musica"
+
+[node name="Musica_cutscene_normal" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Musica_cutscene_normal"]
+stream = ExtResource( 20 )
+bus = "Musica"
+
+[node name="Musica_cutscene_raiva" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Musica_cutscene_raiva"]
+stream = ExtResource( 21 )
 bus = "Musica"
