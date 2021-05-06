@@ -93,10 +93,10 @@ __meta__ = {
 }
 
 [node name="Btn_Reiniciar" type="Button" parent="CanvasLayer/Pause"]
-margin_left = 432.324
-margin_top = 295.087
-margin_right = 582.324
-margin_bottom = 315.087
+margin_left = 435.0
+margin_top = 250.0
+margin_right = 585.0
+margin_bottom = 270.0
 text = "Reiniciar fase"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -108,10 +108,24 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -91.0
-margin_top = 48.0
+margin_top = 46.0
 margin_right = 89.0
-margin_bottom = 68.0
+margin_bottom = 66.0
 text = "Voltar para menu de fases"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_Opcoes" type="Button" parent="CanvasLayer/Pause"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -91.0
+margin_top = -4.0
+margin_right = 89.0
+margin_bottom = 16.0
+text = "Opções"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -129,6 +143,7 @@ __meta__ = {
 [connection signal="pressed" from="GameInterface/Control/Btn_centralizar" to="camera" method="_on_Btn_centralizar_pressed"]
 [connection signal="pressed" from="GameInterface/Control/Btn_slow" to="GameStats" method="_on_Btn_slow_pressed"]
 [connection signal="player_morreu" from="Player" to="CanvasLayer/Pause" method="_on_Player_player_morreu"]
+[connection signal="pressed" from="CanvasLayer/Pause/Btn_Opcoes" to="CanvasLayer/Pause" method="_on_Btn_Opcoes_pressed"]
 
 [editable path="GameInterface"]
 

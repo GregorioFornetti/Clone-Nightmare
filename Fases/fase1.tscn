@@ -31,6 +31,16 @@ collision_mask = 0
 
 [node name="CollisionPolygon2D" parent="StaticBody2D" index="0"]
 polygon = PoolVector2Array( 704, -496, 947.827, -745.586, 908.133, 510.294, -763.637, 510.294, -754.744, -758.54, 942.275, -751.138, 696, -496, -512, -496, -512, 304, 704, 304 )
+
+[node name="BackGround" parent="CanvasLayer/Pause" index="0"]
+margin_left = -0.598755
+margin_top = 1.19745
+margin_right = -0.598755
+margin_bottom = 1.19745
+
+[node name="Btn_Opcoes" parent="CanvasLayer/Pause" index="5"]
+margin_top = -1.68298
+margin_bottom = 18.317
 [connection signal="player_atirou" from="Player" to="GameStats" method="_on_Player_player_atirou"]
 [connection signal="pressed" from="CanvasLayer/Pause/Btn_Reiniciar" to="CanvasLayer/Pause" method="_on_Btn_Reiniciar_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Btn_Voltar" to="CanvasLayer/Pause" method="_on_Btn_Voltar_pressed"]

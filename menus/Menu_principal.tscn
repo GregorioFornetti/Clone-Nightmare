@@ -76,6 +76,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Btn_opcoes" type="Button" parent="."]
+margin_left = 480.883
+margin_top = 250.104
+margin_right = 541.883
+margin_bottom = 270.104
+text = "Opções"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 1.5
 anims/TransicaoParaConsciencia = SubResource( 1 )
@@ -87,4 +97,5 @@ one_shot = true
 autostart = true
 [connection signal="pressed" from="Btn_jogar" to="." method="_on_Btn_jogar_pressed"]
 [connection signal="pressed" from="Btn_sair" to="." method="_on_Btn_sair_pressed"]
+[connection signal="pressed" from="Btn_opcoes" to="." method="_on_Btn_opcoes_pressed"]
 [connection signal="timeout" from="Timer_animacao" to="." method="_on_Timer_animacao_timeout"]

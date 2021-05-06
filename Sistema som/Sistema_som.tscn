@@ -26,69 +26,82 @@ script = ExtResource( 5 )
 
 [node name="Tiro1" type="AudioStreamPlayer" parent="Tiro"]
 stream = ExtResource( 1 )
+bus = "Efeitos sonoros"
 
 [node name="Tiro2" type="AudioStreamPlayer" parent="Tiro"]
 stream = ExtResource( 4 )
+bus = "Efeitos sonoros"
 
 [node name="Tiro3" type="AudioStreamPlayer" parent="Tiro"]
 stream = ExtResource( 3 )
+bus = "Efeitos sonoros"
 
 [node name="Tiro4" type="AudioStreamPlayer" parent="Tiro"]
 stream = ExtResource( 2 )
+bus = "Efeitos sonoros"
 
 [node name="Morte_inimigo" type="Node" parent="."]
 
 [node name="Morte_inimigo1" type="AudioStreamPlayer" parent="Morte_inimigo"]
 stream = ExtResource( 6 )
+bus = "Efeitos sonoros"
 
 [node name="Morte_inimigo2" type="AudioStreamPlayer" parent="Morte_inimigo"]
 stream = ExtResource( 7 )
+bus = "Efeitos sonoros"
 
 [node name="Player_perdeu" type="Node" parent="."]
 
 [node name="Player_perdeu1" type="AudioStreamPlayer" parent="Player_perdeu"]
 stream = ExtResource( 9 )
+bus = "Efeitos sonoros"
 
 [node name="Player_perdeu2" type="AudioStreamPlayer" parent="Player_perdeu"]
 stream = ExtResource( 8 )
+bus = "Efeitos sonoros"
 
 [node name="Portal" type="Node" parent="."]
 
 [node name="Portal1" type="AudioStreamPlayer" parent="Portal"]
 stream = ExtResource( 10 )
+bus = "Efeitos sonoros"
 
 [node name="Portal2" type="AudioStreamPlayer" parent="Portal"]
 stream = ExtResource( 11 )
+bus = "Efeitos sonoros"
 
 [node name="Portal3" type="AudioStreamPlayer" parent="Portal"]
 stream = ExtResource( 12 )
+bus = "Efeitos sonoros"
 
 [node name="Dialogo_normal" type="Node" parent="."]
 
 [node name="Dialogo_normal" type="AudioStreamPlayer" parent="Dialogo_normal"]
 stream = ExtResource( 13 )
 volume_db = -20.0
+bus = "Efeitos sonoros"
 
 [node name="Dialogo_raiva" type="Node" parent="."]
 
 [node name="Dialogo_raiva" type="AudioStreamPlayer" parent="Dialogo_raiva"]
 stream = ExtResource( 14 )
-volume_db = -20.0
 pitch_scale = 1.1
+bus = "Efeitos sonoros"
 
 [node name="Tiro_parede" type="Node" parent="."]
 
 [node name="Tiro_parede" type="AudioStreamPlayer" parent="Tiro_parede"]
 stream = ExtResource( 16 )
+bus = "Efeitos sonoros"
 
 [node name="Musica_menu" type="Node" parent="."]
 
 [node name="Musica_menu" type="AudioStreamPlayer" parent="Musica_menu"]
 stream = ExtResource( 15 )
-volume_db = -20.0
+bus = "Musica"
 
 [node name="Musica_fases_1-5" type="Node" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Musica_fases_1-5"]
 stream = ExtResource( 17 )
-volume_db = -20.0
+bus = "Musica"

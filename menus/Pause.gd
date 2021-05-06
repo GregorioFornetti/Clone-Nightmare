@@ -1,20 +1,20 @@
 extends Control
 
 var pausado = false
-var fase_acabou = false
 var player_perdeu = false
 var desabilitado = false
 onready var GameStats = get_parent().get_parent().get_node("GameStats")
 onready var FASE_ATUAL = get_parent().get_parent().get_node("GameStats").FASE_ATUAL
 onready var background_transicao = get_parent().get_node("Transicao")
+onready var Menu_opcoes = preload("res://menus/Menu_opcoes.tscn")
 var acabou_inimigos = false
 var opacidade = 0
 
 func _process(_delta):
 	if acabou_inimigos and not player_perdeu and GameStats.quant_balas_em_jogo == 0:
 		# Fazer uma transição para cutscene
-		if not fase_acabou:
-			fase_acabou = true
+		if not desabilitado:
+			desabilitado = true
 			SaveStats.passar_fase()
 			background_transicao.visible = true
 		opacidade += 0.03
@@ -29,7 +29,7 @@ func _process(_delta):
 				get_tree().change_scene("res://Cutscenes/Dialogo-root.tscn")
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel") and not fase_acabou and not desabilitado:
+	if event.is_action_pressed("ui_cancel") and not desabilitado and not has_node("Menu_opcoes"):
 		pausado = not pausado
 		get_tree().paused = pausado
 		visible = pausado
@@ -52,7 +52,7 @@ func _on_Player_player_morreu():
 
 func prender_no_menu():
 	# Pausa o jogo e não deixa o botão de pause funcionar mais. Fica preso no menu de pause até selecionar uma opção...
-	fase_acabou = true
+	desabilitado = true
 	get_tree().paused = true
 	visible = true
 
@@ -72,3 +72,7 @@ func _on_Btn_Voltar_pressed():
 	Sist_som.parar_musicas_fase()
 	Sist_som.play("Musica_menu")
 	get_tree().change_scene("res://menus/Menu_fases.tscn")
+
+func _on_Btn_Opcoes_pressed():
+	var menu_opcoes = Menu_opcoes.instance()
+	add_child(menu_opcoes)

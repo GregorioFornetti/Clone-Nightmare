@@ -1,9 +1,7 @@
 extends Control
 
 const NOME_PLAYER = "Personagem"
-const NOME_SILHUETA = "???????????"
-const NOME_CONSCIENCIA = "Consciência"
-const IMG_PERSONAGEM = "res://Sprites/Personagem/cientista-portrait.png"
+var nome_silhueta = "???????????"
 
 const DIC_HUMORES = {
 	"normal" : {
@@ -37,12 +35,29 @@ var dic_humor
 func _ready():
 	dics_dialogos = retorna_dics_dialogos()
 	atualizar_box_dialogo(dics_dialogos[0])
+	
+	carregar_sprite_silhueta()
+	if SaveStats.num_dialogo_atual == 20:
+		nome_silhueta = "Consciência"
+
 
 func retorna_dics_dialogos():
 	# OBS: para editar os textos do dialogo, abra a pasta "Dialogos" em algum editor de código para acessar os arquivos JSON.
 	var file = File.new()
 	file.open("res://Cutscenes/Dialogos/dialogo" + str(SaveStats.num_dialogo_atual) + ".json", file.READ)
 	return parse_json(file.get_as_text())
+
+func carregar_sprite_silhueta():
+	if SaveStats.num_dialogo_atual <= 5:
+		silhueta.texture = load("res://Sprites/Novossprites/consciencia-1.png")
+	elif SaveStats.num_dialogo_atual <= 10:
+		silhueta.texture = load("res://Sprites/Novossprites/consciencia-2.png")
+	elif SaveStats.num_dialogo_atual <= 15:
+		silhueta.texture = load("res://Sprites/Novossprites/consciencia-3.png")
+	elif SaveStats.num_dialogo_atual <= 19:
+		silhueta.texture = load("res://Sprites/Novossprites/consciencia-4.png")
+	else:
+		silhueta.texture = load("res://Sprites/Novossprites/consciencia-5.png")
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
@@ -94,9 +109,11 @@ func atualizar_box_dialogo(dic_dialogo):
 	lb_dialogo.text = dic_dialogo.texto
 	
 	if dic_dialogo.nome == "player":
+		sprite_box_dialogo.frame = 1
 		lb_nome.text = NOME_PLAYER
 	else:
-		lb_nome.text = NOME_SILHUETA
+		sprite_box_dialogo.frame = 0
+		lb_nome.text = nome_silhueta
 		
 	# Aplicar efeitos do humor:
 	dic_humor = DIC_HUMORES[dic_dialogo['humor']]
@@ -106,10 +123,8 @@ func atualizar_box_dialogo(dic_dialogo):
 	Sist_som.play(dic_humor.som)
 	
 	if dialogo_atual == 0:
-		sprite_box_dialogo.frame = 1
 		btn_ant.disabled = true
 	else:
-		sprite_box_dialogo.frame = 0
 		btn_ant.disabled = false
 	
 	timer_letras.start()

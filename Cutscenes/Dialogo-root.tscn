@@ -18,7 +18,9 @@ __meta__ = {
 [node name="Background" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 1.58673
 margin_top = 1.36038
+margin_right = 1.58667
 margin_bottom = 1.36035
 color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 __meta__ = {
@@ -109,7 +111,7 @@ centered = false
 offset = Vector2( 0, -200 )
 
 [node name="Silhueta" type="Sprite" parent="."]
-position = Vector2( 1123.06, 531.577 )
+position = Vector2( 1126, 532 )
 texture = ExtResource( 2 )
 centered = false
 offset = Vector2( -300, -200 )

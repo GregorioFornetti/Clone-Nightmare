@@ -1,0 +1,121 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://menus/Menu_opcoes.gd" type="Script" id=1]
+
+[node name="Menu_opcoes" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BoxOpcoes" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -449.603
+margin_top = -249.384
+margin_right = 450.397
+margin_bottom = 250.616
+color = Color( 0.215686, 0.188235, 0.188235, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_fechar" type="Button" parent="."]
+margin_left = 904.579
+margin_top = 70.8274
+margin_right = 924.579
+margin_bottom = 90.8274
+rect_scale = Vector2( 2, 2 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slider_geral" type="HSlider" parent="."]
+margin_left = 300.0
+margin_top = 140.0
+margin_right = 672.0
+margin_bottom = 156.0
+rect_scale = Vector2( 1.5, 1.5 )
+min_value = -60.0
+max_value = 0.0
+step = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slider_musica" type="HSlider" parent="."]
+margin_left = 300.0
+margin_top = 190.0
+margin_right = 672.0
+margin_bottom = 206.0
+rect_scale = Vector2( 1.5, 1.5 )
+min_value = -60.0
+max_value = 0.0
+step = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slider_efeitos_sonoros" type="HSlider" parent="."]
+margin_left = 300.0
+margin_top = 240.0
+margin_right = 672.0
+margin_bottom = 256.0
+rect_scale = Vector2( 1.5, 1.5 )
+min_value = -60.0
+max_value = 0.0
+step = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_vol_geral" type="Label" parent="."]
+margin_left = 169.0
+margin_top = 140.0
+margin_right = 253.0
+margin_bottom = 154.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Volume geral"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_vol_geral2" type="Label" parent="."]
+margin_left = 145.0
+margin_top = 190.0
+margin_right = 244.0
+margin_bottom = 204.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Volume musica"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_vol_geral3" type="Label" parent="."]
+margin_left = 69.4767
+margin_top = 240.744
+margin_right = 221.477
+margin_bottom = 271.744
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Volume efeitos sonoros"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Btn_fechar" to="." method="_on_Btn_fechar_pressed"]
+[connection signal="value_changed" from="Slider_geral" to="." method="_on_Slider_geral_value_changed"]
+[connection signal="value_changed" from="Slider_musica" to="." method="_on_Slider_musica_value_changed"]
+[connection signal="value_changed" from="Slider_efeitos_sonoros" to="." method="_on_Slider_efeitos_sonoros_value_changed"]
