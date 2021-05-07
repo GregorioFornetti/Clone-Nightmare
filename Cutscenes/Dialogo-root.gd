@@ -36,7 +36,7 @@ var dic_humor
 
 func _ready():
 	dics_dialogos = retorna_dics_dialogos()
-	atualizar_box_dialogo(dics_dialogos[0])
+	atualizar_box_dialogo(dics_dialogos[0], true)
 	
 	carregar_sprite_silhueta()
 	if SaveStats.num_dialogo_atual == 20:
@@ -75,8 +75,11 @@ func _on_Btn_prox_pressed():
 func _on_Btn_ant_pressed():
 	dialogo_atual -= 1
 	Sist_som.stop(dic_humor.som)
-	Sist_som.stop(dic_humor.musica)
-	atualizar_box_dialogo(dics_dialogos[dialogo_atual])
+	if dics_dialogos[dialogo_atual + 1].humor != dics_dialogos[dialogo_atual].humor:  # Só parar a música se o humor anterior for diferente do atual
+		Sist_som.stop(dic_humor.musica)
+		atualizar_box_dialogo(dics_dialogos[dialogo_atual], true)
+	else:
+		atualizar_box_dialogo(dics_dialogos[dialogo_atual], false)
 
 func _on_Timer_letras_timeout():
 	if lb_dialogo.percent_visible != 1:
@@ -92,12 +95,15 @@ func avancar_proximo():
 	if lb_dialogo.percent_visible != 1:
 		lb_dialogo.percent_visible = 1
 	else:
-		Sist_som.stop(dic_humor.musica)
 		dialogo_atual += 1
 		if dialogo_atual == len(dics_dialogos):
 			mudar_menu()
 		else:
-			atualizar_box_dialogo(dics_dialogos[dialogo_atual])
+			if dics_dialogos[dialogo_atual].humor != dics_dialogos[dialogo_atual - 1].humor:  # Só parar a música se o próximo humor for diferente
+				Sist_som.stop(dic_humor.musica)
+				atualizar_box_dialogo(dics_dialogos[dialogo_atual], true)
+			else:
+				atualizar_box_dialogo(dics_dialogos[dialogo_atual], false)
 
 func mudar_menu():
 	Sist_som.parar_sons_cutscene()
@@ -107,7 +113,7 @@ func mudar_menu():
 	else:  # Jogador está acessando pela cutscene automática após vitória
 		get_tree().change_scene("res://menus/Menu_vitoria.tscn") # Acabou os dialogos, ir para o menu de vitória.
 
-func atualizar_box_dialogo(dic_dialogo):
+func atualizar_box_dialogo(dic_dialogo, comecar_musica):
 	# Atualizar textos/labels
 	lb_dialogo.percent_visible = 0
 	lb_dialogo.text = dic_dialogo.texto
@@ -125,7 +131,8 @@ func atualizar_box_dialogo(dic_dialogo):
 	lb_dialogo.add_color_override("font_color", dic_humor.cor)
 	timer_letras.wait_time = 1.0 / dic_humor.velocidade
 	Sist_som.play(dic_humor.som)
-	Sist_som.play(dic_humor.musica)
+	if comecar_musica:
+		Sist_som.play(dic_humor.musica)
 	
 	if dialogo_atual == 0:
 		btn_ant.disabled = true

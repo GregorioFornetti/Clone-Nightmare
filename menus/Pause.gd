@@ -9,6 +9,8 @@ onready var background_transicao = get_parent().get_node("Transicao")
 onready var Menu_opcoes = preload("res://menus/Menu_opcoes.tscn")
 var acabou_inimigos = false
 var opacidade = 0
+var volume_atual = 0
+var audio_fase
 
 func _process(_delta):
 	if acabou_inimigos and not player_perdeu and GameStats.quant_balas_em_jogo == 0:
@@ -17,15 +19,18 @@ func _process(_delta):
 			desabilitado = true
 			SaveStats.passar_fase()
 			background_transicao.visible = true
-		opacidade += 0.03
+			audio_fase = Sist_som.coletar_obj_audio_fase(FASE_ATUAL)
+			Sist_som.play("Alarme")
+		opacidade += 0.004
 		background_transicao.color = Color(0.08, 0.08, 0.08, opacidade)
+		audio_fase.volume_db -= 0.1
 		if opacidade >= 1:
 			Sist_som.parar_musicas_fase()
+			audio_fase.volume_db = 0
 			if FASE_ATUAL == 0:
 				Sist_som.play("Musica_menu")
 				get_tree().change_scene("res://Tutorial/Menu_final_tutorial.tscn")
 			else:
-				Sist_som.play("Musica_cutscene")
 				get_tree().change_scene("res://Cutscenes/Dialogo-root.tscn")
 
 func _input(event):

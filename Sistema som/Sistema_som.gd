@@ -38,3 +38,14 @@ func parar_sons_cutscene():
 	stop("Musica_cutscene_raiva")
 	stop("Dialogo_normal")
 	stop("Dialogo_raiva")
+
+func coletar_obj_audio_fase(fase_atual):
+	if fase_atual <= 5:
+		return $"Musica_fases_1-5/AudioStreamPlayer"
+	elif fase_atual <= 10:
+		return $"Musica_fases_6-10/AudioStreamPlayer"
+	elif fase_atual <= 15:
+		return $"Musica_fases_11-15/AudioStreamPlayer"
+	else:
+		# return $"Musica_fases_16-20/AudioStreamPlayer"
+		return $"Musica_fases_11-15/AudioStreamPlayer"

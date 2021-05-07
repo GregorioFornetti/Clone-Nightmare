@@ -37,6 +37,10 @@ func _ready():
 		
 	file.close()
 
+func _input(event):
+	if event.is_action_pressed("tela_cheia"):
+		OS.set_window_fullscreen(not OS.window_fullscreen)
+
 
 func aplicar_vol_audio(audio, value):
 	var VOL_MIN = -60

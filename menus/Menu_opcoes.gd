@@ -3,8 +3,8 @@ extends Control
 onready var audio_geral = AudioServer.get_bus_index("Master")
 onready var audio_musica = AudioServer.get_bus_index("Musica")
 onready var audio_efeitos_sonoros = AudioServer.get_bus_index("Efeitos sonoros")
-onready var min_value = $Slider_geral.min_value
-onready var dropdown_resolucao = $Dropdown_resolucao
+onready var min_value = $Opcoes/Slider_geral.min_value
+onready var dropdown_resolucao = $Opcoes/Dropdown_resolucao
 onready var save_path = "user://opcoes.dat"
 
 
@@ -17,9 +17,9 @@ func _ready():
 		file.open(save_path, File.READ)
 		var opcoes = file.get_var()
 		# Configurando os sliders de audio:
-		$Slider_geral.value = opcoes.volume_geral
-		$Slider_musica.value = opcoes.volume_musica
-		$Slider_efeitos_sonoros.value = opcoes.volume_efeitos_sonoros
+		$Opcoes/Slider_geral.value = opcoes.volume_geral
+		$Opcoes/Slider_musica.value = opcoes.volume_musica
+		$Opcoes/Slider_efeitos_sonoros.value = opcoes.volume_efeitos_sonoros
 		# Configurando o dropdown de resoluções:
 		dropdown_resolucao.add_item("Tela cheia")
 		dropdown_resolucao.add_separator()
@@ -62,6 +62,14 @@ func _on_Dropdown_resolucao_item_selected(id):
 		OS.set_window_fullscreen(false)
 		OS.set_window_size(Vector2(int(tam_tela[0]), int(tam_tela[1])))
 
+func _on_Btn_controles_pressed():
+	$Opcoes.visible = false
+	$Controles.visible = true
+
+func _on_Btn_voltar_pressed():
+	$Opcoes.visible = true
+	$Controles.visible = false
+
 func _on_Btn_fechar_pressed():
 	salvar_novas_opcoes_e_fechar()
 
@@ -83,9 +91,9 @@ func salvar_novas_opcoes_e_fechar():
 	var file = File.new()
 	file.open(save_path, File.WRITE)
 	file.store_var({
-		"volume_geral" : $Slider_geral.value,
-		"volume_musica" : $Slider_musica.value,
-		"volume_efeitos_sonoros" : $Slider_efeitos_sonoros.value,
+		"volume_geral" : $Opcoes/Slider_geral.value,
+		"volume_musica" : $Opcoes/Slider_musica.value,
+		"volume_efeitos_sonoros" : $Opcoes/Slider_efeitos_sonoros.value,
 		"resolucao" : retorna_dic_resolucao()
 	})
 	file.close()
@@ -99,4 +107,3 @@ func retorna_dic_resolucao():
 	else:
 		resolucao_atual = resolucao_atual.split("x")
 		return {"tela_cheia" : false, "x" : int(resolucao_atual[0]), "y" : int(resolucao_atual[1])}
-	
