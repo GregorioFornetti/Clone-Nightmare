@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Finais/Cutscenes/Cutscene_root.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Finais/Cutscenes/Node_historia.tscn" type="PackedScene" id=2]
+
+[node name="Cutscene_final_suicidio" instance=ExtResource( 1 )]
+
+[node name="Node_historia" parent="Lista_nodes_historia" index="0" instance=ExtResource( 2 )]
+visible = false
+
+[node name="Label_historia" parent="Lista_nodes_historia/Node_historia" index="0"]
+text = "Você já na aguentava mais. Estava sofrendo muito. A sua consciência estava te torturando. Você sabia que fez algo errado..."
+
+[node name="Node_historia2" parent="Lista_nodes_historia" index="1" instance=ExtResource( 2 )]
+visible = false
+
+[node name="Label_historia" parent="Lista_nodes_historia/Node_historia2" index="0"]
+text = "Você não queria mais viver assim. Então, você pegou sua arma, apontou para a sua cabeça e ...  puxou o gatilho..."
+
+[node name="Node_historia4" parent="Lista_nodes_historia" index="2" instance=ExtResource( 2 )]
+visible = false
+
+[node name="Label_historia" parent="Lista_nodes_historia/Node_historia4" index="0"]
+text = "E os clones ? Continuaram sendo criados e escravizados. "
+
+[node name="Node_historia3" parent="Lista_nodes_historia" index="3" instance=ExtResource( 2 )]
+visible = false
+
+[node name="Label_historia" parent="Lista_nodes_historia/Node_historia3" index="0"]
+text = "Você abandonou sua família sem dizer ao menos um adeus... Você transferiu toda sua dor para eles !"
+
+[node name="Background" parent="." index="1"]
+margin_left = 0.956481
+margin_top = 0.730131
+margin_right = 0.956421
+margin_bottom = 0.730103
+color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+
+[editable path="Lista_nodes_historia/Node_historia"]
+
+[editable path="Lista_nodes_historia/Node_historia2"]
+
+[editable path="Lista_nodes_historia/Node_historia4"]
+
+[editable path="Lista_nodes_historia/Node_historia3"]

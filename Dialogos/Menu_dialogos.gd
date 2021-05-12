@@ -12,7 +12,7 @@ func _on_Botao_pressionado(fase):  # Algum botão de fase foi selecionado (carre
 	Sist_som.stop("Musica_menu")
 	Sist_som.play("Musica_cutscene")
 	
-	get_tree().change_scene("res://Cutscenes/Dialogo-root.tscn")
+	get_tree().change_scene("res://Dialogos/Dialogo-root.tscn")
 
 
 func _on_Btn_voltar_pressed():

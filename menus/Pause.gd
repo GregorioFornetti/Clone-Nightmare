@@ -31,7 +31,7 @@ func _process(_delta):
 				Sist_som.play("Musica_menu")
 				get_tree().change_scene("res://Tutorial/Menu_final_tutorial.tscn")
 			else:
-				get_tree().change_scene("res://Cutscenes/Dialogo-root.tscn")
+				get_tree().change_scene("res://Dialogos/Dialogo-root.tscn")
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel") and not desabilitado and not has_node("Menu_opcoes"):

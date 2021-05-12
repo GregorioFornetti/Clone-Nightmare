@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Finais/Cutscenes/Node_historia.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Finais/Cutscenes/Cutscene_root.tscn" type="PackedScene" id=2]
+
+[node name="Cutscene_final_revelacao" instance=ExtResource( 2 )]
+
+[node name="Node_historia" parent="Lista_nodes_historia" index="0" instance=ExtResource( 1 )]
+visible = false
+
+[node name="Label_historia" parent="Lista_nodes_historia/Node_historia" index="0"]
+text = "Você decide dar um fim nisso tudo."
+
+[node name="Node_historia2" parent="Lista_nodes_historia" index="1" instance=ExtResource( 1 )]
+visible = false
+
+[node name="Label_historia" parent="Lista_nodes_historia/Node_historia2" index="0"]
+text = "Você vai até uma delegacia e relata tudo, informando tudo que você sabe."
+
+[node name="Node_historia3" parent="Lista_nodes_historia" index="2" instance=ExtResource( 1 )]
+visible = false
+
+[node name="Label_historia" parent="Lista_nodes_historia/Node_historia3" index="0"]
+text = "Com o rastreador que  você tinha da maquina, a polícia foi capaz de encontrar o paradeiro dos criminosos..."
+
+[node name="Node_historia4" parent="Lista_nodes_historia" index="3" instance=ExtResource( 1 )]
+visible = false
+
+[node name="Label_historia" parent="Lista_nodes_historia/Node_historia4" index="0"]
+text = "Vários traficantes de pessoas foram presos e a máquina foi confiscada e destruida..."
+
+[node name="Node_historia5" parent="Lista_nodes_historia" index="4" instance=ExtResource( 1 )]
+visible = false
+
+[node name="Label_historia" parent="Lista_nodes_historia/Node_historia5" index="0"]
+text = "Você, obviamente, foi preso por traficar a máquina de clones."
+
+[node name="Node_historia6" parent="Lista_nodes_historia" index="5" instance=ExtResource( 1 )]
+
+[node name="Label_historia" parent="Lista_nodes_historia/Node_historia6" index="0"]
+text = "Sua consciência e seus pesadelos param de te torturar. Sua família te perdoa pelo o que você fez."
+
+[editable path="Lista_nodes_historia/Node_historia"]
+
+[editable path="Lista_nodes_historia/Node_historia2"]
+
+[editable path="Lista_nodes_historia/Node_historia3"]
+
+[editable path="Lista_nodes_historia/Node_historia4"]
+
+[editable path="Lista_nodes_historia/Node_historia5"]
+
+[editable path="Lista_nodes_historia/Node_historia6"]

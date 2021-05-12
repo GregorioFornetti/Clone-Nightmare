@@ -2,10 +2,11 @@
 
 [ext_resource path="res://Sprites/Personagem/cientista-portrait.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Novossprites/consciencia-1.png" type="Texture" id=2]
-[ext_resource path="res://Cutscenes/Dialogo-root.gd" type="Script" id=3]
+[ext_resource path="res://Dialogos/Dialogo-root.gd" type="Script" id=3]
 [ext_resource path="res://fontes/fonte_normal.tres" type="DynamicFont" id=4]
-[ext_resource path="res://Cutscenes/Menu_pular.gd" type="Script" id=5]
+[ext_resource path="res://Dialogos/Menu_pular.gd" type="Script" id=5]
 [ext_resource path="res://Sprites/Menus e Cutscene/boxdialogo.png" type="Texture" id=6]
+
 
 [node name="Dialogo-root" type="Control"]
 anchor_right = 1.0
@@ -41,8 +42,9 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Box-dialogo"]
 position = Vector2( 357.761, 114.765 )
-scale = Vector2( 1.75683, 0.983341 )
+scale = Vector2( 1.75, 1 )
 texture = ExtResource( 6 )
+flip_h = true
 hframes = 2
 
 [node name="Lb_nome" type="Label" parent="Box-dialogo"]
@@ -58,9 +60,9 @@ __meta__ = {
 
 [node name="Lb_dialogo" type="Label" parent="Box-dialogo"]
 margin_left = 29.0
-margin_top = 84.0
+margin_top = 83.3698
 margin_right = 621.0
-margin_bottom = 150.0
+margin_bottom = 149.37
 custom_fonts/font = ExtResource( 4 )
 text = "dasdasdasdasdasdasdadsadasasddasdasdasdasdas"
 autowrap = true

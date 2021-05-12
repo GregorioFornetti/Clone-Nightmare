@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Finais/Cutscenes/Cutscene_root.gd" type="Script" id=1]
+
+[node name="Cutscene_root" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lista_nodes_historia" type="Node" parent="."]
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.58673
+margin_top = 1.36038
+margin_right = 1.58667
+margin_bottom = 1.36035
+color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_avancar" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -99.5
+margin_top = -28.0
+margin_right = 99.5
+margin_bottom = -14.0
+text = "Pressione espaço para avançar."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer_letras" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+[connection signal="timeout" from="Timer_letras" to="." method="_on_Timer_letras_timeout"]

@@ -1,0 +1,26 @@
+[gd_scene format=2]
+
+[node name="Node_historia" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.16632
+margin_bottom = -1.16632
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_historia" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -387.0
+margin_top = -11.073
+margin_right = 129.0
+margin_bottom = 2.927
+rect_scale = Vector2( 1.5, 1.5 )
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
