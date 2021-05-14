@@ -1,54 +1,445 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://menus/Menu_fases.gd" type="Script" id=1]
+[ext_resource path="res://menus/Botao_fase.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase4.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase5.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase10.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase8.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase6.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase7.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase9.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/PROX.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/ANT.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase13.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase15.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase14.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase16.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase12.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase11.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase17.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase18.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase19.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase20.png" type="Texture" id=23]
 
 [node name="Menu_fases" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -1.32684
+margin_bottom = -1.32684
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Lista_paginas_fases" type="Node" parent="."]
+
+[node name="Pagina1" type="Control" parent="Lista_paginas_fases"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_fase1" parent="Lista_paginas_fases/Pagina1" instance=ExtResource( 2 )]
+margin_left = 50.0
+margin_top = 15.0
+margin_right = 350.0
+margin_bottom = 275.0
+
+[node name="Btn_fase2" parent="Lista_paginas_fases/Pagina1" instance=ExtResource( 2 )]
+margin_left = 360.0
+margin_top = 15.0
+margin_right = 660.0
+margin_bottom = 275.0
+
+[node name="Teaser" parent="Lista_paginas_fases/Pagina1/Btn_fase2" index="1"]
+texture = ExtResource( 3 )
+
+[node name="Label_titulo_fase" parent="Lista_paginas_fases/Pagina1/Btn_fase2" index="2"]
+text = "Fase 2"
+
+[node name="Btn_fase3" parent="Lista_paginas_fases/Pagina1" instance=ExtResource( 2 )]
+margin_left = 670.0
+margin_top = 15.0
+margin_right = 970.0
+margin_bottom = 275.0
+
+[node name="Teaser" parent="Lista_paginas_fases/Pagina1/Btn_fase3" index="1"]
+texture = ExtResource( 4 )
+
+[node name="Label_titulo_fase" parent="Lista_paginas_fases/Pagina1/Btn_fase3" index="2"]
+text = "Fase 3
+"
+
+[node name="Btn_fase4" parent="Lista_paginas_fases/Pagina1" instance=ExtResource( 2 )]
+margin_left = 205.0
+margin_top = 285.0
+margin_right = 505.0
+margin_bottom = 545.0
+
+[node name="Teaser" parent="Lista_paginas_fases/Pagina1/Btn_fase4" index="1"]
+texture = ExtResource( 5 )
+
+[node name="Label_titulo_fase" parent="Lista_paginas_fases/Pagina1/Btn_fase4" index="2"]
+text = "Fase 4"
+
+[node name="Btn_fase5" parent="Lista_paginas_fases/Pagina1" instance=ExtResource( 2 )]
+margin_left = 520.0
+margin_top = 285.0
+margin_right = 820.0
+margin_bottom = 545.0
+
+[node name="Teaser" parent="Lista_paginas_fases/Pagina1/Btn_fase5" index="1"]
+texture = ExtResource( 6 )
+
+[node name="Label_titulo_fase" parent="Lista_paginas_fases/Pagina1/Btn_fase5" index="2"]
+text = "Fase 5"
+
+[node name="Pagina2" type="Control" parent="Lista_paginas_fases"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_fase6" parent="Lista_paginas_fases/Pagina2" instance=ExtResource( 2 )]
+margin_left = 50.0
+margin_top = 15.0
+margin_right = 350.0
+margin_bottom = 275.0
+
+[node name="Teaser" parent="Lista_paginas_fases/Pagina2/Btn_fase6" index="1"]
+texture = ExtResource( 9 )
+
+[node name="Label_titulo_fase" parent="Lista_paginas_fases/Pagina2/Btn_fase6" index="2"]
+text = "Fase 6"
+
+[node name="Btn_fase7" parent="Lista_paginas_fases/Pagina2" instance=ExtResource( 2 )]
+margin_left = 360.0
+margin_top = 15.0
+margin_right = 660.0
+margin_bottom = 275.0
+
+[node name="Teaser" parent="Lista_paginas_fases/Pagina2/Btn_fase7" index="1"]
+texture = ExtResource( 10 )
+
+[node name="Label_titulo_fase" parent="Lista_paginas_fases/Pagina2/Btn_fase7" index="2"]
+text = "Fase 7"
+
+[node name="Btn_fase8" parent="Lista_paginas_fases/Pagina2" instance=ExtResource( 2 )]
+margin_left = 670.0
+margin_top = 15.0
+margin_right = 970.0
+margin_bottom = 275.0
+
+[node name="Teaser" parent="Lista_paginas_fases/Pagina2/Btn_fase8" index="1"]
+texture = ExtResource( 8 )
+
+[node name="Label_titulo_fase" parent="Lista_paginas_fases/Pagina2/Btn_fase8" index="2"]
+text = "Fase 8"
+
+[node name="Btn_fase9" parent="Lista_paginas_fases/Pagina2" instance=ExtResource( 2 )]
+margin_left = 205.0
+margin_top = 285.0
+margin_right = 505.0
+margin_bottom = 545.0
+
+[node name="Teaser" parent="Lista_paginas_fases/Pagina2/Btn_fase9" index="1"]
+texture = ExtResource( 11 )
+
+[node name="Label_titulo_fase" parent="Lista_paginas_fases/Pagina2/Btn_fase9" index="2"]
+text = "Fase 9"
+
+[node name="Btn_fase10" parent="Lista_paginas_fases/Pagina2" instance=ExtResource( 2 )]
+margin_left = 520.0
+margin_top = 285.0
+margin_right = 820.0
+margin_bottom = 545.0
+
+[node name="Teaser" parent="Lista_paginas_fases/Pagina2/Btn_fase10" index="1"]
+texture = ExtResource( 7 )
+
+[node name="Label_titulo_fase" parent="Lista_paginas_fases/Pagina2/Btn_fase10" index="2"]
+margin_left = -35.713
+margin_right = 13.287
+text = "Fase 10"
+
+[node name="Pagina3" type="Control" parent="Lista_paginas_fases"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_fase11" parent="Lista_paginas_fases/Pagina3" instance=ExtResource( 2 )]
+margin_left = 50.0
+margin_top = 15.0
+margin_right = 350.0
+margin_bottom = 275.0
+
+[node name="Teaser" parent="Lista_paginas_fases/Pagina3/Btn_fase11" index="1"]
+texture = ExtResource( 19 )
+
+[node name="Label_titulo_fase" parent="Lista_paginas_fases/Pagina3/Btn_fase11" index="2"]
+margin_left = -35.7129
+margin_top = 8.26352
+margin_right = 13.2871
+margin_bottom = 22.2635
+text = "Fase 11"
+
+[node name="Btn_fase12" parent="Lista_paginas_fases/Pagina3" instance=ExtResource( 2 )]
+margin_left = 360.0
+margin_top = 15.0
+margin_right = 660.0
+margin_bottom = 275.0
+
+[node name="Teaser" parent="Lista_paginas_fases/Pagina3/Btn_fase12" index="1"]
+texture = ExtResource( 18 )
+
+[node name="Label_titulo_fase" parent="Lista_paginas_fases/Pagina3/Btn_fase12" index="2"]
+margin_left = -36.1762
+margin_right = 12.8238
+text = "Fase 12"
+
+[node name="Btn_fase13" parent="Lista_paginas_fases/Pagina3" instance=ExtResource( 2 )]
+margin_left = 670.0
+margin_top = 15.0
+margin_right = 970.0
+margin_bottom = 275.0
+
+[node name="Teaser" parent="Lista_paginas_fases/Pagina3/Btn_fase13" index="1"]
+texture = ExtResource( 14 )
+
+[node name="Label_titulo_fase" parent="Lista_paginas_fases/Pagina3/Btn_fase13" index="2"]
+margin_left = -36.2101
+margin_top = 10.1235
+margin_right = 12.7899
+margin_bottom = 24.1235
+text = "Fase 13"
+
+[node name="Btn_fase14" parent="Lista_paginas_fases/Pagina3" instance=ExtResource( 2 )]
+margin_left = 205.0
+margin_top = 285.0
+margin_right = 505.0
+margin_bottom = 545.0
+
+[node name="Teaser" parent="Lista_paginas_fases/Pagina3/Btn_fase14" index="1"]
+texture = ExtResource( 16 )
+
+[node name="Label_titulo_fase" parent="Lista_paginas_fases/Pagina3/Btn_fase14" index="2"]
+margin_left = -36.7918
+margin_top = 8.18646
+margin_right = 12.2082
+margin_bottom = 22.1865
+text = "Fase 14"
+
+[node name="Btn_fase15" parent="Lista_paginas_fases/Pagina3" instance=ExtResource( 2 )]
+margin_left = 520.0
+margin_top = 285.0
+margin_right = 820.0
+margin_bottom = 545.0
+
+[node name="Teaser" parent="Lista_paginas_fases/Pagina3/Btn_fase15" index="1"]
+texture = ExtResource( 15 )
+
+[node name="Label_titulo_fase" parent="Lista_paginas_fases/Pagina3/Btn_fase15" index="2"]
+margin_left = -35.713
+margin_right = 13.287
+text = "Fase 15"
+
+[node name="Pagina4" type="Control" parent="Lista_paginas_fases"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_fase16" parent="Lista_paginas_fases/Pagina4" instance=ExtResource( 2 )]
+margin_left = 50.0
+margin_top = 15.0
+margin_right = 350.0
+margin_bottom = 275.0
+
+[node name="Teaser" parent="Lista_paginas_fases/Pagina4/Btn_fase16" index="1"]
+texture = ExtResource( 17 )
+
+[node name="Label_titulo_fase" parent="Lista_paginas_fases/Pagina4/Btn_fase16" index="2"]
+margin_left = -35.7129
+margin_top = 8.26352
+margin_right = 13.2871
+margin_bottom = 22.2635
+text = "Fase 16"
+
+[node name="Btn_fase17" parent="Lista_paginas_fases/Pagina4" instance=ExtResource( 2 )]
+margin_left = 360.0
+margin_top = 15.0
+margin_right = 660.0
+margin_bottom = 275.0
+
+[node name="Teaser" parent="Lista_paginas_fases/Pagina4/Btn_fase17" index="1"]
+texture = ExtResource( 20 )
+
+[node name="Label_titulo_fase" parent="Lista_paginas_fases/Pagina4/Btn_fase17" index="2"]
+margin_left = -36.1762
+margin_right = 12.8238
+text = "Fase 17"
+
+[node name="Btn_fase18" parent="Lista_paginas_fases/Pagina4" instance=ExtResource( 2 )]
+margin_left = 670.0
+margin_top = 15.0
+margin_right = 970.0
+margin_bottom = 275.0
+
+[node name="Teaser" parent="Lista_paginas_fases/Pagina4/Btn_fase18" index="1"]
+texture = ExtResource( 21 )
+
+[node name="Label_titulo_fase" parent="Lista_paginas_fases/Pagina4/Btn_fase18" index="2"]
+margin_left = -36.2101
+margin_top = 10.1235
+margin_right = 12.7899
+margin_bottom = 24.1235
+text = "Fase 18"
+
+[node name="Btn_fase19" parent="Lista_paginas_fases/Pagina4" instance=ExtResource( 2 )]
+margin_left = 205.0
+margin_top = 285.0
+margin_right = 505.0
+margin_bottom = 545.0
+
+[node name="Teaser" parent="Lista_paginas_fases/Pagina4/Btn_fase19" index="1"]
+texture = ExtResource( 22 )
+
+[node name="Label_titulo_fase" parent="Lista_paginas_fases/Pagina4/Btn_fase19" index="2"]
+margin_left = -36.7918
+margin_top = 8.18646
+margin_right = 12.2082
+margin_bottom = 22.1865
+text = "Fase 19"
+
+[node name="Btn_fase20" parent="Lista_paginas_fases/Pagina4" instance=ExtResource( 2 )]
+margin_left = 520.0
+margin_top = 285.0
+margin_right = 820.0
+margin_bottom = 545.0
+
+[node name="Teaser" parent="Lista_paginas_fases/Pagina4/Btn_fase20" index="1"]
+texture = ExtResource( 23 )
+
+[node name="Label_titulo_fase" parent="Lista_paginas_fases/Pagina4/Btn_fase20" index="2"]
+margin_left = -35.713
+margin_right = 13.287
+text = "Fase 20"
+
 [node name="Background" type="ColorRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -1.36041
-margin_bottom = -1.36041
+margin_top = -2.26291
+margin_bottom = -2.26288
 color = Color( 0.0823529, 0.0784314, 0.0784314, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Btn_voltar" type="Button" parent="."]
-margin_left = 50.0
-margin_top = 540.0
-margin_right = 103.0
-margin_bottom = 560.0
+margin_left = 48.0097
+margin_top = 578.478
+margin_right = 101.01
+margin_bottom = 598.478
 text = "Voltar"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Btn_tutorial" type="Button" parent="."]
-margin_left = 250.0
-margin_top = 540.0
-margin_right = 342.0
-margin_bottom = 560.0
+margin_left = 246.019
+margin_top = 577.151
+margin_right = 338.019
+margin_bottom = 597.151
 text = "Jogar tutorial"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Btn_dialogos" type="Button" parent="."]
-margin_left = 450.0
-margin_top = 540.0
-margin_right = 584.0
-margin_bottom = 560.0
+margin_left = 457.961
+margin_top = 577.815
+margin_right = 591.961
+margin_bottom = 597.815
 text = "Galeria de dialogos"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_prox" type="Button" parent="."]
+margin_left = 968.957
+margin_top = 205.285
+margin_right = 1020.96
+margin_bottom = 411.285
+icon = ExtResource( 12 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_ant" type="Button" parent="."]
+visible = false
+margin_top = 205.0
+margin_right = 52.0
+margin_bottom = 411.0
+icon = ExtResource( 13 )
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="Btn_voltar" to="." method="_on_Btn_voltar_pressed"]
 [connection signal="pressed" from="Btn_tutorial" to="." method="_on_Btn_tutorial_pressed"]
 [connection signal="pressed" from="Btn_dialogos" to="." method="_on_Btn_dialogos_pressed"]
+[connection signal="pressed" from="Btn_prox" to="." method="_on_Btn_prox_pressed"]
+[connection signal="pressed" from="Btn_ant" to="." method="_on_Btn_ant_pressed"]
+
+[editable path="Lista_paginas_fases/Pagina1/Btn_fase1"]
+
+[editable path="Lista_paginas_fases/Pagina1/Btn_fase2"]
+
+[editable path="Lista_paginas_fases/Pagina1/Btn_fase3"]
+
+[editable path="Lista_paginas_fases/Pagina1/Btn_fase4"]
+
+[editable path="Lista_paginas_fases/Pagina1/Btn_fase5"]
+
+[editable path="Lista_paginas_fases/Pagina2/Btn_fase6"]
+
+[editable path="Lista_paginas_fases/Pagina2/Btn_fase7"]
+
+[editable path="Lista_paginas_fases/Pagina2/Btn_fase8"]
+
+[editable path="Lista_paginas_fases/Pagina2/Btn_fase9"]
+
+[editable path="Lista_paginas_fases/Pagina2/Btn_fase10"]
+
+[editable path="Lista_paginas_fases/Pagina3/Btn_fase11"]
+
+[editable path="Lista_paginas_fases/Pagina3/Btn_fase12"]
+
+[editable path="Lista_paginas_fases/Pagina3/Btn_fase13"]
+
+[editable path="Lista_paginas_fases/Pagina3/Btn_fase14"]
+
+[editable path="Lista_paginas_fases/Pagina3/Btn_fase15"]
+
+[editable path="Lista_paginas_fases/Pagina4/Btn_fase16"]
+
+[editable path="Lista_paginas_fases/Pagina4/Btn_fase17"]
+
+[editable path="Lista_paginas_fases/Pagina4/Btn_fase18"]
+
+[editable path="Lista_paginas_fases/Pagina4/Btn_fase19"]
+
+[editable path="Lista_paginas_fases/Pagina4/Btn_fase20"]
