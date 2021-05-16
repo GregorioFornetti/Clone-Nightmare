@@ -76,7 +76,7 @@ func _on_Btn_Voltar_pressed():
 	get_tree().paused = false
 	Sist_som.parar_musicas_fase()
 	Sist_som.play("Musica_menu")
-	get_tree().change_scene("res://menus/Menu_fases.tscn")
+	get_tree().change_scene("res://menus/Menu_geral.tscn")
 
 func _on_Btn_Opcoes_pressed():
 	var menu_opcoes = Menu_opcoes.instance()

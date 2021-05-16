@@ -18,4 +18,4 @@ func _on_Btn_reiniciar_pressed():
 
 
 func _on_Btn_voltar_pressed():
-	get_tree().change_scene("res://menus/Menu_fases.tscn")
+	get_tree().change_scene("res://menus/Menu_geral.tscn")

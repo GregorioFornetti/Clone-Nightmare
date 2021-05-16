@@ -12,6 +12,7 @@ func _ready():
 	var audio_geral = AudioServer.get_bus_index("Master")
 	var audio_musica = AudioServer.get_bus_index("Musica")
 	var audio_efeitos_sonoros = AudioServer.get_bus_index("Efeitos sonoros")
+	var diretorio = Directory.new()
 	
 	if file.file_exists(save_path):
 		file.open(save_path, File.READ)
@@ -34,13 +35,18 @@ func _ready():
 		AudioServer.set_bus_volume_db(audio_geral, VOL_MAX)
 		AudioServer.set_bus_volume_db(audio_musica, VOL_MEDIO)
 		AudioServer.set_bus_volume_db(audio_efeitos_sonoros, VOL_MEDIO)
-		
+	
 	file.close()
 
 func _input(event):
 	if event.is_action_pressed("tela_cheia"):
 		OS.set_window_fullscreen(not OS.window_fullscreen)
 
+func apagar_arquivo(slot_number, path):
+	var dir = Directory.new()
+	#teste = dir.remove(str(slot_number) + ".dat")
+	var teste = dir.remove(path)
+	print(teste)
 
 func aplicar_vol_audio(audio, value):
 	var VOL_MIN = -60

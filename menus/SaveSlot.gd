@@ -3,7 +3,7 @@ extends Control
 export (int)var slot_number
 
 var save_path
-var fase_salva
+var save_info
 
 onready var info_slot = get_node("Info_slot")
 onready var titulo_slot = get_node("Titulo_slot")
@@ -19,16 +19,24 @@ func _ready():
 	# get_node("Titulo_slot").text = "Slot " + str(slot_number)
 	save_path = "user://save" + str(slot_number) + ".dat"
 	var file = File.new()
-	
 	if file.file_exists(save_path):
-		ajustar_slot_carregado()
+		file.open(save_path, File.READ)
+		if file.get_var().has("fase final liberada"):
+			ajustar_slot_carregado()
+		else:
+			apagar_slot()
 	else:
 		ajustar_slot_vazio()
 
 
 func _on_Btn_comecar_pressed():
 	var dados_save = {
-		"fase" : 1
+		"fase" : 1,
+		"fase final liberada" : false,
+		"final suicidio liberado" : false,
+		"final bom liberado" : false,
+		"final ignorar liberado" : false,
+		"final secreto liberado" : false
 	}
 	
 	var file = File.new()
@@ -37,7 +45,7 @@ func _on_Btn_comecar_pressed():
 	file.close()
 	
 	SaveStats.selected_save_path = save_path
-	SaveStats.ultima_fase_liberada = 1
+	SaveStats.dados_save = dados_save
 
 func _on_Btn_apagar_pressed():
 	menu_apagar.slot_number = slot_number
@@ -51,8 +59,8 @@ func apagar_slot():
 
 func _on_Btn_continuar_pressed():
 	SaveStats.selected_save_path = save_path
-	SaveStats.ultima_fase_liberada = fase_salva
-	get_tree().change_scene("res://menus/Menu_fases.tscn")
+	SaveStats.dados_save = save_info
+	get_tree().change_scene("res://menus/Menu_geral.tscn")
 
 
 func ajustar_slot_carregado():
@@ -63,9 +71,8 @@ func ajustar_slot_carregado():
 	
 	var file = File.new()
 	file.open(save_path, File.READ)
-	var save_infos = file.get_var()
-	fase_salva = save_infos.fase
-	info_slot.text = "Fase " + str(fase_salva)
+	save_info = file.get_var()
+	info_slot.text = "Fase " + str(save_info["fase"])
 	file.close()
 
 func ajustar_slot_vazio():

@@ -7,17 +7,17 @@ var nome_funcao_transicao
 var opacidade = 0
 var velocidade_transicao = 0.004
 
-enum {FINAL_SUICIDIO = 1, FINAL_REVELACAO, FINAL_IGNORAR}
+enum {FINAL_SUICIDIO = 1, FINAL_BOM, FINAL_IGNORAR}
 # FINAL_SUICIDIO : final em que o jogador se mata.
 # FINAL_REVELACAO : final em que o jogador se entrega e revela o rastreador da maquina e ajuda a policia
 # FINAL_IGNORAR : final em que o jogador ignora tudo e continua a vida, acaba ficando louco no final devido ao sentimento de culpa.
 var dic_final = {
 	"Player" : FINAL_SUICIDIO,
-	"Maquina de clones" : FINAL_REVELACAO,
+	"Maquina de clones" : FINAL_BOM,
 	"Saida" : FINAL_IGNORAR,
 	
 	FINAL_SUICIDIO : "transicao_final_suicidio",
-	FINAL_REVELACAO : "transicao_final_revelacao",
+	FINAL_BOM : "transicao_final_bom",
 	FINAL_IGNORAR : "transicao_final_ignorar"
 }
 
@@ -29,11 +29,11 @@ func _input(event):
 	if event.get_action_strength("ui_accept") and not final_iniciado:
 		match final_selecionado:
 			FINAL_SUICIDIO:
-				print("FINAL SUICIDIO COMECOU")
-			FINAL_REVELACAO:
-				print("FINAL REVELACAO COMECOU")
+				SaveStats.liberar_final_suicidio()
+			FINAL_BOM:
+				SaveStats.liberar_final_bom()
 			FINAL_IGNORAR:
-				print("FINAL IGNORAR COMECOU")
+				SaveStats.liberar_final_ignorar()
 		
 		if final_selecionado:
 			# Transição para o final está começando...
@@ -54,8 +54,8 @@ func selecionar_cena_final():
 	match final_iniciado:
 		FINAL_SUICIDIO:
 			get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_suicidio.tscn")
-		FINAL_REVELACAO:
-			get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_revelacao.tscn")
+		FINAL_BOM:
+			get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_bom.tscn")
 		FINAL_IGNORAR:
 			get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_ignorar.tscn")
 
@@ -69,7 +69,7 @@ func transicao_padrao():
 func transicao_final_suicidio():
 	transicao_padrao()
 
-func transicao_final_revelacao():
+func transicao_final_bom():
 	transicao_padrao()
 
 func transicao_final_ignorar():

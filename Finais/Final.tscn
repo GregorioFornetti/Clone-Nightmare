@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Final.gd" type="Script" id=1]
+[ext_resource path="res://Finais/Final.gd" type="Script" id=1]
 [ext_resource path="res://Finais/Player_final.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Fases/tilemap-piso&parede.tscn" type="PackedScene" id=3]
 [ext_resource path="res://TileMap-objetos.tscn" type="PackedScene" id=4]

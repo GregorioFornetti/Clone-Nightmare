@@ -109,7 +109,9 @@ func mudar_menu():
 	Sist_som.parar_sons_cutscene()
 	Sist_som.play("Musica_menu")
 	if SaveStats.fase_atual == 0:  # Jogador está acessando pela galeria
-		get_tree().change_scene("res://Dialogos/Menu_dialogos.tscn")
+		get_tree().change_scene("res://menus/Menu_geral.tscn")
+	elif SaveStats.num_dialogo_atual == 20:
+		get_tree().change_scene("res://Finais/Final.tscn")
 	else:  # Jogador está acessando pela cutscene automática após vitória
 		get_tree().change_scene("res://menus/Menu_vitoria.tscn") # Acabou os dialogos, ir para o menu de vitória.
 
