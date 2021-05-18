@@ -1,7 +1,13 @@
 extends Control
 
+const FRAME_BACKGROUND_NORMAL = 2
+const FRAME_BACKGROUND_MAQUINA = 0
+
 onready var PAG_MAX = get_node("Menu_fases").get_child_count() - 1
 onready var paginas = get_node("Menu_fases").get_children()
+onready var animation_player = get_node("AnimationPlayer")
+onready var timer = get_node("Timer_anim")
+onready var background = get_node("Background")
 var pagina_atual = 0
 
 enum {MENU_FASES, MENU_DIALOGOS, MENU_FINAIS}
@@ -13,6 +19,8 @@ onready var dados_menus = [
 ]
 
 func _ready():
+	randomize()
+	timer.start(rand_range(5, 35))
 	mudar_menu_atual()
 
 func _on_Btn_voltar_pressed():
@@ -36,6 +44,18 @@ func _on_Btn_tutorial_pressed():
 	Sist_som.comecar_musica_fase(1)
 	get_tree().change_scene("res://Tutorial/Tutorial.tscn")
 
+func _on_Timer_anim_timeout(): 
+	if background.frame == FRAME_BACKGROUND_NORMAL:
+		if rand_range(1, 100) <= 75:
+			animation_player.play("Transic_normal")
+			timer.start(animation_player.current_animation_length + rand_range(5, 35))
+		else:
+			animation_player.play("Transic_maquina")
+			timer.start(animation_player.current_animation_length + rand_range(2, 6))
+	else:
+		animation_player.play("Transic_normal")
+		timer.start(animation_player.current_animation_length + rand_range(5, 35))
+
 
 func mudar_menu_atual():
 	SaveStats.ultimo_menu_selecionado = menu_atual
@@ -46,3 +66,4 @@ func mudar_menu_atual():
 		else:
 			dados_menu["botao"].disabled = false
 			dados_menu["node"].visible = false
+

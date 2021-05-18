@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://menus/Menu_principal.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Menus e Cutscene/Menu-Principal-sheet.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Buttons/play-btn.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Buttons/options-btn.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Buttons/sair-btn.png" type="Texture" id=5]
+[ext_resource path="res://menus/Btn_jogo.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "TransicaoParaConsciencia"
@@ -48,44 +52,6 @@ position = Vector2( 512, 303 )
 texture = ExtResource( 2 )
 hframes = 4
 
-[node name="Btn_jogar" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -38.0
-margin_top = -105.053
-margin_right = 38.0
-margin_bottom = -85.0526
-text = "Jogar"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Btn_sair" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -52.0
-margin_top = -4.0
-margin_right = 52.0
-margin_bottom = 16.0
-text = "Sair do jogo"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Btn_opcoes" type="Button" parent="."]
-margin_left = 480.883
-margin_top = 250.104
-margin_right = 541.883
-margin_bottom = 270.104
-text = "Opções"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 1.5
 anims/TransicaoParaConsciencia = SubResource( 1 )
@@ -95,7 +61,28 @@ anims/TransicaoParaPlayer = SubResource( 2 )
 wait_time = 20.0
 one_shot = true
 autostart = true
-[connection signal="pressed" from="Btn_jogar" to="." method="_on_Btn_jogar_pressed"]
-[connection signal="pressed" from="Btn_sair" to="." method="_on_Btn_sair_pressed"]
-[connection signal="pressed" from="Btn_opcoes" to="." method="_on_Btn_opcoes_pressed"]
+
+[node name="Btn_jogar" parent="." instance=ExtResource( 6 )]
+margin_left = 450.0
+margin_top = 170.0
+margin_right = -518.0
+margin_bottom = -411.0
+texture_normal = ExtResource( 3 )
+
+[node name="Btn_opcoes" parent="." instance=ExtResource( 6 )]
+margin_left = 450.0
+margin_top = 250.0
+margin_right = -518.0
+margin_bottom = -331.0
+texture_normal = ExtResource( 4 )
+
+[node name="Btn_sair" parent="." instance=ExtResource( 6 )]
+margin_left = 450.0
+margin_top = 330.0
+margin_right = -518.0
+margin_bottom = -251.0
+texture_normal = ExtResource( 5 )
 [connection signal="timeout" from="Timer_animacao" to="." method="_on_Timer_animacao_timeout"]
+[connection signal="pressed" from="Btn_jogar" to="." method="_on_Btn_jogar_pressed"]
+[connection signal="pressed" from="Btn_opcoes" to="." method="_on_Btn_opcoes_pressed"]
+[connection signal="pressed" from="Btn_sair" to="." method="_on_Btn_sair_pressed"]

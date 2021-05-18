@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://menus/Btn_jogo.gd" type="Script" id=1]
+
+[node name="Btn_jogo" type="TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1021.0
+margin_bottom = -606.0
+rect_scale = Vector2( 2, 2 )
+mouse_default_cursor_shape = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="mouse_entered" from="." to="." method="_on_Btn_jogo_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_Btn_jogo_pressed"]
