@@ -21,7 +21,7 @@ text = "Você vai até uma delegacia e relata tudo, informando tudo que você sa
 visible = false
 
 [node name="Label_historia" parent="Lista_nodes_historia/Node_historia3" index="0"]
-text = "Com o rastreador que  você tinha da maquina, a polícia foi capaz de encontrar o paradeiro dos criminosos..."
+text = "Com o rastreador que  você tinha da máquina, a polícia foi capaz de encontrar o paradeiro dos criminosos..."
 
 [node name="Node_historia4" parent="Lista_nodes_historia" index="3" instance=ExtResource( 1 )]
 visible = false

@@ -27,5 +27,4 @@ func _on_Btn_final_ignorar_pressed():
 	get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_ignorar.tscn")
 
 func _on_Btn_final_secreto_pressed():
-	pass
-	# get_tree().change_scene("")
+	get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_secreto.tscn")

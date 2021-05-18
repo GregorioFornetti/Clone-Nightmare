@@ -9,7 +9,7 @@
 visible = false
 
 [node name="Label_historia" parent="Lista_nodes_historia/Node_historia" index="0"]
-text = "Você já na aguentava mais. Estava sofrendo muito. A sua consciência estava te torturando. Você sabia que fez algo errado..."
+text = "Você já não aguentava mais. Estava sofrendo muito. A sua consciência estava te torturando. Você sabia que fez algo errado..."
 
 [node name="Node_historia2" parent="Lista_nodes_historia" index="1" instance=ExtResource( 2 )]
 visible = false

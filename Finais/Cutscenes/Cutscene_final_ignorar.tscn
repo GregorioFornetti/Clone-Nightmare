@@ -6,7 +6,6 @@
 [node name="Cutscene_final_ignorar" instance=ExtResource( 1 )]
 
 [node name="Node_historia" parent="Lista_nodes_historia" index="0" instance=ExtResource( 2 )]
-visible = false
 
 [node name="Label_historia" parent="Lista_nodes_historia/Node_historia" index="0"]
 text = "Você decide fazer nada, ignorar tudo isso."
@@ -24,6 +23,7 @@ visible = false
 text = "Sua saúde mental estava ficando cada vez pior, até que ..."
 
 [node name="Node_historia4" parent="Lista_nodes_historia" index="3" instance=ExtResource( 2 )]
+visible = false
 
 [node name="Label_historia" parent="Lista_nodes_historia/Node_historia4" index="0"]
 text = "um dia, você tem um surto, e acaba ...  assassinando sua esposa  e filha. "
