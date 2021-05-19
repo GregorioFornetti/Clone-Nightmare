@@ -21,17 +21,10 @@ const dic_final = {
 	FINAL_IGNORAR : "transicao_final_ignorar",
 	FINAL_SECRETO : "transicao_final_secreto"
 }
-const DATA_FINAL_SECRETO = {"day": 15, "month": 1, "year": 2016}
 
 func _process(_delta):
 	if final_iniciado:
 		call(nome_funcao_transicao)
-	else:
-		var date = OS.get_date()
-		if date.day == DATA_FINAL_SECRETO["day"] and date.month == DATA_FINAL_SECRETO["month"] and date.year == DATA_FINAL_SECRETO["year"]:
-			SaveStats.liberar_final_secreto()
-			final_selecionado = FINAL_SECRETO
-			iniciar_final()
 
 
 func _input(event):
@@ -90,3 +83,8 @@ func transicao_final_ignorar():
 
 func transicao_final_secreto():
 	transicao_padrao()
+
+
+func _on_Range_pc_body_entered(_body):
+	final_selecionado = null
+

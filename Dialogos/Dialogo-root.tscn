@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Sprites/Personagem/cientista-portrait.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Novossprites/consciencia-1.png" type="Texture" id=2]
 [ext_resource path="res://Dialogos/Dialogo-root.gd" type="Script" id=3]
 [ext_resource path="res://fontes/fonte_normal.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Dialogos/Menu_pular.gd" type="Script" id=5]
-[ext_resource path="res://Sprites/Menus e Cutscene/boxdialogo.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Menus e Cutscene/boxdialogo2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Menus e Cutscene/fundo conversa.png" type="Texture" id=7]
 
 [node name="Dialogo-root" type="Control"]
 anchor_right = 1.0
@@ -15,17 +16,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 1.58673
-margin_top = 1.36038
-margin_right = 1.58667
-margin_bottom = 1.36035
-color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 512, 303 )
+texture = ExtResource( 7 )
 
 [node name="Box-dialogo" type="Control" parent="."]
 anchor_top = 1.0
@@ -40,17 +33,15 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Box-dialogo"]
-position = Vector2( 357.761, 114.765 )
-scale = Vector2( 1.75, 1 )
+position = Vector2( 356.563, 99.7965 )
 texture = ExtResource( 6 )
 flip_h = true
-hframes = 2
 
 [node name="Lb_nome" type="Label" parent="Box-dialogo"]
-margin_left = 299.481
-margin_top = 59.5507
-margin_right = 378.481
-margin_bottom = 73.5507
+margin_left = 307.513
+margin_top = 15.3608
+margin_right = 386.513
+margin_bottom = 29.3608
 rect_scale = Vector2( 1.5, 1.5 )
 text = "Personagem"
 __meta__ = {
@@ -58,10 +49,10 @@ __meta__ = {
 }
 
 [node name="Lb_dialogo" type="Label" parent="Box-dialogo"]
-margin_left = 29.0
-margin_top = 83.3698
-margin_right = 621.0
-margin_bottom = 149.37
+margin_left = 63.4843
+margin_top = 51.3789
+margin_right = 655.484
+margin_bottom = 140.379
 custom_fonts/font = ExtResource( 4 )
 text = "dasdasdasdasdasdasdadsadasasddasdasdasdasdas"
 autowrap = true
@@ -70,10 +61,10 @@ __meta__ = {
 }
 
 [node name="Lb_info" type="Label" parent="Box-dialogo"]
-margin_left = 254.122
-margin_top = 154.852
-margin_right = 454.122
-margin_bottom = 185.852
+margin_left = 269.792
+margin_top = 152.691
+margin_right = 469.792
+margin_bottom = 183.691
 text = "Pressione ESC para pular
 Pressione ESPAÇO para avançar"
 align = 1

@@ -7,6 +7,7 @@ var rotation_fix = PI / 2
 var pode_mirar = true
 onready var main_node = get_parent()
 onready var label_sair = get_parent().get_node("CanvasLayer/Label_sair")
+onready var label_pc = get_parent().get_node("CanvasLayer/Label_computador")
 var alvo
 
 signal alvo_marcado(nome_alvo)
@@ -76,3 +77,13 @@ func _on_Saida_body_exited(_body):
 	emit_signal("alvo_desmarcado")
 	pode_mirar = true
 	label_sair.visible = false
+
+
+func _on_Range_pc_body_entered(_body):
+	desmarcar_alvo()
+	pode_mirar = false
+	label_pc.visible = true
+	
+func _on_Range_pc_body_exited(body):
+	pode_mirar = true
+	label_pc.visible = false

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/esteira_cima.png-2fadc445c4f5c68b944e15624db14913.stex"
+path="res://.import/btn_senha.png-20ca02fd90374d22730cb1082ba2b973.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/esteira_cima.png"
-dest_files=[ "res://.import/esteira_cima.png-2fadc445c4f5c68b944e15624db14913.stex" ]
+source_file="res://Sprites/Buttons/btn_senha.png"
+dest_files=[ "res://.import/btn_senha.png-20ca02fd90374d22730cb1082ba2b973.stex" ]
 
 [params]
 

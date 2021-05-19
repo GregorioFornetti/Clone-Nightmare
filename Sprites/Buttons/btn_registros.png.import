@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/esteira_baixo.png-dc106295a473a9ec083ab69dd4f4f042.stex"
+path="res://.import/btn_registros.png-732eb4e47fbf92989ff6f98d7e182433.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/esteira_baixo.png"
-dest_files=[ "res://.import/esteira_baixo.png-dc106295a473a9ec083ab69dd4f4f042.stex" ]
+source_file="res://Sprites/Buttons/btn_registros.png"
+dest_files=[ "res://.import/btn_registros.png-732eb4e47fbf92989ff6f98d7e182433.stex" ]
 
 [params]
 

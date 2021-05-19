@@ -24,7 +24,7 @@ config/icon="res://UI/icon.png"
 ReloadTimer="*res://BulletReloadTimer.tscn"
 SaveStats="*res://SaveStats.tscn"
 Sist_som="*res://Sistema som/Sistema_som.tscn"
-InicEComandosGerais="*res://Inic e comandos gerais.tscn"
+ComandosGerais="*res://Inic e comandos gerais.tscn"
 
 [display]
 

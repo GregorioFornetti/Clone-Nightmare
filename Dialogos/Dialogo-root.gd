@@ -121,10 +121,8 @@ func atualizar_box_dialogo(dic_dialogo, comecar_musica):
 	lb_dialogo.text = dic_dialogo.texto
 	
 	if dic_dialogo.nome == "player":
-		sprite_box_dialogo.frame = 1
 		lb_nome.text = NOME_PLAYER
 	else:
-		sprite_box_dialogo.frame = 0
 		lb_nome.text = nome_silhueta
 		
 	# Aplicar efeitos do humor:

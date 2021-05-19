@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/esteira_esquerda.png-48b874c8e072d45552a2c3937da73cd4.stex"
+path="res://.import/btn_desligar.png-54ae27dfe951e7a32efddc042f3d37b7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/esteira_esquerda.png"
-dest_files=[ "res://.import/esteira_esquerda.png-48b874c8e072d45552a2c3937da73cd4.stex" ]
+source_file="res://Sprites/Buttons/btn_desligar.png"
+dest_files=[ "res://.import/btn_desligar.png-54ae27dfe951e7a32efddc042f3d37b7.stex" ]
 
 [params]
 
