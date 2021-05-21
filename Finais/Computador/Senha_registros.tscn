@@ -1,0 +1,91 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Finais/Computador/Senha_registros.gd" type="Script" id=1]
+
+[node name="Senha_registros" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0470588, 0.0470588, 0.0470588, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titulo_registros" type="Label" parent="."]
+margin_left = 423.387
+margin_top = 137.63
+margin_right = 482.387
+margin_bottom = 151.63
+rect_scale = Vector2( 3, 3 )
+text = "Registros"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lbl_senha" type="Label" parent="."]
+margin_left = 336.847
+margin_top = 295.011
+margin_right = 382.847
+margin_bottom = 309.011
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Senha:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_senha_incocrreta" type="Label" parent="."]
+visible = false
+margin_left = 461.181
+margin_top = 269.161
+margin_right = 568.181
+margin_bottom = 283.161
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Senha incorreta !"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Input_senha" type="LineEdit" parent="."]
+margin_left = 412.475
+margin_top = 292.352
+margin_right = 609.475
+margin_bottom = 316.352
+secret = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_acessar" type="Button" parent="."]
+margin_left = 623.966
+margin_top = 294.437
+margin_right = 685.966
+margin_bottom = 314.437
+text = "Acessar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_fechar" type="Button" parent="."]
+margin_left = 966.833
+margin_top = 15.4374
+margin_right = 986.833
+margin_bottom = 35.4374
+rect_scale = Vector2( 2, 2 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer_apagar_senha_incorreta" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+[connection signal="pressed" from="Btn_acessar" to="." method="_on_Btn_acessar_pressed"]
+[connection signal="pressed" from="Btn_fechar" to="." method="_on_Btn_fechar_pressed"]
+[connection signal="timeout" from="Timer_apagar_senha_incorreta" to="." method="_on_Timer_apagar_senha_incorreta_timeout"]

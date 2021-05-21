@@ -107,7 +107,7 @@ __meta__ = {
 [connection signal="body_entered" from="Saida" to="Player" method="_on_Saida_body_entered"]
 [connection signal="body_exited" from="Saida" to="Player" method="_on_Saida_body_exited"]
 [connection signal="body_entered" from="Range_pc" to="Range_pc" method="_on_Range_pc_body_entered"]
-[connection signal="body_entered" from="Range_pc" to="Player" method="_on_Range_pc_body_entered"]
 [connection signal="body_entered" from="Range_pc" to="." method="_on_Range_pc_body_entered"]
+[connection signal="body_entered" from="Range_pc" to="Player" method="_on_Range_pc_body_entered"]
 [connection signal="body_exited" from="Range_pc" to="Range_pc" method="_on_Range_pc_body_exited"]
 [connection signal="body_exited" from="Range_pc" to="Player" method="_on_Range_pc_body_exited"]

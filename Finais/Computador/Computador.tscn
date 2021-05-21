@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/tela-pc.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Buttons/btn_desligar.png" type="Texture" id=2]
 [ext_resource path="res://Finais/Computador/Computador.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/Buttons/btn_registros.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Buttons/btn_senha.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Buttons/btn_jogo_clone.png" type="Texture" id=6]
 
 [node name="Computador" type="Control"]
 anchor_right = 1.0
@@ -66,9 +67,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Btn_jogo_clone" type="TextureButton" parent="Dentro"]
+margin_left = 525.465
+margin_top = 265.072
+margin_right = 600.465
+margin_bottom = 340.072
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Tela_pc" type="Sprite" parent="."]
 position = Vector2( 512, 303 )
 texture = ExtResource( 1 )
 [connection signal="pressed" from="Dentro/Btn_desligar" to="." method="_on_Btn_desligar_pressed"]
 [connection signal="pressed" from="Dentro/Btn_registros" to="." method="_on_Btn_registros_pressed"]
 [connection signal="pressed" from="Dentro/Btn_senha" to="." method="_on_Btn_senha_pressed"]
+[connection signal="pressed" from="Dentro/Btn_jogo_clone" to="." method="_on_Btn_jogo_clone_pressed"]

@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Finais/Computador/Txt_enigma_senha.gd" type="Script" id=1]
+
+[node name="Txt_enigma_senha" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 63.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_fechar" type="Button" parent="."]
+margin_left = 967.103
+margin_top = 13.3
+margin_right = 987.103
+margin_bottom = 33.3
+rect_scale = Vector2( 2, 2 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_titulo_arquivo" type="Label" parent="."]
+margin_left = 18.2413
+margin_top = 19.4076
+margin_right = 129.241
+margin_bottom = 33.4076
+rect_scale = Vector2( 2, 2 )
+text = "Enigma_senha.txt"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Btn_fechar" to="." method="_on_Btn_fechar_pressed"]
