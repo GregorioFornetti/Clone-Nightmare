@@ -13,8 +13,9 @@
 script = ExtResource( 6 )
 
 [node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 0.9, 0.9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

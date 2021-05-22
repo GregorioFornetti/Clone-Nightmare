@@ -60,7 +60,8 @@ func apagar_slot():
 func _on_Btn_continuar_pressed():
 	SaveStats.selected_save_path = save_path
 	SaveStats.dados_save = save_info
-	get_tree().change_scene("res://menus/Menu_geral.tscn")
+	# get_tree().change_scene("res://menus/Menu_geral.tscn")
+	ComandosGerais.carregar_nova_cena("res://menus/Menu_geral.tscn", get_parent())
 
 
 func ajustar_slot_carregado():

@@ -22,6 +22,15 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 63.0
+text = "       jogo - fase
+       2 - 1
+       1 - 20
+       2 - 10
+       4 - 3
+       3 - 13
+       2 - 19
+       4 - 4
+       3 - 2"
 __meta__ = {
 "_edit_use_anchors_": false
 }

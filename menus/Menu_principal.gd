@@ -11,10 +11,18 @@ func _ready():
 	randomize()
 
 func _on_Btn_jogar_pressed():
-	get_tree().change_scene("res://menus/Menu_saves.tscn")
+	# get_tree().change_scene("res://menus/Menu_saves.tscn")
+	ComandosGerais.carregar_nova_cena("res://menus/Menu_saves.tscn", self)
 
 func _on_Btn_sair_pressed():
-	get_tree().quit()
+	if ComandosGerais.qnt_jogos_abertos == 1:
+		get_tree().quit()
+	else:
+		ComandosGerais.qnt_jogos_abertos -= 1
+		ComandosGerais.nodes_salvar_fases.pop_back()
+		ComandosGerais.nodes_salvar_menus.pop_back()
+		SaveStats.selected_save_path = get_parent().get_parent().save_path
+		queue_free()
 
 func _on_Btn_opcoes_pressed():
 	var menu_opcoes = Menu_opcoes.instance()

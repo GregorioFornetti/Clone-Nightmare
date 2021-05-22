@@ -30,7 +30,8 @@ func _on_Botao_pressionado(fase):  # Algum botão de fase foi selecionado (carre
 	Sist_som.stop("Musica_menu")
 	Sist_som.comecar_musica_fase(fase)
 	
-	get_tree().change_scene("res://Fases/fase" + str(fase) + ".tscn")
+	# get_tree().change_scene("res://Fases/fase" + str(fase) + ".tscn")
+	ComandosGerais.carregar_nova_fase("res://Fases/fase" + str(fase) + ".tscn", get_parent())
 
 func _on_Btn_prox_pressed():
 	ir_para_prox_pagina()

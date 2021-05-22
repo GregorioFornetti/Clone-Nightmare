@@ -21,7 +21,8 @@ func _input(event):
 		elif indice_atual == len(lista_historias) - 1:
 			Sist_som.stop("Musica_finais")
 			Sist_som.play("Musica_menus")
-			get_tree().change_scene("res://menus/Menu_geral.tscn")
+			# get_tree().change_scene("res://menus/Menu_geral.tscn")
+			ComandosGerais.carregar_nova_cena("res://menus/Menu_geral.tscn", self)
 		else:
 			comecar_novo_node_hist()
 

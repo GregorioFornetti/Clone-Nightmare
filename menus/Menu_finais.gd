@@ -15,16 +15,21 @@ func _ready():
 
 
 func _on_Btn_fase_final_pressed():
-	get_tree().change_scene("res://Finais/Final.tscn")
+	# get_tree().change_scene("res://Finais/Final.tscn")
+	ComandosGerais.carregar_nova_fase("res://Finais/Final.tscn", get_parent())
 
 func _on_Btn_final_bom_pressed():
-	get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_bom.tscn")
+	# get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_bom.tscn")
+	ComandosGerais.carregar_nova_fase("res://Finais/Cutscenes/Cutscene_final_bom.tscn", get_parent())
 
 func _on_Btn_final_suicidio_pressed():
-	get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_suicidio.tscn")
+	# get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_suicidio.tscn")
+	ComandosGerais.carregar_nova_fase("res://Finais/Cutscenes/Cutscene_final_suicidio.tscn", get_parent())
 
 func _on_Btn_final_ignorar_pressed():
-	get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_ignorar.tscn")
+	# get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_ignorar.tscn")
+	ComandosGerais.carregar_nova_fase("res://Finais/Cutscenes/Cutscene_final_ignorar.tscn", get_parent())
 
 func _on_Btn_final_secreto_pressed():
-	get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_secreto.tscn")
+	# get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_secreto.tscn")
+	ComandosGerais.carregar_nova_fase("res://Finais/Cutscenes/Cutscene_final_secreto.tscn", get_parent())

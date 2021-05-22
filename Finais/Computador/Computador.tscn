@@ -78,7 +78,8 @@ __meta__ = {
 }
 
 [node name="Tela_pc" type="Sprite" parent="."]
-position = Vector2( 512, 303 )
+position = Vector2( 512, 304 )
+z_index = 1000
 texture = ExtResource( 1 )
 [connection signal="pressed" from="Dentro/Btn_desligar" to="." method="_on_Btn_desligar_pressed"]
 [connection signal="pressed" from="Dentro/Btn_registros" to="." method="_on_Btn_registros_pressed"]

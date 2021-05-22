@@ -25,7 +25,8 @@ func _ready():
 
 func _on_Btn_voltar_pressed():
 	SaveStats.ultimo_menu_selecionado = MENU_FASES
-	get_tree().change_scene("res://menus/Menu_saves.tscn")
+	# get_tree().change_scene("res://menus/Menu_saves.tscn")
+	ComandosGerais.carregar_nova_cena("res://menus/Menu_saves.tscn", self)
 
 func _on_Btn_fases_pressed():
 	menu_atual = MENU_FASES
@@ -42,7 +43,8 @@ func _on_Btn_finais_pressed():
 func _on_Btn_tutorial_pressed():
 	Sist_som.stop("Musica_menu")
 	Sist_som.comecar_musica_fase(1)
-	get_tree().change_scene("res://Tutorial/Tutorial.tscn")
+	# get_tree().change_scene("res://Tutorial/Tutorial.tscn")
+	ComandosGerais.carregar_nova_fase("res://Tutorial/Tutorial.tscn", self)
 
 func _on_Timer_anim_timeout(): 
 	if background.frame == FRAME_BACKGROUND_NORMAL:

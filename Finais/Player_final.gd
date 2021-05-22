@@ -5,9 +5,9 @@ const lista_entidades_interagiveis = ["Player", "Maquina de clones"]
 var vetor_velocidade = Vector2.ZERO
 var rotation_fix = PI / 2
 var pode_mirar = true
-onready var main_node = get_parent()
-onready var label_sair = get_parent().get_node("CanvasLayer/Label_sair")
-onready var label_pc = get_parent().get_node("CanvasLayer/Label_computador")
+onready var main_node = get_parent().get_parent()
+onready var label_sair = get_parent().get_parent().get_node("CanvasLayer/Label_sair")
+onready var label_pc = get_parent().get_parent().get_node("CanvasLayer/Label_computador")
 var alvo
 
 signal alvo_marcado(nome_alvo)
@@ -15,7 +15,8 @@ signal alvo_desmarcado()
 
 
 func _ready():
-	pass 
+	connect("alvo_desmarcado", main_node, "_on_Player_alvo_desmarcado")
+	connect("alvo_marcado", main_node, "_on_Player_alvo_marcado")
 	
 func _process(_delta):
 	movimentacao()

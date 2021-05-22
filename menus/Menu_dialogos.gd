@@ -21,11 +21,13 @@ func _on_Botao_pressionado(fase):  # Algum botão de fase foi selecionado (carre
 	Sist_som.stop("Musica_menu")
 	Sist_som.play("Musica_cutscene")
 	
-	get_tree().change_scene("res://Dialogos/Dialogo-root.tscn")
+	# get_tree().change_scene("res://Dialogos/Dialogo-root.tscn")
+	ComandosGerais.carregar_nova_cena("res://Dialogos/Dialogo-root.tscn", get_parent())
 
 
 func _on_Btn_voltar_pressed():
-	get_tree().change_scene("res://menus/Menu_fases.tscn")
+	# get_tree().change_scene("res://menus/Menu_fases.tscn")
+	ComandosGerais.carregar_nova_cena("res://menus/Menu_fases.tscn", get_parent())
 
 
 func criar_botoes(ultimo_liberado):

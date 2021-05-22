@@ -8,4 +8,5 @@ func _on_Btn_comecar_pressed():
 
 
 func _on_Btn_voltar_pressed():
-	get_tree().change_scene("res://menus/Menu_principal.tscn")
+	# get_tree().change_scene("res://menus/Menu_principal.tscn")
+	ComandosGerais.carregar_nova_cena("res://menus/Menu_principal.tscn", self)

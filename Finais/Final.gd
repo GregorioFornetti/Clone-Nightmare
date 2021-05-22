@@ -6,6 +6,7 @@ var final_iniciado = null
 var nome_funcao_transicao
 var opacidade = 0
 var velocidade_transicao = 0.004
+var possivel_fechar = true
 
 enum {FINAL_SUICIDIO = 1, FINAL_BOM, FINAL_IGNORAR, FINAL_SECRETO}
 # FINAL_SUICIDIO : final em que o jogador se mata.
@@ -39,6 +40,9 @@ func _input(event):
 		
 		if final_selecionado:
 			iniciar_final()
+	
+	if event.get_action_strength("ui_cancel") and possivel_fechar:
+		ComandosGerais.carregar_nova_cena("res://menus/Menu_geral.tscn", self)
 
 
 func _on_Player_alvo_marcado(nome_alvo):
@@ -52,18 +56,22 @@ func iniciar_final():
 	transicao_color_rect.visible = true
 	final_iniciado = final_selecionado
 	nome_funcao_transicao = dic_final[final_selecionado]
-	$Player.desmarcar_alvo()
+	$Fase/Player.desmarcar_alvo()
 
 func selecionar_cena_final():
 	match final_iniciado:
 		FINAL_SUICIDIO:
-			get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_suicidio.tscn")
+			ComandosGerais.carregar_nova_cena("res://Finais/Cutscenes/Cutscene_final_suicidio.tscn", self)
+			# get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_suicidio.tscn")
 		FINAL_BOM:
-			get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_bom.tscn")
+			ComandosGerais.carregar_nova_cena("res://Finais/Cutscenes/Cutscene_final_bom.tscn", self)
+			# get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_bom.tscn")
 		FINAL_IGNORAR:
-			get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_ignorar.tscn")
+			ComandosGerais.carregar_nova_cena("res://Finais/Cutscenes/Cutscene_final_ignorar.tscn", self)
+			# get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_ignorar.tscn")
 		FINAL_SECRETO:
-			get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_secreto.tscn")
+			ComandosGerais.carregar_nova_cena("res://Finais/Cutscenes/Cutscene_final_secreto.tscn", self)
+			# get_tree().change_scene("res://Finais/Cutscenes/Cutscene_final_secreto.tscn")
 
 func transicao_padrao():
 	opacidade += velocidade_transicao

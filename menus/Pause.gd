@@ -29,9 +29,11 @@ func _process(_delta):
 			audio_fase.volume_db = 0
 			if FASE_ATUAL == 0:
 				Sist_som.play("Musica_menu")
-				get_tree().change_scene("res://Tutorial/Menu_final_tutorial.tscn")
+				# get_tree().change_scene("res://Tutorial/Menu_final_tutorial.tscn")
+				ComandosGerais.carregar_nova_cena("res://Tutorial/Menu_final_tutorial.tscn", get_parent().get_parent())
 			else:
-				get_tree().change_scene("res://Dialogos/Dialogo-root.tscn")
+				# get_tree().change_scene("res://Dialogos/Dialogo-root.tscn")
+				ComandosGerais.carregar_nova_cena("res://Dialogos/Dialogo-root.tscn", get_parent().get_parent())
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel") and not desabilitado and not has_node("Menu_opcoes"):
@@ -69,14 +71,18 @@ func adicionar_elementos_derrota(motivo_derrota):
 
 func _on_Btn_Reiniciar_pressed():
 	get_tree().paused = false
-	get_tree().reload_current_scene()
+	if ComandosGerais.qnt_jogos_abertos == 1:
+		get_tree().reload_current_scene()
+	else:
+		ComandosGerais.carregar_nova_fase("res://Fases/fase" + str(FASE_ATUAL) + ".tscn", get_parent().get_parent())
 
 
 func _on_Btn_Voltar_pressed():
 	get_tree().paused = false
 	Sist_som.parar_musicas_fase()
 	Sist_som.play("Musica_menu")
-	get_tree().change_scene("res://menus/Menu_geral.tscn")
+	# get_tree().change_scene("res://menus/Menu_geral.tscn")
+	ComandosGerais.carregar_nova_cena("res://menus/Menu_geral.tscn", get_parent().get_parent())
 
 func _on_Btn_Opcoes_pressed():
 	var menu_opcoes = Menu_opcoes.instance()

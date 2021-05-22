@@ -109,11 +109,14 @@ func mudar_menu():
 	Sist_som.parar_sons_cutscene()
 	Sist_som.play("Musica_menu")
 	if SaveStats.fase_atual == 0:  # Jogador está acessando pela galeria
-		get_tree().change_scene("res://menus/Menu_geral.tscn")
+		# get_tree().change_scene("res://menus/Menu_geral.tscn")
+		ComandosGerais.carregar_nova_cena("res://menus/Menu_geral.tscn", self)
 	elif SaveStats.num_dialogo_atual == 20:
-		get_tree().change_scene("res://Finais/Final.tscn")
+		# get_tree().change_scene("res://Finais/Final.tscn")
+		ComandosGerais.carregar_nova_cena("res://Finais/Final.tscn", self)
 	else:  # Jogador está acessando pela cutscene automática após vitória
-		get_tree().change_scene("res://menus/Menu_vitoria.tscn") # Acabou os dialogos, ir para o menu de vitória.
+		# get_tree().change_scene("res://menus/Menu_vitoria.tscn") # Acabou os dialogos, ir para o menu de vitória.
+		ComandosGerais.carregar_nova_cena("res://menus/Menu_vitoria.tscn", self)
 
 func atualizar_box_dialogo(dic_dialogo, comecar_musica):
 	# Atualizar textos/labels

@@ -1,5 +1,9 @@
 extends Node
 
+var qnt_jogos_abertos = 1
+onready var nodes_salvar_fases = []
+onready var nodes_salvar_menus = []
+
 # Node para criar arquivos iniciais, controlar comandos que devem funcionar em todo jogo e
 # aplicar as configurações iniciais do jogo
 # Ex: comando F11 deve colocar a tela cheia a qualquer momento
@@ -42,12 +46,6 @@ func _input(event):
 	if event.is_action_pressed("tela_cheia"):
 		OS.set_window_fullscreen(not OS.window_fullscreen)
 
-func apagar_arquivo(slot_number, path):
-	var dir = Directory.new()
-	#teste = dir.remove(str(slot_number) + ".dat")
-	var teste = dir.remove(path)
-	print(teste)
-
 func aplicar_vol_audio(audio, value):
 	var VOL_MIN = -60
 	if value == VOL_MIN:
@@ -60,3 +58,22 @@ func aplicar_resolucao(resolucao):
 		OS.set_window_size(Vector2(resolucao.x, resolucao.y))
 	else:
 		OS.set_window_fullscreen(true)
+
+
+func carregar_nova_cena(cena, instancia_atual):
+	if qnt_jogos_abertos == 1:
+		get_tree().change_scene(cena)
+	else:
+		var nova_cena = load(cena).instance()
+		nodes_salvar_menus[-1].add_child(nova_cena)
+		nodes_salvar_menus[-1].visible = true
+		instancia_atual.queue_free()
+
+func carregar_nova_fase(cena, instancia_atual):
+	if qnt_jogos_abertos == 1:
+		get_tree().change_scene(cena)
+	else:
+		var nova_cena = load(cena).instance()
+		nodes_salvar_fases[-1].add_child(nova_cena)
+		nodes_salvar_menus[-1].visible = false
+		instancia_atual.queue_free()
