@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Sprites/Screenshots_fases/Fase6.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Screenshots_fases/Fase8.png" type="Texture" id=2]
@@ -33,6 +33,7 @@
 [ext_resource path="res://Sprites/Buttons/finais.png" type="Texture" id=31]
 [ext_resource path="res://Sprites/Buttons/tuttorial.png" type="Texture" id=32]
 [ext_resource path="res://Sprites/Menus e Cutscene/menu-fases-Sheet.png" type="Texture" id=33]
+[ext_resource path="res://menus/Menu_estatisticas.gd" type="Script" id=34]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Transic_maquina"
@@ -67,20 +68,19 @@ tracks/0/keys = {
 [node name="Menu_geral" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -1.32684
-margin_bottom = -1.32684
 script = ExtResource( 25 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 512, 303 )
+position = Vector2( 512, 304 )
 texture = ExtResource( 33 )
 hframes = 3
 frame = 2
 
 [node name="Menu_fases" type="Control" parent="."]
+visible = false
 script = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -474,6 +474,980 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Menu_estatisticas" type="Control" parent="."]
+margin_left = 56.6427
+margin_top = 71.7844
+margin_right = 978.643
+margin_bottom = 443.784
+script = ExtResource( 34 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titulos" type="GridContainer" parent="Menu_estatisticas"]
+margin_left = 200.0
+margin_top = 7.0
+margin_right = 612.0
+margin_bottom = 21.0
+rect_scale = Vector2( 1.5, 1.5 )
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titulo1" type="Label" parent="Menu_estatisticas/Titulos"]
+margin_right = 100.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 100, 0 )
+text = "Tentativas"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titulo2" type="Label" parent="Menu_estatisticas/Titulos"]
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 100, 0 )
+text = "Derrotas"
+align = 1
+
+[node name="Titulo3" type="Label" parent="Menu_estatisticas/Titulos"]
+margin_left = 208.0
+margin_right = 308.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 100, 0 )
+text = "Tempo gasto"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titulo4" type="Label" parent="Menu_estatisticas/Titulos"]
+margin_left = 312.0
+margin_right = 412.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 100, 0 )
+text = "Melhor tempo"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Menu_estatisticas"]
+margin_left = 130.0
+margin_top = 38.0
+margin_right = 598.0
+margin_bottom = 268.0
+rect_scale = Vector2( 1.5, 1.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Menu_estatisticas/ScrollContainer"]
+margin_right = 465.0
+margin_bottom = 374.0
+columns = 5
+
+[node name="Lbl_fase1" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_right = 49.0
+margin_bottom = 14.0
+text = "Fase 1"
+align = 1
+
+[node name="Lbl_tentativas_1" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_right = 153.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotas_1" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_right = 257.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGasto_1" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_right = 361.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempo_1" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_right = 465.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_fase2" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_top = 18.0
+margin_right = 49.0
+margin_bottom = 32.0
+text = "Fase 2"
+align = 1
+
+[node name="Lbl_tentativas_2" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_top = 18.0
+margin_right = 153.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotas_2" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_top = 18.0
+margin_right = 257.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGasto_2" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 18.0
+margin_right = 361.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempo_2" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_top = 18.0
+margin_right = 465.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_fase3" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_top = 36.0
+margin_right = 49.0
+margin_bottom = 50.0
+text = "Fase 3"
+align = 1
+
+[node name="Lbl_tentativas_3" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_top = 36.0
+margin_right = 153.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotas_3" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_top = 36.0
+margin_right = 257.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGasto_3" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 36.0
+margin_right = 361.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempo_3" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_top = 36.0
+margin_right = 465.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_fase4" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_top = 54.0
+margin_right = 49.0
+margin_bottom = 68.0
+text = "Fase 4"
+align = 1
+
+[node name="Lbl_tentativas_4" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_top = 54.0
+margin_right = 153.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotas_4" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_top = 54.0
+margin_right = 257.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGasto_4" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 54.0
+margin_right = 361.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempo_4" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_top = 54.0
+margin_right = 465.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_fase5" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_top = 72.0
+margin_right = 49.0
+margin_bottom = 86.0
+text = "Fase 5"
+align = 1
+
+[node name="Lbl_tentativas_5" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_top = 72.0
+margin_right = 153.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotas_5" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_top = 72.0
+margin_right = 257.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGasto_5" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 72.0
+margin_right = 361.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempo_5" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_top = 72.0
+margin_right = 465.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_fase6" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_top = 90.0
+margin_right = 49.0
+margin_bottom = 104.0
+text = "Fase 6"
+align = 1
+
+[node name="Lbl_tentativas_6" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_top = 90.0
+margin_right = 153.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotas_6" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_top = 90.0
+margin_right = 257.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGasto_6" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 90.0
+margin_right = 361.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempo_6" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_top = 90.0
+margin_right = 465.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_fase7" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_top = 108.0
+margin_right = 49.0
+margin_bottom = 122.0
+text = "Fase 7"
+align = 1
+
+[node name="Lbl_tentativas_7" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_top = 108.0
+margin_right = 153.0
+margin_bottom = 122.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotas_7" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_top = 108.0
+margin_right = 257.0
+margin_bottom = 122.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGasto_7" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 108.0
+margin_right = 361.0
+margin_bottom = 122.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempo_7" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_top = 108.0
+margin_right = 465.0
+margin_bottom = 122.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_fase8" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_top = 126.0
+margin_right = 49.0
+margin_bottom = 140.0
+text = "Fase 8"
+align = 1
+
+[node name="Lbl_tentativas_8" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_top = 126.0
+margin_right = 153.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotas_8" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_top = 126.0
+margin_right = 257.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGasto_8" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 126.0
+margin_right = 361.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempo_8" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_top = 126.0
+margin_right = 465.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_fase9" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_top = 144.0
+margin_right = 49.0
+margin_bottom = 158.0
+text = "Fase 9"
+align = 1
+
+[node name="Lbl_tentativas_9" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_top = 144.0
+margin_right = 153.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotas_9" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_top = 144.0
+margin_right = 257.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGasto_9" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 144.0
+margin_right = 361.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempo_9" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_top = 144.0
+margin_right = 465.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_fase10" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_top = 162.0
+margin_right = 49.0
+margin_bottom = 176.0
+text = "Fase 10"
+align = 1
+
+[node name="Lbl_tentativas_10" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_top = 162.0
+margin_right = 153.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotas_10" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_top = 162.0
+margin_right = 257.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGasto_10" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 162.0
+margin_right = 361.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempo_10" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_top = 162.0
+margin_right = 465.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_fase11" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_top = 180.0
+margin_right = 49.0
+margin_bottom = 194.0
+text = "Fase 11"
+align = 1
+
+[node name="Lbl_tentativas_11" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_top = 180.0
+margin_right = 153.0
+margin_bottom = 194.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotas_11" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_top = 180.0
+margin_right = 257.0
+margin_bottom = 194.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGasto_11" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 180.0
+margin_right = 361.0
+margin_bottom = 194.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempo_11" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_top = 180.0
+margin_right = 465.0
+margin_bottom = 194.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_fase12" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_top = 198.0
+margin_right = 49.0
+margin_bottom = 212.0
+text = "Fase 12"
+align = 1
+
+[node name="Lbl_tentativas_12" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_top = 198.0
+margin_right = 153.0
+margin_bottom = 212.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotas_12" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_top = 198.0
+margin_right = 257.0
+margin_bottom = 212.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGasto_12" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 198.0
+margin_right = 361.0
+margin_bottom = 212.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempo_12" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_top = 198.0
+margin_right = 465.0
+margin_bottom = 212.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_fase13" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_top = 216.0
+margin_right = 49.0
+margin_bottom = 230.0
+text = "Fase 13"
+align = 1
+
+[node name="Lbl_tentativas_13" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_top = 216.0
+margin_right = 153.0
+margin_bottom = 230.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotas_13" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_top = 216.0
+margin_right = 257.0
+margin_bottom = 230.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGasto_13" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 216.0
+margin_right = 361.0
+margin_bottom = 230.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempo_13" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_top = 216.0
+margin_right = 465.0
+margin_bottom = 230.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_fase14" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_top = 234.0
+margin_right = 49.0
+margin_bottom = 248.0
+text = "Fase 14"
+align = 1
+
+[node name="Lbl_tentativas_14" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_top = 234.0
+margin_right = 153.0
+margin_bottom = 248.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotas_14" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_top = 234.0
+margin_right = 257.0
+margin_bottom = 248.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGasto_14" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 234.0
+margin_right = 361.0
+margin_bottom = 248.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempo_14" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_top = 234.0
+margin_right = 465.0
+margin_bottom = 248.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_fase15" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_top = 252.0
+margin_right = 49.0
+margin_bottom = 266.0
+text = "Fase 15"
+align = 1
+
+[node name="Lbl_tentativas_15" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_top = 252.0
+margin_right = 153.0
+margin_bottom = 266.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotas_15" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_top = 252.0
+margin_right = 257.0
+margin_bottom = 266.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGasto_15" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 252.0
+margin_right = 361.0
+margin_bottom = 266.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempo_15" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_top = 252.0
+margin_right = 465.0
+margin_bottom = 266.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_fase16" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_top = 270.0
+margin_right = 49.0
+margin_bottom = 284.0
+text = "Fase 16"
+align = 1
+
+[node name="Lbl_tentativas_16" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_top = 270.0
+margin_right = 153.0
+margin_bottom = 284.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotas_16" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_top = 270.0
+margin_right = 257.0
+margin_bottom = 284.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGasto_16" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 270.0
+margin_right = 361.0
+margin_bottom = 284.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempo_16" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_top = 270.0
+margin_right = 465.0
+margin_bottom = 284.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_fase17" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_top = 288.0
+margin_right = 49.0
+margin_bottom = 302.0
+text = "Fase 17"
+align = 1
+
+[node name="Lbl_tentativas_17" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_top = 288.0
+margin_right = 153.0
+margin_bottom = 302.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotas_17" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_top = 288.0
+margin_right = 257.0
+margin_bottom = 302.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGasto_17" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 288.0
+margin_right = 361.0
+margin_bottom = 302.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempo_17" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_top = 288.0
+margin_right = 465.0
+margin_bottom = 302.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_fase18" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_top = 306.0
+margin_right = 49.0
+margin_bottom = 320.0
+text = "Fase 18"
+align = 1
+
+[node name="Lbl_tentativas_18" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_top = 306.0
+margin_right = 153.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotas_18" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_top = 306.0
+margin_right = 257.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGasto_18" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 306.0
+margin_right = 361.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempo_18" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_top = 306.0
+margin_right = 465.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_fase19" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_top = 324.0
+margin_right = 49.0
+margin_bottom = 338.0
+text = "Fase 19"
+align = 1
+
+[node name="Lbl_tentativas_19" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_top = 324.0
+margin_right = 153.0
+margin_bottom = 338.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotas_19" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_top = 324.0
+margin_right = 257.0
+margin_bottom = 338.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGasto_19" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 324.0
+margin_right = 361.0
+margin_bottom = 338.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempo_19" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_top = 324.0
+margin_right = 465.0
+margin_bottom = 338.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_fase20" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_top = 342.0
+margin_right = 49.0
+margin_bottom = 356.0
+text = "Fase 20"
+align = 1
+
+[node name="Lbl_tentativas_20" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_top = 342.0
+margin_right = 153.0
+margin_bottom = 356.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotas_20" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_top = 342.0
+margin_right = 257.0
+margin_bottom = 356.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGasto_20" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 342.0
+margin_right = 361.0
+margin_bottom = 356.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempo_20" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_top = 342.0
+margin_right = 465.0
+margin_bottom = 356.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_geral" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_top = 360.0
+margin_right = 49.0
+margin_bottom = 374.0
+text = "Geral"
+align = 1
+
+[node name="Lbl_tentativasGeral" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 53.0
+margin_top = 360.0
+margin_right = 153.0
+margin_bottom = 374.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_derrotasGeral" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 157.0
+margin_top = 360.0
+margin_right = 257.0
+margin_bottom = 374.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_tempoGastoGeral" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 261.0
+margin_top = 360.0
+margin_right = 361.0
+margin_bottom = 374.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
+[node name="Lbl_melhorTempoGeral" type="Label" parent="Menu_estatisticas/ScrollContainer/GridContainer"]
+margin_left = 365.0
+margin_top = 360.0
+margin_right = 465.0
+margin_bottom = 374.0
+rect_min_size = Vector2( 100, 0 )
+text = "0"
+align = 1
+
 [node name="Btn_voltar" parent="." instance=ExtResource( 27 )]
 margin_left = 20.0
 margin_top = 555.0
@@ -482,23 +1456,23 @@ margin_bottom = -29.0
 texture_normal = ExtResource( 28 )
 
 [node name="Btn_fases" parent="." instance=ExtResource( 27 )]
-margin_left = 340.0
+margin_left = 250.0
 margin_top = 555.0
-margin_right = -632.0
+margin_right = -722.0
 margin_bottom = -30.0
 texture_normal = ExtResource( 29 )
 
 [node name="Btn_dialogos" parent="." instance=ExtResource( 27 )]
-margin_left = 455.0
+margin_left = 370.0
 margin_top = 555.0
-margin_right = -511.0
+margin_right = -596.0
 margin_bottom = -28.0
 texture_normal = ExtResource( 30 )
 
 [node name="Btn_finais" parent="." instance=ExtResource( 27 )]
-margin_left = 585.0
+margin_left = 600.0
 margin_top = 555.0
-margin_right = -387.0
+margin_right = -372.0
 margin_bottom = -30.0
 texture_normal = ExtResource( 31 )
 
@@ -508,6 +1482,16 @@ margin_top = 555.0
 margin_right = -90.9999
 margin_bottom = -29.0
 texture_normal = ExtResource( 32 )
+
+[node name="Btn_estatisticas" type="Button" parent="."]
+margin_left = 502.066
+margin_top = 571.387
+margin_right = 586.066
+margin_bottom = 591.387
+text = "Estatisticas"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Transic_maquina = SubResource( 1 )
@@ -526,6 +1510,7 @@ anims/Transic_normal = SubResource( 2 )
 [connection signal="pressed" from="Btn_dialogos" to="." method="_on_Btn_dialogos_pressed"]
 [connection signal="pressed" from="Btn_finais" to="." method="_on_Btn_finais_pressed"]
 [connection signal="pressed" from="Btn_tutorial" to="." method="_on_Btn_tutorial_pressed"]
+[connection signal="pressed" from="Btn_estatisticas" to="." method="_on_Btn_estatisticas_pressed"]
 [connection signal="timeout" from="Timer_anim" to="." method="_on_Timer_anim_timeout"]
 
 [editable path="Menu_fases/Pagina1/Btn_fase1"]

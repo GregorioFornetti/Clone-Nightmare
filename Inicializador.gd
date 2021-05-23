@@ -60,6 +60,9 @@ func aplicar_resolucao(resolucao):
 		OS.set_window_fullscreen(true)
 
 
+func formatar_tempo(segundos):
+	return "%02d:%02d" % [segundos / 60, segundos % 60]
+
 func carregar_nova_cena(cena, instancia_atual):
 	if qnt_jogos_abertos == 1:
 		get_tree().change_scene(cena)

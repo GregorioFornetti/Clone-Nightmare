@@ -22,7 +22,7 @@ one_shot = true
 [node name="TileMap-objetos" parent="." index="4"]
 tile_data = PoolIntArray( -2490414, 1610612738, 0, -2490406, 1610612738, 0, -2490398, 1610612738, 0, -2228276, -1610612734, 0, -2228246, -1073741822, 0, -1703988, -1610612734, 0, -1703958, -1073741822, 0, -1179700, -1610612734, 0, -1179670, -1073741822, 0 )
 
-[node name="camera" parent="." index="5"]
+[node name="camera" parent="." index="6"]
 limite_zoom = 1.5
 
 [node name="CanvasTutorialMecanica" type="CanvasLayer" parent="." index="7"]
@@ -195,7 +195,7 @@ one_shot = true
 wait_time = 3.0
 one_shot = true
 
-[node name="StaticBody2D" parent="." index="12"]
+[node name="StaticBody2D" parent="." index="13"]
 collision_layer = 32
 collision_mask = 0
 
@@ -203,9 +203,9 @@ collision_mask = 0
 position = Vector2( 0, 2.93634 )
 polygon = PoolVector2Array( 1189.99, -972.98, -1200.03, -974.89, -1199.41, 907.657, 1176.77, 908.745, 1191.83, -970.521, 960.006, -738.549, 961.018, 733.774, -961.208, 733.152, -959.058, -739.299, 959.524, -738.748 )
 [connection signal="timeout" from="Timer_comecar" to="." method="_on_Timer_comecar_timeout"]
-[connection signal="player_atirou" from="Player" to="GameStats" method="_on_Player_player_atirou"]
 [connection signal="acabou_tutorial_interface" from="CanvasTutorialInterface/Tut_interface" to="." method="_on_Tut_interface_acabou_tutorial_interface"]
 [connection signal="pressed" from="CanvasTutorialInterface/Tut_interface/Btn_proximo" to="CanvasTutorialInterface/Tut_interface" method="_on_Btn_proximo_pressed"]
+[connection signal="player_atirou" from="Player" to="GameStats" method="_on_Player_player_atirou"]
 [connection signal="timeout" from="TimerSpawnInimigoParado" to="." method="_on_TimerSpawnInimigoParado_timeout"]
 [connection signal="timeout" from="TimerSpawnInimigoComum" to="." method="_on_TimerSpawnInimigoComum_timeout"]
 [connection signal="pressed" from="CanvasLayer/Pause/Btn_Reiniciar" to="CanvasLayer/Pause" method="_on_Btn_Reiniciar_pressed"]

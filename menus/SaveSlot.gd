@@ -38,6 +38,8 @@ func _on_Btn_comecar_pressed():
 		"final ignorar liberado" : false,
 		"final secreto liberado" : false
 	}
+	for i in range(1, 21):
+		dados_save["fase" + str(i)] = {"tentativas" : 0, "derrotas" : 0, "tempoGasto" : 0, "melhorTempo" : 0}
 	
 	var file = File.new()
 	file.open(save_path, File.WRITE)

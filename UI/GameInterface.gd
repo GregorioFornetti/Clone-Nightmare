@@ -17,6 +17,8 @@ func atualizar_label_inimigo(quant_atual_inimigos):
 func atualizar_label_bullets(quant_atual_bullets):
 	$Control/LabelBullets.text = 'Munição restante: ' + str(quant_atual_bullets)
 
+func atualizar_label_tempo(segundos):
+	$Control/LabelTempo.text = "Tempo:  " + ComandosGerais.formatar_tempo(segundos)
 
 func _on_camera_atualizar_botao_cam():
 	Btn_centralizar.pressed = not Btn_centralizar.pressed

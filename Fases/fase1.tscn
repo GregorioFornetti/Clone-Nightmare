@@ -22,7 +22,7 @@ FASE_ATUAL = 1
 
 [node name="GameInterface" parent="." instance=ExtResource( 8 )]
 
-[node name="Btn_slow" parent="GameInterface/Control" index="5"]
+[node name="Btn_slow" parent="GameInterface/Control" index="6"]
 focus_mode = 0
 toggle_mode = true
 enabled_focus_mode = 0
@@ -162,6 +162,9 @@ color = Color( 0.0823529, 0.0784314, 0.0784314, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
 [connection signal="acabou_inimigos" from="GameStats" to="CanvasLayer/Pause" method="_on_GameStats_acabou_inimigos"]
 [connection signal="acabou_municao" from="GameStats" to="CanvasLayer/Pause" method="_on_GameStats_acabou_municao"]
 [connection signal="pressed" from="GameInterface/Control/Btn_centralizar" to="camera" method="_on_Btn_centralizar_pressed"]
@@ -171,6 +174,7 @@ __meta__ = {
 [connection signal="pressed" from="CanvasLayer/Pause/Btn_Reiniciar" to="CanvasLayer/Pause" method="_on_Btn_Reiniciar_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Btn_Voltar" to="CanvasLayer/Pause" method="_on_Btn_Voltar_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Btn_Opcoes" to="CanvasLayer/Pause" method="_on_Btn_Opcoes_pressed"]
+[connection signal="timeout" from="Timer" to="GameStats" method="_on_Timer_timeout"]
 
 [editable path="GameInterface"]
 

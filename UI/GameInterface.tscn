@@ -15,7 +15,6 @@ script = ExtResource( 6 )
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_scale = Vector2( 0.9, 0.9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -44,11 +43,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="LabelTempo" type="Label" parent="Control"]
+margin_left = 813.46
+margin_top = 158.458
+margin_right = 1009.46
+margin_bottom = 172.458
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Place holder"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ProgressBar" type="ProgressBar" parent="Control"]
 margin_left = 814.939
-margin_top = 159.2
+margin_top = 180.43
 margin_right = 1014.94
-margin_bottom = 173.2
+margin_bottom = 194.43
 max_value = 1.5
 percent_visible = false
 script = ExtResource( 2 )
@@ -92,3 +103,6 @@ margin_right = 898.288
 margin_bottom = 598.573
 icon = ExtResource( 7 )
 script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

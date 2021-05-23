@@ -18,7 +18,7 @@ position = Vector2( -0.949951, 1.89999 )
 
 [node name="GameInterface" parent="." instance=ExtResource( 10 )]
 
-[node name="Btn_slow" parent="GameInterface/Control" index="5"]
+[node name="Btn_slow" parent="GameInterface/Control" index="6"]
 focus_mode = 0
 toggle_mode = true
 enabled_focus_mode = 0
@@ -141,12 +141,16 @@ color = Color( 0.0823529, 0.0784314, 0.0784314, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
 [connection signal="acabou_inimigos" from="GameStats" to="CanvasLayer/Pause" method="_on_GameStats_acabou_inimigos"]
 [connection signal="acabou_municao" from="GameStats" to="CanvasLayer/Pause" method="_on_GameStats_acabou_municao"]
 [connection signal="pressed" from="GameInterface/Control/Btn_centralizar" to="camera" method="_on_Btn_centralizar_pressed"]
 [connection signal="pressed" from="GameInterface/Control/Btn_slow" to="GameStats" method="_on_Btn_slow_pressed"]
 [connection signal="player_morreu" from="Player" to="CanvasLayer/Pause" method="_on_Player_player_morreu"]
 [connection signal="pressed" from="CanvasLayer/Pause/Btn_Opcoes" to="CanvasLayer/Pause" method="_on_Btn_Opcoes_pressed"]
+[connection signal="timeout" from="Timer" to="GameStats" method="_on_Timer_timeout"]
 
 [editable path="GameInterface"]
 

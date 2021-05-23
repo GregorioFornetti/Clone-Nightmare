@@ -10,11 +10,12 @@ onready var timer = get_node("Timer_anim")
 onready var background = get_node("Background")
 var pagina_atual = 0
 
-enum {MENU_FASES, MENU_DIALOGOS, MENU_FINAIS}
+enum {MENU_FASES, MENU_DIALOGOS, MENU_ESTATISTICAS, MENU_FINAIS}
 var menu_atual = SaveStats.ultimo_menu_selecionado
 onready var dados_menus = [
 	{"menu" : MENU_FASES, "botao": $Btn_fases, "node": $Menu_fases},
 	{"menu" : MENU_DIALOGOS, "botao": $Btn_dialogos, "node": $Menu_dialogos},
+	{"menu" : MENU_ESTATISTICAS, "botao": $Btn_estatisticas, "node": $Menu_estatisticas},
 	{"menu" : MENU_FINAIS, "botao": $Btn_finais, "node": $Menu_finais}
 ]
 
@@ -34,6 +35,10 @@ func _on_Btn_fases_pressed():
 
 func _on_Btn_dialogos_pressed():
 	menu_atual = MENU_DIALOGOS
+	mudar_menu_atual()
+
+func _on_Btn_estatisticas_pressed():
+	menu_atual = MENU_ESTATISTICAS
 	mudar_menu_atual()
 
 func _on_Btn_finais_pressed():

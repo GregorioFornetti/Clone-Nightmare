@@ -55,9 +55,6 @@ position = Vector2( -470, -470 )
 [node name="Portal2" parent="Portal_balas4" index="1"]
 position = Vector2( -336.227, -823.649 )
 
-[node name="camera" parent="." index="8"]
-limite_zoom = 1.4
-
 [node name="Enemy_mov_igual3" parent="." index="9" instance=ExtResource( 6 )]
 position = Vector2( 1049.37, -32.5441 )
 
@@ -70,10 +67,13 @@ position = Vector2( 501.501, 467.851 )
 [node name="Enemy3" parent="." index="12" instance=ExtResource( 1 )]
 position = Vector2( -171.069, -506.93 )
 
-[node name="Player" parent="." index="13"]
+[node name="camera" parent="." index="13"]
+limite_zoom = 1.4
+
+[node name="Player" parent="." index="14"]
 position = Vector2( 42.2985, -48.4154 )
 
-[node name="StaticBody2D" parent="." index="15"]
+[node name="StaticBody2D" parent="." index="16"]
 collision_mask = 0
 
 [node name="CollisionPolygon2D" parent="StaticBody2D" index="0"]

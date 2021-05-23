@@ -9,6 +9,7 @@ onready var GameInterface = get_parent().get_node("GameInterface")
 var quant_balas_em_jogo = 0
 var jogo_acabou = false
 var multiplicador_vel = 1
+var tempo_atual = 0
 
 signal acabou_municao()
 signal acabou_inimigos()
@@ -18,6 +19,7 @@ func _ready():
 	SaveStats.num_dialogo_atual = FASE_ATUAL
 	GameInterface.atualizar_label_bullets(QUANT_INICIAL_BULLETS)
 	GameInterface.atualizar_label_inimigo(QUANT_INICIAL_INIMIGOS)
+	GameInterface.atualizar_label_tempo(0)
 
 func _input(event):
 	if event.get_action_strength("botao_vel"):
@@ -52,3 +54,6 @@ func alterar_velocidade():
 func _on_Btn_slow_pressed():
 	alterar_velocidade()
 
+func _on_Timer_timeout():
+	tempo_atual += 1
+	GameInterface.atualizar_label_tempo(tempo_atual)

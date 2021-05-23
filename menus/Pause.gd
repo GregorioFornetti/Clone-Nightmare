@@ -7,17 +7,30 @@ onready var GameStats = get_parent().get_parent().get_node("GameStats")
 onready var FASE_ATUAL = get_parent().get_parent().get_node("GameStats").FASE_ATUAL
 onready var background_transicao = get_parent().get_node("Transicao")
 onready var Menu_opcoes = preload("res://menus/Menu_opcoes.tscn")
+onready var str_fase_atual = "fase" + str(FASE_ATUAL)
 var acabou_inimigos = false
 var opacidade = 0
 var volume_atual = 0
 var audio_fase
 
+func _ready():
+	if FASE_ATUAL != 0:
+		SaveStats.dados_save[str_fase_atual]["tentativas"] += 1
+
 func _process(_delta):
 	if acabou_inimigos and not player_perdeu and GameStats.quant_balas_em_jogo == 0:
 		# Fazer uma transição para cutscene
 		if not desabilitado:
+			if FASE_ATUAL != 0:
+				SaveStats.dados_save[str_fase_atual]["tempoGasto"] += GameStats.tempo_atual
+				if SaveStats.dados_save[str_fase_atual]["melhorTempo"] != 0:
+					SaveStats.dados_save[str_fase_atual]["melhorTempo"] = min(SaveStats.dados_save[str_fase_atual]["melhorTempo"], GameStats.tempo_atual)
+				else:
+					SaveStats.dados_save[str_fase_atual]["melhorTempo"] = GameStats.tempo_atual
+				SaveStats.salvar_nova_info()
+				SaveStats.passar_fase()
+			
 			desabilitado = true
-			SaveStats.passar_fase()
 			background_transicao.visible = true
 			audio_fase = Sist_som.coletar_obj_audio_fase(FASE_ATUAL)
 			Sist_som.play("Alarme")
@@ -41,6 +54,10 @@ func _input(event):
 		get_tree().paused = pausado
 		visible = pausado
 
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+		if FASE_ATUAL != 0:
+			SaveStats.salvar_nova_info()
 
 func _on_GameStats_acabou_inimigos():
 	acabou_inimigos = true
@@ -67,9 +84,14 @@ func adicionar_elementos_derrota(motivo_derrota):
 	$MotivoMorte.visible = true
 	$MotivoMorte.text = motivo_derrota
 	$TituloPause.text = 'Você perdeu'
+	SaveStats.dados_save[str_fase_atual]["derrotas"] += 1
 
 
 func _on_Btn_Reiniciar_pressed():
+	if FASE_ATUAL != 0:
+		SaveStats.dados_save[str_fase_atual]["tempoGasto"] += GameStats.tempo_atual
+		SaveStats.salvar_nova_info()
+	
 	get_tree().paused = false
 	if ComandosGerais.qnt_jogos_abertos == 1:
 		get_tree().reload_current_scene()
@@ -78,6 +100,10 @@ func _on_Btn_Reiniciar_pressed():
 
 
 func _on_Btn_Voltar_pressed():
+	if FASE_ATUAL != 0:
+		SaveStats.dados_save[str_fase_atual]["tempoGasto"] += GameStats.tempo_atual
+		SaveStats.salvar_nova_info()
+	
 	get_tree().paused = false
 	Sist_som.parar_musicas_fase()
 	Sist_som.play("Musica_menu")
