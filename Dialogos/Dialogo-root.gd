@@ -1,6 +1,6 @@
 extends Control
 
-const NOME_PLAYER = "Personagem"
+const NOME_PLAYER = "Charles"
 var nome_silhueta = "???????????"
 
 const DIC_HUMORES = {

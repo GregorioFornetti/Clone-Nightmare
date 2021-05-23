@@ -8,7 +8,8 @@ const SENHA_CORRETA = "15012016"
 
 func _on_Btn_acessar_pressed():
 	if input_senha.text == SENHA_CORRETA:
-		pass # Jogador conseguiu acessar o final secreto
+		# Jogador conseguiu acessar o final secreto
+		ComandosGerais.carregar_nova_cena("res://Finais/Cutscenes/Cutscene_final_secreto.tscn", get_parent().get_parent())
 	else:
 		timer_apagar_senha_incorreta.start()
 		label_senha_incorreta.visible = true
