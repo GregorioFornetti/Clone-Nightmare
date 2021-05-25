@@ -13,13 +13,13 @@
 [ext_resource path="res://Sprites/Screenshots_fases/Fase10.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Screenshots_fases/Fase2.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/Screenshots_fases/Fase15.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/Screenshots_fases/Fase17.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase19.png" type="Texture" id=14]
 [ext_resource path="res://Sprites/Screenshots_fases/Fase12.png" type="Texture" id=15]
 [ext_resource path="res://Sprites/Screenshots_fases/Fase14.png" type="Texture" id=16]
-[ext_resource path="res://Sprites/Screenshots_fases/Fase19.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase18.png" type="Texture" id=17]
 [ext_resource path="res://Sprites/Screenshots_fases/Fase16.png" type="Texture" id=18]
 [ext_resource path="res://Sprites/Screenshots_fases/Fase20.png" type="Texture" id=19]
-[ext_resource path="res://Sprites/Screenshots_fases/Fase18.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Screenshots_fases/Fase17.png" type="Texture" id=20]
 [ext_resource path="res://Sprites/Screenshots_fases/Fase13.png" type="Texture" id=21]
 [ext_resource path="res://menus/Menu_fases.gd" type="Script" id=22]
 [ext_resource path="res://menus/Btn_fase.tscn" type="PackedScene" id=23]
@@ -331,7 +331,7 @@ margin_right = 660.0
 margin_bottom = 275.0
 
 [node name="Teaser" parent="Menu_fases/Pagina4/Btn_fase17" index="0"]
-texture = ExtResource( 14 )
+texture = ExtResource( 20 )
 
 [node name="Label_titulo_fase" parent="Menu_fases/Pagina4/Btn_fase17" index="1"]
 margin_left = -36.0192
@@ -345,7 +345,7 @@ margin_right = 970.0
 margin_bottom = 275.0
 
 [node name="Teaser" parent="Menu_fases/Pagina4/Btn_fase18" index="0"]
-texture = ExtResource( 20 )
+texture = ExtResource( 17 )
 
 [node name="Label_titulo_fase" parent="Menu_fases/Pagina4/Btn_fase18" index="1"]
 margin_left = -35.4836
@@ -361,7 +361,7 @@ margin_right = 505.0
 margin_bottom = 545.0
 
 [node name="Teaser" parent="Menu_fases/Pagina4/Btn_fase19" index="0"]
-texture = ExtResource( 17 )
+texture = ExtResource( 14 )
 
 [node name="Label_titulo_fase" parent="Menu_fases/Pagina4/Btn_fase19" index="1"]
 margin_left = -36.3965
@@ -428,6 +428,9 @@ margin_right = 549.62
 margin_bottom = 150.02
 disabled = true
 text = "Fase final"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Btn_final_bom" type="Button" parent="Menu_finais"]
 margin_left = 375.786
@@ -454,12 +457,12 @@ disabled = true
 text = "final 3"
 
 [node name="Btn_final_secreto" type="Button" parent="Menu_finais"]
+visible = false
 margin_left = 469.815
 margin_top = 242.927
 margin_right = 560.815
 margin_bottom = 262.927
-disabled = true
-text = "final secreto"
+text = "Registros"
 __meta__ = {
 "_edit_use_anchors_": false
 }

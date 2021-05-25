@@ -19,8 +19,8 @@ func _input(event):
 		if label_atual.percent_visible != 1:
 			label_atual.percent_visible = 1
 		elif indice_atual == len(lista_historias) - 1:
-			Sist_som.stop("Musica_finais")
-			Sist_som.play("Musica_menus")
+			Sist_som.parar_musicas_fase()
+			Sist_som.play("Musica_menu")
 			# get_tree().change_scene("res://menus/Menu_geral.tscn")
 			ComandosGerais.carregar_nova_cena("res://menus/Menu_geral.tscn", self)
 		else:

@@ -73,4 +73,3 @@ func mudar_menu_atual():
 		else:
 			dados_menu["botao"].disabled = false
 			dados_menu["node"].visible = false
-

@@ -21,9 +21,13 @@ func _ready():
 
 func _input(event):
 	if event.get_action_strength("ui_right") and main.menu_atual == main.MENU_FASES:
-		ir_para_prox_pagina()
+		if pagina_atual != PAG_MAX:
+			Sist_som.play("Btn_click")
+			ir_para_prox_pagina()
 	elif event.get_action_strength("ui_left") and main.menu_atual == main.MENU_FASES:
-		ir_para_pagina_ant()
+		if pagina_atual != 0:
+			Sist_som.play("Btn_click")
+			ir_para_pagina_ant()
 
 
 func _on_Botao_pressionado(fase):  # Algum botão de fase foi selecionado (carregar tal fase)]

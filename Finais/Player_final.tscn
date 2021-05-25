@@ -1,15 +1,27 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Jogador/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Finais/Player_final.gd" type="Script" id=2]
 [ext_resource path="res://Inimigos/target.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Personagem/Cientista_sheet.png" type="Texture" id=4]
 
 [node name="Player" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
+[node name="Sprite" parent="." index="0"]
+position = Vector2( -0.737755, -11.4733 )
+texture = ExtResource( 4 )
+hframes = 3
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 1.42001, 0.788902 )
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( 1.94366, 1.00041 )
+
 [node name="target" type="Sprite" parent="." index="4"]
 visible = false
-position = Vector2( 0, -20 )
+position = Vector2( 1.2735, 10.465 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 

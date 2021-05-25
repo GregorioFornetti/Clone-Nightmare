@@ -42,6 +42,8 @@ func _input(event):
 			iniciar_final()
 	
 	if event.get_action_strength("ui_cancel") and possivel_fechar:
+		Sist_som.parar_musicas_fase()
+		Sist_som.play("Musica_menu")
 		ComandosGerais.carregar_nova_cena("res://menus/Menu_geral.tscn", self)
 
 

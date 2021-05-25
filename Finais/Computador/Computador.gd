@@ -32,8 +32,12 @@ func _on_Btn_senha_pressed():
 	dentro.add_child(txt_senha)
 
 func _on_Btn_jogo_clone_pressed():
+	Sist_som.parar_musicas_fase()
+	Sist_som.play("Musica_menu")
+	
 	ComandosGerais.qnt_jogos_abertos += 1
 	ComandosGerais.nodes_salvar_fases.append(node_salvar_fases)
 	ComandosGerais.nodes_salvar_menus.append(dentro)
+	
 	var novo_jogo = Novo_jogo.instance()
 	dentro.add_child(novo_jogo)

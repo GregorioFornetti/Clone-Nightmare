@@ -33,6 +33,7 @@ func marcar_alvo():
 		var space_state = get_world_2d().direct_space_state
 		var colisao = space_state.intersect_point(get_global_mouse_position())
 		if colisao and colisao[0]['collider'].name in lista_entidades_interagiveis:
+			$Sprite.frame = 1
 			# O jogador clicou em um interagivel:
 			if alvo == colisao[0]['collider']:
 				# Se ele clicou no mesmo interagivel que ele ja tinha clicado antes, desmarca-lo
@@ -42,7 +43,7 @@ func marcar_alvo():
 			if alvo:
 				alvo.get_node('target').visible = false  # Desmarcar interagivel antigo que havia sido marcado
 			if colisao[0]['collider'].name == "Player":
-				$Sprite.frame = 1  # Sprite suicidio
+				$Sprite.frame = 2  # Sprite suicidio
 			# Marcar nova entidade
 			emit_signal("alvo_marcado", colisao[0]['collider'].name)
 			alvo = colisao[0]['collider']
@@ -65,7 +66,7 @@ func desmarcar_alvo():
 	if alvo:
 		emit_signal("alvo_desmarcado")
 		alvo.get_node('target').visible = false
-		$Sprite.frame = 0
+		$Sprite.frame = 1
 		alvo = null
 	
 func _on_Saida_body_entered(_body):

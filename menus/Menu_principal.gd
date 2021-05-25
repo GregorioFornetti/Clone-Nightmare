@@ -18,10 +18,15 @@ func _on_Btn_sair_pressed():
 	if ComandosGerais.qnt_jogos_abertos == 1:
 		get_tree().quit()
 	else:
+		Sist_som.comecar_musica_fase(20)
+		Sist_som.stop("Musica_menu")
+		
 		ComandosGerais.qnt_jogos_abertos -= 1
 		ComandosGerais.nodes_salvar_fases.pop_back()
 		ComandosGerais.nodes_salvar_menus.pop_back()
+		
 		SaveStats.selected_save_path = get_parent().get_parent().save_path
+		
 		queue_free()
 
 func _on_Btn_opcoes_pressed():
