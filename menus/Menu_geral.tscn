@@ -22,7 +22,7 @@
 [ext_resource path="res://Sprites/Screenshots_fases/Fase18.png" type="Texture" id=20]
 [ext_resource path="res://Sprites/Screenshots_fases/Fase13.png" type="Texture" id=21]
 [ext_resource path="res://menus/Menu_fases.gd" type="Script" id=22]
-[ext_resource path="res://menus/Botao_fase.tscn" type="PackedScene" id=23]
+[ext_resource path="res://menus/Btn_fase.tscn" type="PackedScene" id=23]
 [ext_resource path="res://menus/Menu_dialogos.gd" type="Script" id=24]
 [ext_resource path="res://menus/Menu_geral.gd" type="Script" id=25]
 [ext_resource path="res://menus/Menu_finais.gd" type="Script" id=26]
@@ -80,7 +80,6 @@ hframes = 3
 frame = 2
 
 [node name="Menu_fases" type="Control" parent="."]
-visible = false
 script = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -387,31 +386,22 @@ margin_right = 12.8762
 margin_bottom = 22.2512
 text = "Fase 20"
 
-[node name="Btn_prox" type="Button" parent="Menu_fases"]
-margin_left = 968.957
-margin_top = 205.285
-margin_right = 1020.96
-margin_bottom = 411.285
-focus_mode = 0
-enabled_focus_mode = 0
-icon = ExtResource( 4 )
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Btn_prox" parent="Menu_fases" instance=ExtResource( 27 )]
+margin_left = 974.653
+margin_top = 205.248
+margin_right = 1014.65
+margin_bottom = 405.248
+rect_scale = Vector2( 1, 1 )
+texture_normal = ExtResource( 4 )
 
-[node name="Btn_ant" type="Button" parent="Menu_fases"]
+[node name="Btn_ant" parent="Menu_fases" instance=ExtResource( 27 )]
 visible = false
-margin_top = 205.0
-margin_right = 52.0
-margin_bottom = 411.0
-focus_mode = 0
-enabled_focus_mode = 0
-icon = ExtResource( 8 )
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_left = 6.5161
+margin_top = 195.483
+margin_right = 46.5161
+margin_bottom = 395.483
+rect_scale = Vector2( 1, 1 )
+texture_normal = ExtResource( 8 )
 
 [node name="Menu_dialogos" type="Control" parent="."]
 visible = false
@@ -475,6 +465,7 @@ __meta__ = {
 }
 
 [node name="Menu_estatisticas" type="Control" parent="."]
+visible = false
 margin_left = 56.6427
 margin_top = 71.7844
 margin_right = 978.643
