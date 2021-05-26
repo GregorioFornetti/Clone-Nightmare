@@ -1,13 +1,99 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Finais/Final.gd" type="Script" id=1]
 [ext_resource path="res://Finais/Fase_final.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Finais/GameStatsFinal.gd" type="Script" id=3]
 [ext_resource path="res://Finais/Computador/Computador.tscn" type="PackedScene" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Fugir"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Porta2:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Porta1:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 80.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Player:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 180.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Player:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 378 ), Vector2( 1, 378 ), Vector2( 1, 500 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Player/Sprite:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
 [node name="Final" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Fase" parent="." instance=ExtResource( 2 )]
+
+[node name="TileMap-objetos" parent="Fase" index="1"]
+tile_data = PoolIntArray( -1114099, 2, 0 )
+
+[node name="Maquina de clones" parent="Fase" index="5"]
+position = Vector2( -7.62939e-06, -224 )
+
+[node name="AnimationPlayer" parent="Fase/Maquina de clones" index="7"]
+playback_speed = 0.8
+
+[node name="Saida" parent="Fase" index="6"]
+position = Vector2( 0, 400 )
+
+[node name="Range_pc" parent="Fase" index="7"]
+position = Vector2( 272, -224 )
+
+[node name="GameStats" type="Node2D" parent="Fase"]
+script = ExtResource( 3 )
+
+[node name="AnimationPlayer_fugir" type="AnimationPlayer" parent="Fase"]
+playback_speed = 0.7
+anims/Fugir = SubResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -60,5 +146,12 @@ margin_bottom = 124.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="body_entered" from="Fase/Maquina de clones/Area2D" to="." method="_on_Area2D_body_entered"]
 
 [editable path="Fase"]
+
+[editable path="Fase/Player"]
+
+[editable path="Fase/camera"]
+
+[editable path="Fase/Maquina de clones"]

@@ -7,6 +7,7 @@ var nome_funcao_transicao
 var opacidade = 0
 var velocidade_transicao = 0.004
 var possivel_fechar = true
+var comecar_final_bom = false
 
 enum {FINAL_SUICIDIO = 1, FINAL_BOM, FINAL_IGNORAR, FINAL_SECRETO}
 # FINAL_SUICIDIO : final em que o jogador se mata.
@@ -32,10 +33,15 @@ func _input(event):
 	if event.get_action_strength("ui_accept") and not final_iniciado:
 		match final_selecionado:
 			FINAL_SUICIDIO:
+				velocidade_transicao *= 5
 				SaveStats.liberar_final_suicidio()
 			FINAL_BOM:
+				velocidade_transicao *= 1.5
+				$Fase/Player.atirar()
 				SaveStats.liberar_final_bom()
 			FINAL_IGNORAR:
+				$Fase/AnimationPlayer_fugir.play("Fugir")
+				velocidade_transicao *= 3
 				SaveStats.liberar_final_ignorar()
 		
 		if final_selecionado:
@@ -55,6 +61,10 @@ func _on_Player_alvo_desmarcado():
 
 
 func iniciar_final():
+	if final_selecionado == FINAL_IGNORAR:
+		pass
+	else:
+		Sist_som.play("Tiro")
 	transicao_color_rect.visible = true
 	final_iniciado = final_selecionado
 	nome_funcao_transicao = dic_final[final_selecionado]
@@ -86,7 +96,8 @@ func transicao_final_suicidio():
 	transicao_padrao()
 
 func transicao_final_bom():
-	transicao_padrao()
+	if comecar_final_bom:
+		transicao_padrao()
 
 func transicao_final_ignorar():
 	transicao_padrao()
@@ -98,3 +109,6 @@ func transicao_final_secreto():
 func _on_Range_pc_body_entered(_body):
 	final_selecionado = null
 
+func _on_Area2D_body_entered(_body):
+	# Tiro chegou na maquina
+	comecar_final_bom = true

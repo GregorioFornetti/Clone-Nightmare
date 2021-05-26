@@ -10,7 +10,7 @@ const LIMITE_ZOOM_IN = Vector2(0.3, 0.3)
 var LIMITE_ZOOM_OUT
 
 
-var focalizar_player = true
+export (bool)var focalizar_player = true
 signal atualizar_botao_cam
 
 func _ready():

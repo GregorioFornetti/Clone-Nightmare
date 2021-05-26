@@ -5,9 +5,11 @@ const lista_entidades_interagiveis = ["Player", "Maquina de clones"]
 var vetor_velocidade = Vector2.ZERO
 var rotation_fix = PI / 2
 var pode_mirar = true
+var Tiro_player = preload('res://Jogador/player_bullet.tscn')
 onready var main_node = get_parent().get_parent()
 onready var label_sair = get_parent().get_parent().get_node("CanvasLayer/Label_sair")
 onready var label_pc = get_parent().get_parent().get_node("CanvasLayer/Label_computador")
+onready var arma = $Position2D
 var alvo
 
 signal alvo_marcado(nome_alvo)
@@ -19,13 +21,13 @@ func _ready():
 	connect("alvo_marcado", main_node, "_on_Player_alvo_marcado")
 	
 func _process(_delta):
-	movimentacao()
-	rotacionar()
+	if not main_node.final_iniciado or main_node.final_iniciado == main_node.FINAL_BOM:
+		movimentacao()
+		rotacionar()
 
 func _input(event):
 	if event.get_action_strength("mouse_right_click"):
 		marcar_alvo()
-
 
 func marcar_alvo():
 	# Verifica se o botão esquerdo do mouse foi clicado
@@ -62,11 +64,21 @@ func rotacionar():
 	else:
 		rotation = position.angle_to_point(get_global_mouse_position()) - rotation_fix
 
+func atirar():
+	var tiro_player = Tiro_player.instance()
+	tiro_player.global_position = arma.global_position
+	tiro_player.rotation = rotation
+	tiro_player.alvo = alvo.global_position
+	get_parent().call_deferred('add_child', tiro_player)
+
 func desmarcar_alvo():
 	if alvo:
 		emit_signal("alvo_desmarcado")
 		alvo.get_node('target').visible = false
-		$Sprite.frame = 1
+		if not main_node.final_iniciado == main_node.FINAL_SUICIDIO:
+			$Sprite.frame = 1
+		else:
+			$Efeito_sangue/Particles2D.emitting = true
 		alvo = null
 	
 func _on_Saida_body_entered(_body):
@@ -86,6 +98,6 @@ func _on_Range_pc_body_entered(_body):
 	pode_mirar = false
 	label_pc.visible = true
 	
-func _on_Range_pc_body_exited(body):
+func _on_Range_pc_body_exited(_body):
 	pode_mirar = true
 	label_pc.visible = false
