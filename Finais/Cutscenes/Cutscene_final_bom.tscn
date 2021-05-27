@@ -15,7 +15,7 @@ text = "Você decide dar um fim nisso tudo."
 visible = false
 
 [node name="Label_historia" parent="Lista_nodes_historia/Node_historia2" index="0"]
-text = "Você vai até uma delegacia e relata tudo, informando tudo que você sabe."
+text = "Você vai até uma delegacia e relata tudo que você sabe."
 
 [node name="Node_historia3" parent="Lista_nodes_historia" index="2" instance=ExtResource( 1 )]
 visible = false
@@ -36,6 +36,7 @@ visible = false
 text = "Você, obviamente, foi preso por traficar a máquina de clones."
 
 [node name="Node_historia6" parent="Lista_nodes_historia" index="5" instance=ExtResource( 1 )]
+visible = false
 
 [node name="Label_historia" parent="Lista_nodes_historia/Node_historia6" index="0"]
 text = "Sua consciência e seus pesadelos param de te torturar. Sua família te perdoa pelo o que você fez."

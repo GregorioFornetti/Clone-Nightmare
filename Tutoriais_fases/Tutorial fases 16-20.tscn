@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Tutoriais_fases/controlador_tutorial.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Videos/Tutorial esteiras/tutorial_esteiras.webm" type="VideoStream" id=2]
 [ext_resource path="res://Tutoriais_fases/VideoPlayer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://fontes/fonte_normal.tres" type="DynamicFont" id=4]
 
 [node name="Controlador_tutorial" instance=ExtResource( 1 )]
 
@@ -18,10 +19,11 @@ __meta__ = {
 [node name="Label" type="Label" parent="Control/Lista_tutoriais/Control" index="0"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 196.193
-margin_top = 50.5886
-margin_right = 737.193
-margin_bottom = 281.589
+margin_left = 46.5
+margin_top = 65.0
+margin_right = 916.5
+margin_bottom = 287.0
+custom_fonts/font = ExtResource( 4 )
 text = "Agora as fases vão possuir esteiras !
 Todas esteiras terão setas indicando a direção em que você será mais rápido utilizando 
 ela, e se você se movimentar no sentido oposto, você irá mais devagar.
@@ -41,7 +43,6 @@ __meta__ = {
 stream = ExtResource( 2 )
 
 [node name="Label_titulo" parent="Control" index="3"]
-margin_top = 30.0
 margin_bottom = 44.0
 
 [node name="Btn_proximo" parent="Control" index="6"]
