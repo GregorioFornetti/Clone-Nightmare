@@ -29,6 +29,9 @@ func _on_Btn_sair_pressed():
 		
 		queue_free()
 
+func _on_Btn_creditos_pressed():
+	ComandosGerais.carregar_nova_cena("res://menus/Menu_creditos.tscn", self)
+
 func _on_Btn_opcoes_pressed():
 	var menu_opcoes = Menu_opcoes.instance()
 	add_child(menu_opcoes)

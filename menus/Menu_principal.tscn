@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://menus/Menu_principal.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Menus e Cutscene/Menu-Principal-sheet.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Sprites/Buttons/options-btn.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Buttons/sair-btn.png" type="Texture" id=5]
 [ext_resource path="res://menus/Btn_jogo.tscn" type="PackedScene" id=6]
+[ext_resource path="res://fontes/fonte.tres" type="DynamicFont" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "TransicaoParaConsciencia"
@@ -76,13 +77,25 @@ margin_right = -518.0
 margin_bottom = -331.0
 texture_normal = ExtResource( 4 )
 
+[node name="Btn_creditos" type="Button" parent="."]
+margin_left = 443.659
+margin_top = 339.691
+margin_right = 565.659
+margin_bottom = 367.691
+custom_fonts/font = ExtResource( 7 )
+text = "CREDITOS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Btn_sair" parent="." instance=ExtResource( 6 )]
 margin_left = 450.0
-margin_top = 330.0
+margin_top = 400.0
 margin_right = -518.0
-margin_bottom = -251.0
+margin_bottom = -181.0
 texture_normal = ExtResource( 5 )
 [connection signal="timeout" from="Timer_animacao" to="." method="_on_Timer_animacao_timeout"]
 [connection signal="pressed" from="Btn_jogar" to="." method="_on_Btn_jogar_pressed"]
 [connection signal="pressed" from="Btn_opcoes" to="." method="_on_Btn_opcoes_pressed"]
+[connection signal="pressed" from="Btn_creditos" to="." method="_on_Btn_creditos_pressed"]
 [connection signal="pressed" from="Btn_sair" to="." method="_on_Btn_sair_pressed"]
