@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Sprites/Screenshots_fases/Fase6.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Screenshots_fases/Fase8.png" type="Texture" id=2]
@@ -35,6 +35,7 @@
 [ext_resource path="res://Sprites/Menus e Cutscene/menu-fases-Sheet.png" type="Texture" id=33]
 [ext_resource path="res://menus/Menu_estatisticas.gd" type="Script" id=34]
 [ext_resource path="res://fontes/fonte.tres" type="DynamicFont" id=35]
+[ext_resource path="res://Sprites/Screenshots_fases/FaseSecreta.JPG" type="Texture" id=36]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Transic_maquina"
@@ -75,7 +76,7 @@ __meta__ = {
 }
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 512, 303.302 )
+position = Vector2( 512, 304 )
 texture = ExtResource( 33 )
 hframes = 3
 frame = 2
@@ -401,6 +402,9 @@ margin_top = 140.096
 margin_right = 668.159
 margin_bottom = 400.096
 
+[node name="Teaser" parent="Menu_fases/PagSecreta/Btn_fase_secreta" index="0"]
+texture = ExtResource( 36 )
+
 [node name="Label_titulo_fase" parent="Menu_fases/PagSecreta/Btn_fase_secreta" index="1"]
 margin_left = -59.9422
 margin_right = 20.0578
@@ -428,6 +432,17 @@ visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_dialogo_secreto" type="Button" parent="Menu_dialogos"]
+visible = false
+margin_left = 447.988
+margin_top = 464.338
+margin_right = 559.988
+margin_bottom = 484.338
+text = "Dialogo secreto"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1633,6 +1648,7 @@ anims/Transic_normal = SubResource( 2 )
 [connection signal="pressed" from="Menu_fases/PagSecreta/Btn_fase_secreta" to="Menu_fases" method="_on_Btn_fase_secreta_pressed"]
 [connection signal="pressed" from="Menu_fases/Btn_prox" to="Menu_fases" method="_on_Btn_prox_pressed"]
 [connection signal="pressed" from="Menu_fases/Btn_ant" to="Menu_fases" method="_on_Btn_ant_pressed"]
+[connection signal="pressed" from="Menu_dialogos/Btn_dialogo_secreto" to="Menu_dialogos" method="_on_Btn_dialogo_secreto_pressed"]
 [connection signal="pressed" from="Menu_finais/Btn_fase_final" to="Menu_finais" method="_on_Btn_fase_final_pressed"]
 [connection signal="pressed" from="Menu_finais/Btn_final_bom" to="Menu_finais" method="_on_Btn_final_bom_pressed"]
 [connection signal="pressed" from="Menu_finais/Btn_final_suicidio" to="Menu_finais" method="_on_Btn_final_suicidio_pressed"]

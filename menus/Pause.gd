@@ -29,6 +29,8 @@ func _process(_delta):
 					SaveStats.dados_save[str_fase_atual]["melhorTempo"] = GameStats.tempo_atual
 				SaveStats.salvar_nova_info()
 				SaveStats.passar_fase()
+			if FASE_ATUAL == -1:  # passou da fase secreta
+				SaveStats.liberar_dialogo_secreto()
 			
 			desabilitado = true
 			background_transicao.visible = true

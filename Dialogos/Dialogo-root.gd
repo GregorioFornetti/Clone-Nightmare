@@ -39,14 +39,17 @@ func _ready():
 	atualizar_box_dialogo(dics_dialogos[0], true)
 	
 	carregar_sprite_silhueta()
-	if SaveStats.num_dialogo_atual == 20:
+	if SaveStats.num_dialogo_atual == 20 or SaveStats.num_dialogo_atual == -1:
 		nome_silhueta = "Consciência"
 
 
 func retorna_dics_dialogos():
 	# OBS: para editar os textos do dialogo, abra a pasta "Dialogos" em algum editor de código para acessar os arquivos JSON.
 	var file = File.new()
-	file.open("res://Dialogos/JSON-Dialogos/dialogo" + str(SaveStats.num_dialogo_atual) + ".json", file.READ)
+	if SaveStats.num_dialogo_atual == -1:
+		file.open("res://Dialogos/JSON-Dialogos/dialogoSecreto.json", file.READ)
+	else:
+		file.open("res://Dialogos/JSON-Dialogos/dialogo" + str(SaveStats.num_dialogo_atual) + ".json", file.READ)
 	return parse_json(file.get_as_text())
 
 func carregar_sprite_silhueta():

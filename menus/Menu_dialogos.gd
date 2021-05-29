@@ -13,6 +13,9 @@ func _ready():
 		criar_botoes(SaveStats.dados_save["fase"])
 	else:
 		criar_botoes(SaveStats.dados_save["fase"] - 1)
+	
+	if SaveStats.dados_save["fase secreta concluida"]:
+		$Btn_dialogo_secreto.visible = true
 
 func _on_Botao_pressionado(fase):  # Algum botão de fase foi selecionado (carregar tal fase)
 	SaveStats.fase_atual = 0
@@ -49,3 +52,13 @@ func criar_botoes(ultimo_liberado):
 			
 			x += 200
 		y += 100
+
+
+func _on_Btn_dialogo_secreto_pressed():
+	SaveStats.fase_atual = 0
+	SaveStats.num_dialogo_atual = -1
+	
+	Sist_som.stop("Musica_menu")
+	Sist_som.play("Musica_cutscene")
+	
+	ComandosGerais.carregar_nova_cena("res://Dialogos/Dialogo-root.tscn", get_parent())
