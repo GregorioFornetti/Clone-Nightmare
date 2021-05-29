@@ -14,14 +14,14 @@ var volume_atual = 0
 var audio_fase
 
 func _ready():
-	if FASE_ATUAL != 0:
+	if FASE_ATUAL > 0:
 		SaveStats.dados_save[str_fase_atual]["tentativas"] += 1
 
 func _process(_delta):
 	if acabou_inimigos and not player_perdeu and GameStats.quant_balas_em_jogo == 0:
 		# Fazer uma transição para cutscene
 		if not desabilitado:
-			if FASE_ATUAL != 0:
+			if FASE_ATUAL > 0:
 				SaveStats.dados_save[str_fase_atual]["tempoGasto"] += GameStats.tempo_atual
 				if SaveStats.dados_save[str_fase_atual]["melhorTempo"] != 0:
 					SaveStats.dados_save[str_fase_atual]["melhorTempo"] = min(SaveStats.dados_save[str_fase_atual]["melhorTempo"], GameStats.tempo_atual)
@@ -56,7 +56,7 @@ func _input(event):
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		if FASE_ATUAL != 0:
+		if FASE_ATUAL > 0:
 			SaveStats.salvar_nova_info()
 
 func _on_GameStats_acabou_inimigos():
@@ -77,6 +77,7 @@ func _on_Player_player_morreu():
 func prender_no_menu():
 	# Pausa o jogo e não deixa o botão de pause funcionar mais. Fica preso no menu de pause até selecionar uma opção...
 	desabilitado = true
+	$Btn_continuar.visible = false
 	get_tree().paused = true
 	visible = true
 
@@ -84,11 +85,12 @@ func adicionar_elementos_derrota(motivo_derrota):
 	$MotivoMorte.visible = true
 	$MotivoMorte.text = motivo_derrota
 	$TituloPause.text = 'Você perdeu'
-	SaveStats.dados_save[str_fase_atual]["derrotas"] += 1
+	if FASE_ATUAL > 0:
+		SaveStats.dados_save[str_fase_atual]["derrotas"] += 1
 
 
 func _on_Btn_Reiniciar_pressed():
-	if FASE_ATUAL != 0:
+	if FASE_ATUAL > 0:
 		SaveStats.dados_save[str_fase_atual]["tempoGasto"] += GameStats.tempo_atual
 		SaveStats.salvar_nova_info()
 	
@@ -96,11 +98,14 @@ func _on_Btn_Reiniciar_pressed():
 	if ComandosGerais.qnt_jogos_abertos == 1:
 		get_tree().reload_current_scene()
 	else:
-		ComandosGerais.carregar_nova_fase("res://Fases/fase" + str(FASE_ATUAL) + ".tscn", get_parent().get_parent())
+		if FASE_ATUAL > 0:
+			ComandosGerais.carregar_nova_fase("res://Fases/fase" + str(FASE_ATUAL) + ".tscn", get_parent().get_parent())
+		elif FASE_ATUAL == 0:
+			ComandosGerais.carregar_nova_fase("res://Tutorial/Tutorial.tscn", get_parent().get_parent())
 
 
 func _on_Btn_Voltar_pressed():
-	if FASE_ATUAL != 0:
+	if FASE_ATUAL > 0:
 		SaveStats.dados_save[str_fase_atual]["tempoGasto"] += GameStats.tempo_atual
 		SaveStats.salvar_nova_info()
 	
@@ -113,3 +118,9 @@ func _on_Btn_Voltar_pressed():
 func _on_Btn_Opcoes_pressed():
 	var menu_opcoes = Menu_opcoes.instance()
 	add_child(menu_opcoes)
+
+func _on_Btn_continuar_pressed():
+	if not desabilitado and not has_node("Menu_opcoes"):
+		pausado = not pausado
+		get_tree().paused = pausado
+		visible = pausado

@@ -47,9 +47,15 @@ func _on_Btn_finais_pressed():
 
 func _on_Btn_tutorial_pressed():
 	Sist_som.stop("Musica_menu")
-	Sist_som.comecar_musica_fase(1)
-	# get_tree().change_scene("res://Tutorial/Tutorial.tscn")
-	ComandosGerais.carregar_nova_fase("res://Tutorial/Tutorial.tscn", self)
+	if ComandosGerais.qnt_jogos_abertos != 5:
+		Sist_som.comecar_musica_fase(1)
+		# get_tree().change_scene("res://Tutorial/Tutorial.tscn")
+		ComandosGerais.carregar_nova_fase("res://Tutorial/Tutorial.tscn", self)
+	else:
+		ComandosGerais.qnt_jogos_abertos = 1
+		Sist_som.comecar_musica_fase(20)
+		SaveStats.liberar_fase_secreta()
+		get_tree().change_scene("res://Fases/Fase_secreta.tscn")
 
 func _on_Timer_anim_timeout(): 
 	if background.frame == FRAME_BACKGROUND_NORMAL:
@@ -73,3 +79,4 @@ func mudar_menu_atual():
 		else:
 			dados_menu["botao"].disabled = false
 			dados_menu["node"].visible = false
+

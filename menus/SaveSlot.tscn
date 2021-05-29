@@ -1,6 +1,26 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://menus/SaveSlot.gd" type="Script" id=1]
+[ext_resource path="res://Btn_sem_sprite.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fontes/RobotoMono-SemiBold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://fontes/upheavtt.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Sprites/Menus e Cutscene/JogoSalvo1.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 17
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 17
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 17
+font_data = ExtResource( 3 )
 
 [node name="SaveSlot" type="Control"]
 anchor_right = 1.0
@@ -15,58 +35,45 @@ __meta__ = {
 [node name="Background2" type="Sprite" parent="."]
 position = Vector2( 89.9029, 110.392 )
 scale = Vector2( 1.55005, 1.65746 )
-
-[node name="Titulo_slot" type="Label" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -19.7438
-margin_top = 41.4473
-margin_right = 20.2562
-margin_bottom = 55.4473
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource( 5 )
 
 [node name="Info_slot" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -20.738
-margin_top = 78.6678
-margin_right = 19.262
-margin_bottom = 92.6678
+margin_left = -79.0
+margin_top = 75.0
+margin_right = 79.0
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 2 )
+text = "Fase 1"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Btn_comecar" type="Button" parent="."]
-margin_left = 23.537
-margin_top = 131.277
-margin_right = 159.537
-margin_bottom = 151.277
-text = "Começar novo save"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Btn_continuar" type="Button" parent="."]
-margin_left = 53.9375
-margin_top = 109.117
-margin_right = 126.938
-margin_bottom = 129.117
+[node name="Btn_continuar" parent="." instance=ExtResource( 2 )]
+margin_left = 40.4965
+margin_top = 113.832
+margin_right = 142.496
+margin_bottom = 142.832
+custom_fonts/font = SubResource( 1 )
 text = "Continuar"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Btn_apagar" type="Button" parent="."]
-margin_left = 63.3098
-margin_top = 152.479
-margin_right = 118.31
-margin_bottom = 172.479
+[node name="Btn_comecar" parent="." instance=ExtResource( 2 )]
+margin_left = 50.2166
+margin_top = 141.289
+margin_right = 132.217
+margin_bottom = 170.289
+custom_fonts/font = SubResource( 3 )
+text = "Começar"
+
+[node name="Btn_apagar" parent="." instance=ExtResource( 2 )]
+margin_left = 55.8456
+margin_top = 163.334
+margin_right = 127.846
+margin_bottom = 192.334
+custom_fonts/font = SubResource( 4 )
 text = "Apagar"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-[connection signal="pressed" from="Btn_comecar" to="." method="_on_Btn_comecar_pressed"]
 [connection signal="pressed" from="Btn_continuar" to="." method="_on_Btn_continuar_pressed"]
+[connection signal="pressed" from="Btn_comecar" to="." method="_on_Btn_comecar_pressed"]
 [connection signal="pressed" from="Btn_apagar" to="." method="_on_Btn_apagar_pressed"]

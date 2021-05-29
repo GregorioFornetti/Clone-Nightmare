@@ -1,6 +1,20 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://menus/Menu_opcoes.gd" type="Script" id=1]
+[ext_resource path="res://fontes/upheavtt.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://menus/Btn_jogo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://fontes/RobotoMono-SemiBold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Sprites/Buttons/voltar.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+extra_spacing_top = 4
+extra_spacing_bottom = 4
+font_data = ExtResource( 4 )
 
 [node name="Menu_opcoes" type="Control"]
 anchor_right = 1.0
@@ -34,20 +48,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Btn_fechar" type="Button" parent="."]
-margin_left = 904.579
-margin_top = 70.8274
-margin_right = 924.579
-margin_bottom = 90.8274
-rect_scale = Vector2( 2, 2 )
-text = "X"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Opcoes" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -56,11 +59,22 @@ __meta__ = {
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 478.294
-margin_top = 70.9046
+margin_top = -221.95
 margin_right = 527.294
-margin_bottom = 84.9046
+margin_bottom = -207.95
 rect_scale = Vector2( 1.75, 1.75 )
 text = "Opções"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_fechar" type="Button" parent="Opcoes"]
+margin_left = 905.0
+margin_top = 70.0
+margin_right = 925.0
+margin_bottom = 90.0
+rect_scale = Vector2( 2, 2 )
+text = "X"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -170,56 +184,60 @@ text = "Controles"
 
 [node name="Controles" type="Control" parent="."]
 visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label_titulo" type="Label" parent="Controles"]
-margin_left = 445.447
-margin_top = 80.1041
-margin_right = 506.447
-margin_bottom = 94.1041
-rect_scale = Vector2( 1.75, 1.75 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -107.0
+margin_top = 70.0
+margin_right = 107.0
+margin_bottom = 106.0
+custom_fonts/font = SubResource( 1 )
 text = "Controles"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label_controles" type="Label" parent="Controles"]
-margin_left = 81.1389
-margin_top = 125.588
-margin_right = 652.139
-margin_bottom = 397.588
-rect_scale = Vector2( 1.5, 1.5 )
-text = "                                            WASD ou setas = movimentação.
-
-                                     Botão direito do mouse = marcar inimigo.
-
-              Segurar e arrastar com o botao esquerdo do mouse = movimentar câmera.
-
-                                Ctrl e scroll do mouse = utilizar zoom da câmera.
-
-ESC = menu de pausa.                                 Espaço = atirar (se inimigo estiver marcado).    
-
-F11 = colocar ou tirar da tela cheia.            M = mostrar conexões dos portais.
-
-C = centralizar câmera no jogador.              V = colocar/tirar modo câmera lenta.
-
-"
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -379.0
+margin_top = -182.0
+margin_right = 380.0
+margin_bottom = 165.0
+custom_fonts/font = SubResource( 2 )
+text = "WASD ou setas = movimentação.
+Botão direito do mouse = marcar inimigo.
+Segurar e arrastar com o botao esquerdo do mouse = movimentar câmera.
+Ctrl e scroll do mouse = utilizar zoom da câmera.
+ESC = menu de pausa.
+Espaço = atirar (se inimigo estiver marcado).
+F11 = colocar ou tirar da tela cheia. 
+M = mostrar conexões dos portais.
+C = centralizar câmera no jogador.
+V = colocar/tirar modo câmera lenta."
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Btn_voltar" type="Button" parent="Controles"]
-margin_left = 466.681
-margin_top = 499.215
-margin_right = 515.681
-margin_bottom = 519.215
-rect_scale = Vector2( 1.5, 1.5 )
-text = "Voltar"
-[connection signal="pressed" from="Btn_fechar" to="." method="_on_Btn_fechar_pressed"]
+[node name="Btn_voltar" parent="Controles" instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+margin_left = -50.2003
+margin_top = -118.051
+margin_right = 0.799744
+margin_bottom = -94.051
+texture_normal = ExtResource( 5 )
+[connection signal="pressed" from="Opcoes/Btn_fechar" to="." method="_on_Btn_fechar_pressed"]
 [connection signal="value_changed" from="Opcoes/Slider_musica" to="." method="_on_Slider_musica_value_changed"]
 [connection signal="value_changed" from="Opcoes/Slider_geral" to="." method="_on_Slider_geral_value_changed"]
 [connection signal="value_changed" from="Opcoes/Slider_efeitos_sonoros" to="." method="_on_Slider_efeitos_sonoros_value_changed"]

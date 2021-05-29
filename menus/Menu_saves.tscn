@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://menus/SaveSlot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://menus/Menu_saves.gd" type="Script" id=2]
 [ext_resource path="res://menus/Menu_tutorial.gd" type="Script" id=3]
 [ext_resource path="res://menus/Menu_apagar.gd" type="Script" id=4]
 [ext_resource path="res://Sprites/Menus e Cutscene/Janela Sava-Game.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Menus e Cutscene/JogoSalvo1.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Menus e Cutscene/JogoSalvo3.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Menus e Cutscene/JogoSalvo2.png" type="Texture" id=8]
 [ext_resource path="res://menus/Btn_jogo.tscn" type="PackedScene" id=9]
@@ -24,28 +23,12 @@ position = Vector2( 0, -0.814514 )
 texture = ExtResource( 5 )
 offset = Vector2( 512, 304 )
 
-[node name="Titulo" type="Label" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -142.776
-margin_top = 46.4268
-margin_right = -46.7762
-margin_bottom = 60.4268
-rect_scale = Vector2( 3, 3 )
-text = "Menu de saves"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="SaveSlot1" parent="." instance=ExtResource( 1 )]
 margin_left = 115.0
 margin_top = 175.0
 margin_right = -729.0
 margin_bottom = -214.0
 slot_number = 1
-
-[node name="Background2" parent="SaveSlot1" index="0"]
-texture = ExtResource( 6 )
 
 [node name="SaveSlot2" parent="." instance=ExtResource( 1 )]
 margin_left = 415.0

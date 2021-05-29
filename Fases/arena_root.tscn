@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Jogador/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://BulletReloadTimer.tscn" type="PackedScene" id=2]
@@ -8,8 +8,18 @@
 [ext_resource path="res://menus/Pause.gd" type="Script" id=6]
 [ext_resource path="res://TileMap-objetos.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Finais/TileMap_segredo.tscn" type="PackedScene" id=8]
+[ext_resource path="res://fontes/upheavtt.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://UI/GameInterface.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Fases/Aim_line.gd" type="Script" id=11]
+[ext_resource path="res://fontes/RobotoMono-SemiBold.ttf" type="DynamicFontData" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 12 )
 
 [node name="Arena_root" type="Node2D"]
 
@@ -72,11 +82,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -512.0
-margin_top = -156.0
-margin_bottom = -142.0
-rect_scale = Vector2( 2, 2 )
+margin_top = -196.0
+margin_right = 512.0
+margin_bottom = -150.0
+custom_fonts/font = SubResource( 1 )
 text = "Jogo pausado"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MotivoMorte" type="Label" parent="CanvasLayer/Pause"]
 visible = false
@@ -85,10 +99,10 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -512.0
-margin_top = -101.23
-margin_right = 170.666
-margin_bottom = -87.23
-rect_scale = Vector2( 1.5, 1.5 )
+margin_top = -113.23
+margin_right = 512.0
+margin_bottom = -80.23
+custom_fonts/font = SubResource( 2 )
 text = "Motivo morte..."
 align = 1
 __meta__ = {
@@ -96,10 +110,10 @@ __meta__ = {
 }
 
 [node name="Btn_Reiniciar" type="Button" parent="CanvasLayer/Pause"]
-margin_left = 435.0
-margin_top = 250.0
-margin_right = 585.0
-margin_bottom = 270.0
+margin_left = 421.0
+margin_top = 283.0
+margin_right = 601.0
+margin_bottom = 303.0
 text = "Reiniciar fase"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -111,9 +125,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -91.0
-margin_top = 46.0
+margin_top = 97.0
 margin_right = 89.0
-margin_bottom = 66.0
+margin_bottom = 117.0
 text = "Voltar para menu de fases"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -125,10 +139,20 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -91.0
-margin_top = -4.0
+margin_top = 41.0
 margin_right = 89.0
-margin_bottom = 16.0
+margin_bottom = 61.0
 text = "Opções"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_continuar" type="Button" parent="CanvasLayer/Pause"]
+margin_left = 421.0
+margin_top = 226.0
+margin_right = 603.0
+margin_bottom = 246.0
+text = "Continuar"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -150,6 +174,7 @@ autostart = true
 [connection signal="pressed" from="GameInterface/Control/Btn_slow" to="GameStats" method="_on_Btn_slow_pressed"]
 [connection signal="player_morreu" from="Player" to="CanvasLayer/Pause" method="_on_Player_player_morreu"]
 [connection signal="pressed" from="CanvasLayer/Pause/Btn_Opcoes" to="CanvasLayer/Pause" method="_on_Btn_Opcoes_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause/Btn_continuar" to="CanvasLayer/Pause" method="_on_Btn_continuar_pressed"]
 [connection signal="timeout" from="Timer" to="GameStats" method="_on_Timer_timeout"]
 
 [editable path="GameInterface"]

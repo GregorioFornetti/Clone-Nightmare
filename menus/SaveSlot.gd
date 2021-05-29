@@ -6,7 +6,6 @@ var save_path
 var save_info
 
 onready var info_slot = get_node("Info_slot")
-onready var titulo_slot = get_node("Titulo_slot")
 
 onready var btn_comecar = get_node("Btn_comecar")
 onready var btn_continuar = get_node("Btn_continuar")
@@ -36,7 +35,9 @@ func _on_Btn_comecar_pressed():
 		"final suicidio liberado" : false,
 		"final bom liberado" : false,
 		"final ignorar liberado" : false,
-		"final secreto liberado" : false
+		"final secreto liberado" : false,
+		"fase secreta liberada" : false,
+		"fase secreta concluida" : false
 	}
 	for i in range(1, 21):
 		dados_save["fase" + str(i)] = {"tentativas" : 0, "derrotas" : 0, "tempoGasto" : 0, "melhorTempo" : 0}

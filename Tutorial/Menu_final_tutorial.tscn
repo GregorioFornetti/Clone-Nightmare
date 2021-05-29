@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Tutorial/Menu_final_tutorial.gd" type="Script" id=1]
+[ext_resource path="res://fontes/RobotoMono-SemiBold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Sprites/Buttons/voltar.png" type="Texture" id=3]
+[ext_resource path="res://menus/Btn_jogo.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprites/Menus e Cutscene/Menu_creditos.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 2 )
 
 [node name="Menu_final_tut" type="Control"]
 anchor_right = 1.0
@@ -10,22 +18,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 512, 304 )
+texture = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -217.549
-margin_top = 173.369
-margin_right = 0.450989
-margin_bottom = 221.369
-rect_scale = Vector2( 2, 2 )
+margin_left = -226.053
+margin_top = 163.579
+margin_right = 235.947
+margin_bottom = 271.579
+custom_fonts/font = SubResource( 1 )
 text = "Você acabou o tutorial. Agora, você já está preparado para começar a jogar de verdade !"
 align = 1
 autowrap = true
@@ -33,18 +37,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -161.093
-margin_top = 77.5462
-margin_right = 1.90741
-margin_bottom = 97.5462
-rect_scale = Vector2( 2, 2 )
-text = "Ir para o menu de fases"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Button" parent="." instance=ExtResource( 4 )]
+margin_left = 460.001
+margin_top = 383.159
+margin_right = -512.999
+margin_bottom = -200.841
+texture_normal = ExtResource( 3 )
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

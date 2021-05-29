@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Finais/Computador/Txt_enigma_senha.gd" type="Script" id=1]
+[ext_resource path="res://fontes/upheavtt.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://fontes/RobotoMono-SemiBold.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 2 )
 
 [node name="Txt_enigma_senha" type="Control"]
 anchor_right = 1.0
@@ -22,6 +32,8 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 63.0
+margin_right = -1.0
+custom_fonts/font = SubResource( 2 )
 text = "       jogo - fase
        2 - 1
        1 - 20
@@ -30,7 +42,16 @@ text = "       jogo - fase
        3 - 13
        2 - 19
        4 - 4
-       3 - 2"
+       3 - 2
+	
+	
+	
+	
+	
+	
+	
+	
+	                                                                   5  - tutorial"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -47,11 +68,11 @@ __meta__ = {
 }
 
 [node name="Label_titulo_arquivo" type="Label" parent="."]
-margin_left = 18.2413
-margin_top = 19.4076
-margin_right = 129.241
-margin_bottom = 33.4076
-rect_scale = Vector2( 2, 2 )
+margin_left = 19.2427
+margin_top = 17.1545
+margin_right = 295.243
+margin_bottom = 45.1545
+custom_fonts/font = SubResource( 1 )
 text = "Enigma_senha.txt"
 __meta__ = {
 "_edit_use_anchors_": false

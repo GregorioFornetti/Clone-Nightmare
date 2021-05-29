@@ -81,7 +81,6 @@ hframes = 3
 frame = 2
 
 [node name="Menu_fases" type="Control" parent="."]
-visible = false
 script = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -388,6 +387,25 @@ margin_right = 12.8762
 margin_bottom = 22.2512
 text = "Fase 20"
 
+[node name="PagSecreta" type="Control" parent="Menu_fases"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_fase_secreta" parent="Menu_fases/PagSecreta" instance=ExtResource( 23 )]
+margin_left = 368.159
+margin_top = 140.096
+margin_right = 668.159
+margin_bottom = 400.096
+
+[node name="Label_titulo_fase" parent="Menu_fases/PagSecreta/Btn_fase_secreta" index="1"]
+margin_left = -59.9422
+margin_right = 20.0578
+text = "Fase Secreta"
+
 [node name="Btn_prox" parent="Menu_fases" instance=ExtResource( 27 )]
 margin_left = 974.653
 margin_top = 205.248
@@ -415,6 +433,7 @@ __meta__ = {
 }
 
 [node name="Menu_estatisticas" type="Control" parent="."]
+visible = false
 margin_left = -51.4869
 margin_top = 67.2279
 margin_right = 899.513
@@ -1611,6 +1630,7 @@ anims/Transic_maquina = SubResource( 1 )
 anims/Transic_normal = SubResource( 2 )
 
 [node name="Timer_anim" type="Timer" parent="."]
+[connection signal="pressed" from="Menu_fases/PagSecreta/Btn_fase_secreta" to="Menu_fases" method="_on_Btn_fase_secreta_pressed"]
 [connection signal="pressed" from="Menu_fases/Btn_prox" to="Menu_fases" method="_on_Btn_prox_pressed"]
 [connection signal="pressed" from="Menu_fases/Btn_ant" to="Menu_fases" method="_on_Btn_ant_pressed"]
 [connection signal="pressed" from="Menu_finais/Btn_fase_final" to="Menu_finais" method="_on_Btn_fase_final_pressed"]
@@ -1665,3 +1685,5 @@ anims/Transic_normal = SubResource( 2 )
 [editable path="Menu_fases/Pagina4/Btn_fase19"]
 
 [editable path="Menu_fases/Pagina4/Btn_fase20"]
+
+[editable path="Menu_fases/PagSecreta/Btn_fase_secreta"]

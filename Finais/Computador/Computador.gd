@@ -41,3 +41,4 @@ func _on_Btn_jogo_clone_pressed():
 	
 	var novo_jogo = Novo_jogo.instance()
 	dentro.add_child(novo_jogo)
+

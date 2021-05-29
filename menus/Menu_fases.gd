@@ -5,6 +5,7 @@ onready var PAG_MAX = get_child_count() - 3  # Menos os (botoes de transicao + 1
 onready var paginas = get_children()
 onready var botao_prox = $Btn_prox
 onready var botao_ant = $Btn_ant
+onready var btn_fase_secreta = $PagSecreta/Btn_fase_secreta
 var pagina_atual = 0
 
 func _ready():
@@ -18,6 +19,9 @@ func _ready():
 				if fase_atual > ultima_fase_liberada:
 					botao_fase.desabilitar()
 				fase_atual += 1
+	
+	if not SaveStats.dados_save["fase secreta liberada"]:
+		btn_fase_secreta.desabilitar()
 
 func _input(event):
 	if event.get_action_strength("ui_right") and main.menu_atual == main.MENU_FASES:
@@ -36,6 +40,14 @@ func _on_Botao_pressionado(fase):  # Algum botão de fase foi selecionado (carre
 	
 	# get_tree().change_scene("res://Fases/fase" + str(fase) + ".tscn")
 	ComandosGerais.carregar_nova_fase("res://Fases/fase" + str(fase) + ".tscn", get_parent())
+
+func _on_Btn_fase_secreta_pressed():
+	Sist_som.stop("Musica_menu")
+	Sist_som.comecar_musica_fase(20)
+	
+	get_tree().change_scene("res://Fases/Fase_secreta.tscn")
+	
+	
 
 func _on_Btn_prox_pressed():
 	ir_para_prox_pagina()
@@ -63,3 +75,5 @@ func ir_para_pagina_ant():
 		botao_prox.visible = true
 		if pagina_atual == 0:
 			botao_ant.visible = false
+
+

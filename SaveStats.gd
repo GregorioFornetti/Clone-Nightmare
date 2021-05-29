@@ -36,3 +36,11 @@ func liberar_final_ignorar():
 func liberar_final_secreto():
 	dados_save["final secreto liberado"] = true
 	salvar_nova_info()
+
+func liberar_fase_secreta():
+	dados_save["fase secreta liberada"] = true
+	salvar_nova_info()
+
+func liberar_dialogo_secreto():
+	dados_save["fase secreta concluida"] = true
+	salvar_nova_info()
