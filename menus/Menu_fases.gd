@@ -16,6 +16,10 @@ func _ready():
 		if "Pagina" in pagina.name:  # Garantir que é uma pagina e não um botao
 			for botao_fase in pagina.get_children():
 				botao_fase.connect('pressed', self, '_on_Botao_pressionado', [fase_atual])
+				if SaveStats.dados_save["fase" + str(fase_atual)]["melhorTempo"] > 0:
+					botao_fase.get_node("Label_tempo").text = ComandosGerais.formatar_tempo(SaveStats.dados_save["fase" + str(fase_atual)]["melhorTempo"])
+				else:
+					botao_fase.get_node("Label_tempo").text = "XX:XX"
 				if fase_atual > ultima_fase_liberada:
 					botao_fase.desabilitar()
 				fase_atual += 1

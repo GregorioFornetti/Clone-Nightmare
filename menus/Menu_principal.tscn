@@ -6,7 +6,7 @@
 [ext_resource path="res://Sprites/Buttons/options-btn.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Buttons/sair-btn.png" type="Texture" id=5]
 [ext_resource path="res://menus/Btn_jogo.tscn" type="PackedScene" id=6]
-[ext_resource path="res://fontes/fonte.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Sprites/Buttons/creditos.png" type="Texture" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "TransicaoParaConsciencia"
@@ -49,7 +49,7 @@ __meta__ = {
 }
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 512, 304 )
+position = Vector2( 511.56, 303.56 )
 texture = ExtResource( 2 )
 hframes = 4
 
@@ -77,22 +77,18 @@ margin_right = -518.0
 margin_bottom = -331.0
 texture_normal = ExtResource( 4 )
 
-[node name="Btn_creditos" type="Button" parent="."]
-margin_left = 443.659
-margin_top = 339.691
-margin_right = 565.659
-margin_bottom = 367.691
-custom_fonts/font = ExtResource( 7 )
-text = "CREDITOS"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Btn_creditos" parent="." instance=ExtResource( 6 )]
+margin_left = 445.0
+margin_top = 330.0
+margin_right = -518.0
+margin_bottom = -251.0
+texture_normal = ExtResource( 7 )
 
 [node name="Btn_sair" parent="." instance=ExtResource( 6 )]
 margin_left = 450.0
-margin_top = 400.0
+margin_top = 410.0
 margin_right = -518.0
-margin_bottom = -181.0
+margin_bottom = -171.0
 texture_normal = ExtResource( 5 )
 [connection signal="timeout" from="Timer_animacao" to="." method="_on_Timer_animacao_timeout"]
 [connection signal="pressed" from="Btn_jogar" to="." method="_on_Btn_jogar_pressed"]

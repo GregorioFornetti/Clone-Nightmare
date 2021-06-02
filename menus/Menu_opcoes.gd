@@ -42,18 +42,22 @@ func _notification(what):
 
 
 func _on_Slider_geral_value_changed(value):
+	Sist_som.play("Btn_hover")
 	AudioServer.set_bus_volume_db(audio_geral, value)
 	mutar_no_min(audio_geral, value)
 
 func _on_Slider_musica_value_changed(value):
+	Sist_som.play("Btn_hover")
 	AudioServer.set_bus_volume_db(audio_musica, value)
 	mutar_no_min(audio_musica, value)
 
 func _on_Slider_efeitos_sonoros_value_changed(value):
+	Sist_som.play("Btn_hover")
 	AudioServer.set_bus_volume_db(audio_efeitos_sonoros, value)
 	mutar_no_min(audio_efeitos_sonoros, value)
 
 func _on_Dropdown_resolucao_item_selected(id):
+	Sist_som.play("Btn_click")
 	var resolucao_selecionada = dropdown_resolucao.get_item_text(id)
 	if resolucao_selecionada == "Tela cheia":
 		OS.set_window_fullscreen(true)

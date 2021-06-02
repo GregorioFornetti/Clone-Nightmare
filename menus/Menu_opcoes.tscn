@@ -1,10 +1,23 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://menus/Menu_opcoes.gd" type="Script" id=1]
 [ext_resource path="res://fontes/upheavtt.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://menus/Btn_jogo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://fontes/RobotoMono-SemiBold.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Sprites/Buttons/voltar.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Menus e Cutscene/menu-op.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -34,19 +47,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BoxOpcoes" type="ColorRect" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -449.377
-margin_top = -251.972
-margin_right = 450.623
-margin_bottom = 248.028
-color = Color( 0.215686, 0.188235, 0.188235, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="BoxOpcoes" type="Sprite" parent="."]
+position = Vector2( 500, 300 )
+texture = ExtResource( 6 )
 
 [node name="Opcoes" type="Control" parent="."]
 anchor_right = 1.0
@@ -55,34 +58,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label_titulo" type="Label" parent="Opcoes"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 478.294
-margin_top = -221.95
-margin_right = 527.294
-margin_bottom = -207.95
-rect_scale = Vector2( 1.75, 1.75 )
-text = "Opções"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Btn_fechar" type="Button" parent="Opcoes"]
-margin_left = 905.0
-margin_top = 70.0
-margin_right = 925.0
-margin_bottom = 90.0
-rect_scale = Vector2( 2, 2 )
-text = "X"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Slider_musica" type="HSlider" parent="Opcoes"]
-margin_left = 300.0
+margin_left = 340.0
 margin_top = 190.0
-margin_right = 672.0
+margin_right = 712.0
 margin_bottom = 206.0
 rect_scale = Vector2( 1.5, 1.5 )
 min_value = -60.0
@@ -93,9 +72,9 @@ __meta__ = {
 }
 
 [node name="Slider_geral" type="HSlider" parent="Opcoes"]
-margin_left = 300.0
+margin_left = 340.0
 margin_top = 140.0
-margin_right = 672.0
+margin_right = 712.0
 margin_bottom = 156.0
 rect_scale = Vector2( 1.5, 1.5 )
 min_value = -60.0
@@ -106,10 +85,10 @@ __meta__ = {
 }
 
 [node name="Slider_efeitos_sonoros" type="HSlider" parent="Opcoes"]
-margin_left = 300.0
-margin_top = 240.0
-margin_right = 672.0
-margin_bottom = 256.0
+margin_left = 340.0
+margin_top = 246.0
+margin_right = 712.0
+margin_bottom = 262.0
 rect_scale = Vector2( 1.5, 1.5 )
 min_value = -60.0
 max_value = 0.0
@@ -119,44 +98,46 @@ __meta__ = {
 }
 
 [node name="Label_vol_geral" type="Label" parent="Opcoes"]
-margin_left = 169.0
-margin_top = 140.0
-margin_right = 253.0
-margin_bottom = 154.0
-rect_scale = Vector2( 1.5, 1.5 )
+margin_left = 70.0
+margin_top = 135.0
+margin_right = 334.0
+margin_bottom = 162.0
+custom_fonts/font = SubResource( 3 )
 text = "Volume geral"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label_vol_geral2" type="Label" parent="Opcoes"]
-margin_left = 145.0
-margin_top = 190.0
-margin_right = 244.0
-margin_bottom = 204.0
-rect_scale = Vector2( 1.5, 1.5 )
+margin_left = 70.0
+margin_top = 185.302
+margin_right = 334.0
+margin_bottom = 212.302
+custom_fonts/font = SubResource( 3 )
 text = "Volume musica"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label_resolucao" type="Label" parent="Opcoes"]
-margin_left = 91.1709
-margin_top = 296.804
-margin_right = 217.171
-margin_bottom = 310.804
-rect_scale = Vector2( 1.5, 1.5 )
+margin_left = 194.997
+margin_top = 323.884
+margin_right = 422.997
+margin_bottom = 350.884
+custom_fonts/font = SubResource( 3 )
 text = "Resolução da janela"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label_vol_geral3" type="Label" parent="Opcoes"]
-margin_left = 69.4767
-margin_top = 240.744
-margin_right = 221.477
-margin_bottom = 271.744
-rect_scale = Vector2( 1.5, 1.5 )
+margin_left = 70.0
+margin_top = 240.0
+margin_right = 334.0
+margin_bottom = 271.0
+custom_fonts/font = SubResource( 3 )
 text = "Volume efeitos sonoros"
 align = 1
 __meta__ = {
@@ -164,28 +145,53 @@ __meta__ = {
 }
 
 [node name="Dropdown_resolucao" type="OptionButton" parent="Opcoes"]
-margin_left = 83.8173
-margin_top = 324.019
-margin_right = 224.818
-margin_bottom = 344.019
-rect_scale = Vector2( 1.5, 1.5 )
+margin_left = 198.264
+margin_top = 356.0
+margin_right = 420.264
+margin_bottom = 380.0
+custom_fonts/font = SubResource( 4 )
 text = "Resolução da tela"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Btn_controles" type="Button" parent="Opcoes"]
-margin_left = 353.345
-margin_top = 324.237
-margin_right = 426.345
-margin_bottom = 344.237
-rect_scale = Vector2( 1.5, 1.5 )
+margin_left = 653.633
+margin_top = 356.0
+margin_right = 772.633
+margin_bottom = 380.0
+custom_fonts/font = SubResource( 5 )
 text = "Controles"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_fechar" parent="Opcoes" instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+margin_left = -50.0343
+margin_top = -124.411
+margin_right = 1.9657
+margin_bottom = -100.411
+texture_normal = ExtResource( 5 )
 
 [node name="Controles" type="Control" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 0.166077
+margin_right = 0.166016
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Controles"]
+margin_left = 405.0
+margin_top = 68.0
+margin_right = 633.0
+margin_bottom = 103.0
+color = Color( 0.247059, 0.396078, 0.54902, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -193,10 +199,10 @@ __meta__ = {
 [node name="Label_titulo" type="Label" parent="Controles"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -107.0
-margin_top = 70.0
-margin_right = 107.0
-margin_bottom = 106.0
+margin_left = -108.794
+margin_top = 64.8523
+margin_right = 105.206
+margin_bottom = 100.852
 custom_fonts/font = SubResource( 1 )
 text = "Controles"
 __meta__ = {
@@ -233,14 +239,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 margin_left = -50.2003
-margin_top = -118.051
-margin_right = 0.799744
-margin_bottom = -94.051
+margin_top = -124.411
+margin_right = 1.79971
+margin_bottom = -100.411
 texture_normal = ExtResource( 5 )
-[connection signal="pressed" from="Opcoes/Btn_fechar" to="." method="_on_Btn_fechar_pressed"]
 [connection signal="value_changed" from="Opcoes/Slider_musica" to="." method="_on_Slider_musica_value_changed"]
 [connection signal="value_changed" from="Opcoes/Slider_geral" to="." method="_on_Slider_geral_value_changed"]
 [connection signal="value_changed" from="Opcoes/Slider_efeitos_sonoros" to="." method="_on_Slider_efeitos_sonoros_value_changed"]
 [connection signal="item_selected" from="Opcoes/Dropdown_resolucao" to="." method="_on_Dropdown_resolucao_item_selected"]
 [connection signal="pressed" from="Opcoes/Btn_controles" to="." method="_on_Btn_controles_pressed"]
+[connection signal="pressed" from="Opcoes/Btn_fechar" to="." method="_on_Btn_fechar_pressed"]
 [connection signal="pressed" from="Controles/Btn_voltar" to="." method="_on_Btn_voltar_pressed"]

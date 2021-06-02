@@ -6,3 +6,4 @@ func _ready():
 
 func _on_Area2D_body_entered(_body):
 	$AnimationPlayer.play("Explosoes")
+	Sist_som.play("Explosao")
