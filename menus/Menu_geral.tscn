@@ -1642,38 +1642,38 @@ __meta__ = {
 }
 
 [node name="Btn_fase_final" type="Button" parent="Menu_finais"]
+visible = false
 margin_left = 477.62
 margin_top = 130.02
 margin_right = 549.62
 margin_bottom = 150.02
-disabled = true
 text = "Fase final"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Btn_final_bom" parent="Menu_finais" instance=ExtResource( 27 )]
+visible = false
 margin_left = 326.472
 margin_top = 175.0
 margin_right = 344.472
 margin_bottom = 162.0
-disabled = true
 texture_normal = ExtResource( 39 )
 
 [node name="Btn_final_suicidio" parent="Menu_finais" instance=ExtResource( 27 )]
+visible = false
 margin_left = 452.598
 margin_top = 175.0
 margin_right = 471.598
 margin_bottom = 162.0
-disabled = true
 texture_normal = ExtResource( 40 )
 
 [node name="Btn_final_ignorar" parent="Menu_finais" instance=ExtResource( 27 )]
+visible = false
 margin_left = 585.0
 margin_top = 175.0
 margin_right = 604.0
 margin_bottom = 162.0
-disabled = true
 texture_normal = ExtResource( 41 )
 
 [node name="Btn_final_secreto" parent="Menu_finais" instance=ExtResource( 27 )]
@@ -1732,6 +1732,7 @@ anims/Transic_maquina = SubResource( 1 )
 anims/Transic_normal = SubResource( 2 )
 
 [node name="Timer_anim" type="Timer" parent="."]
+
 [connection signal="pressed" from="Menu_fases/PagSecreta/Btn_fase_secreta" to="Menu_fases" method="_on_Btn_fase_secreta_pressed"]
 [connection signal="pressed" from="Menu_fases/Btn_prox" to="Menu_fases" method="_on_Btn_prox_pressed"]
 [connection signal="pressed" from="Menu_fases/Btn_ant" to="Menu_fases" method="_on_Btn_ant_pressed"]
@@ -1750,43 +1751,23 @@ anims/Transic_normal = SubResource( 2 )
 [connection signal="timeout" from="Timer_anim" to="." method="_on_Timer_anim_timeout"]
 
 [editable path="Menu_fases/Pagina1/Btn_fase1"]
-
 [editable path="Menu_fases/Pagina1/Btn_fase2"]
-
 [editable path="Menu_fases/Pagina1/Btn_fase3"]
-
 [editable path="Menu_fases/Pagina1/Btn_fase4"]
-
 [editable path="Menu_fases/Pagina1/Btn_fase5"]
-
 [editable path="Menu_fases/Pagina2/Btn_fase6"]
-
 [editable path="Menu_fases/Pagina2/Btn_fase7"]
-
 [editable path="Menu_fases/Pagina2/Btn_fase8"]
-
 [editable path="Menu_fases/Pagina2/Btn_fase9"]
-
 [editable path="Menu_fases/Pagina2/Btn_fase10"]
-
 [editable path="Menu_fases/Pagina3/Btn_fase11"]
-
 [editable path="Menu_fases/Pagina3/Btn_fase12"]
-
 [editable path="Menu_fases/Pagina3/Btn_fase13"]
-
 [editable path="Menu_fases/Pagina3/Btn_fase14"]
-
 [editable path="Menu_fases/Pagina3/Btn_fase15"]
-
 [editable path="Menu_fases/Pagina4/Btn_fase16"]
-
 [editable path="Menu_fases/Pagina4/Btn_fase17"]
-
 [editable path="Menu_fases/Pagina4/Btn_fase18"]
-
 [editable path="Menu_fases/Pagina4/Btn_fase19"]
-
 [editable path="Menu_fases/Pagina4/Btn_fase20"]
-
 [editable path="Menu_fases/PagSecreta/Btn_fase_secreta"]

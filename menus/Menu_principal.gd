@@ -38,6 +38,7 @@ func _on_Btn_opcoes_pressed():
 
 
 func _on_Timer_animacao_timeout():
+	Sist_som.play("Trovao")
 	if background.frame == FRAME_BACKGROUND_PLAYER:
 		if rand_range(1, 100) <= 75:
 			animation_player.play("TransicaoParaPlayer")

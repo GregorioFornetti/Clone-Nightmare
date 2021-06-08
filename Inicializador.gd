@@ -16,7 +16,6 @@ func _ready():
 	var audio_geral = AudioServer.get_bus_index("Master")
 	var audio_musica = AudioServer.get_bus_index("Musica")
 	var audio_efeitos_sonoros = AudioServer.get_bus_index("Efeitos sonoros")
-	var diretorio = Directory.new()
 	
 	if file.file_exists(save_path):
 		file.open(save_path, File.READ)

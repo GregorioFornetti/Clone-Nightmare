@@ -46,7 +46,7 @@ func criar_botoes(ultimo_liberado):
 			botao.connect('pressed', self, '_on_Botao_pressionado', [valor_atual])
 			
 			if ultimo_liberado < valor_atual:
-				botao.disabled = true
+				botao.visible = false
 			add_child(botao)
 			botao.rect_size = Vector2(0, 0)
 			

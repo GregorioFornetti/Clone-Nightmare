@@ -952,6 +952,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Porta2"]
 position = Vector2( -22, 0 )
 shape = SubResource( 71 )
+
 [connection signal="body_entered" from="Saida" to="Player" method="_on_Saida_body_entered"]
 [connection signal="body_exited" from="Saida" to="Player" method="_on_Saida_body_exited"]
 [connection signal="body_entered" from="Range_pc" to="Range_pc" method="_on_Range_pc_body_entered"]

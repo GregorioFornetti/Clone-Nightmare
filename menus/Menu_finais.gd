@@ -3,13 +3,13 @@ extends Control
 
 func _ready():
 	if SaveStats.dados_save["fase final liberada"]:
-		$Btn_fase_final.disabled = false
+		$Btn_fase_final.visible = true
 	if SaveStats.dados_save["final bom liberado"]:
-		$Btn_final_bom.disabled = false
+		$Btn_final_bom.visible = true
 	if SaveStats.dados_save["final suicidio liberado"]:
-		$Btn_final_suicidio.disabled = false
+		$Btn_final_suicidio.visible = true
 	if SaveStats.dados_save["final ignorar liberado"]:
-		$Btn_final_ignorar.disabled = false
+		$Btn_final_ignorar.visible = true
 	if SaveStats.dados_save["final secreto liberado"]:
 		$Btn_final_secreto.visible = true
 

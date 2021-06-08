@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Sistema som/Sons/Efeitos sonoros/Tiro/tiro1.wav" type="AudioStream" id=1]
 [ext_resource path="res://Sistema som/Sons/Efeitos sonoros/Tiro/tiro4.wav" type="AudioStream" id=2]
@@ -26,6 +26,8 @@
 [ext_resource path="res://Sistema som/Sons/Efeitos sonoros/Botoes/botao_hover.wav" type="AudioStream" id=24]
 [ext_resource path="res://Sistema som/Sons/Efeitos sonoros/Botoes/botao_click.wav" type="AudioStream" id=25]
 [ext_resource path="res://Sistema som/Sons/Efeitos sonoros/explosao.wav" type="AudioStream" id=26]
+[ext_resource path="res://Sistema som/Sons/Efeitos sonoros/porta.wav" type="AudioStream" id=27]
+[ext_resource path="res://Sistema som/Sons/Efeitos sonoros/trovao.wav" type="AudioStream" id=28]
 
 [node name="Sistema_som" type="Node"]
 pause_mode = 2
@@ -125,6 +127,19 @@ bus = "Efeitos sonoros"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Explosao"]
 stream = ExtResource( 26 )
+bus = "Efeitos sonoros"
+
+[node name="Porta" type="Node" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Porta"]
+stream = ExtResource( 27 )
+bus = "Efeitos sonoros"
+
+[node name="Trovao" type="Node" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Trovao"]
+stream = ExtResource( 28 )
+volume_db = 10.0
 bus = "Efeitos sonoros"
 
 [node name="Musica_menu" type="Node" parent="."]

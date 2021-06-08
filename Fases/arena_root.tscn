@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Jogador/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://BulletReloadTimer.tscn" type="PackedScene" id=2]
@@ -12,6 +12,11 @@
 [ext_resource path="res://UI/GameInterface.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Fases/Aim_line.gd" type="Script" id=11]
 [ext_resource path="res://fontes/RobotoMono-SemiBold.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://menus/Btn_jogo.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Sprites/Buttons/CONTINUAR.PNG" type="Texture" id=14]
+[ext_resource path="res://Sprites/Buttons/REINICIAR.PNG" type="Texture" id=15]
+[ext_resource path="res://Sprites/Buttons/voltar.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Buttons/options-btn.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -71,7 +76,7 @@ __meta__ = {
 [node name="BackGround" type="ColorRect" parent="CanvasLayer/Pause"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.305882 )
+color = Color( 0, 0, 0, 0.588235 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -109,53 +114,33 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Btn_Reiniciar" type="Button" parent="CanvasLayer/Pause"]
-margin_left = 421.0
-margin_top = 283.0
-margin_right = 601.0
-margin_bottom = 303.0
-text = "Reiniciar fase"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Btn_continuar" parent="CanvasLayer/Pause" instance=ExtResource( 13 )]
+margin_left = 434.0
+margin_top = 200.0
+margin_right = -515.0
+margin_bottom = -383.0
+texture_normal = ExtResource( 14 )
 
-[node name="Btn_Voltar" type="Button" parent="CanvasLayer/Pause"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -91.0
-margin_top = 97.0
-margin_right = 89.0
-margin_bottom = 117.0
-text = "Voltar para menu de fases"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Btn_Reiniciar" parent="CanvasLayer/Pause" instance=ExtResource( 13 )]
+margin_left = 434.0
+margin_top = 270.0
+margin_right = -515.0
+margin_bottom = -313.0
+texture_normal = ExtResource( 15 )
 
-[node name="Btn_Opcoes" type="Button" parent="CanvasLayer/Pause"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -91.0
-margin_top = 41.0
-margin_right = 89.0
-margin_bottom = 61.0
-text = "Opções"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Btn_Opcoes" parent="CanvasLayer/Pause" instance=ExtResource( 13 )]
+margin_left = 455.0
+margin_top = 340.0
+margin_right = -513.0
+margin_bottom = -241.0
+texture_normal = ExtResource( 17 )
 
-[node name="Btn_continuar" type="Button" parent="CanvasLayer/Pause"]
-margin_left = 421.0
-margin_top = 226.0
-margin_right = 603.0
-margin_bottom = 246.0
-text = "Continuar"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Btn_Voltar" parent="CanvasLayer/Pause" instance=ExtResource( 13 )]
+margin_left = 458.0
+margin_top = 410.0
+margin_right = -514.0
+margin_bottom = -174.0
+texture_normal = ExtResource( 16 )
 
 [node name="Transicao" type="ColorRect" parent="CanvasLayer"]
 visible = false
@@ -174,8 +159,10 @@ autostart = true
 [connection signal="pressed" from="GameInterface/Control/Btn_centralizar" to="camera" method="_on_Btn_centralizar_pressed"]
 [connection signal="pressed" from="GameInterface/Control/Btn_slow" to="GameStats" method="_on_Btn_slow_pressed"]
 [connection signal="player_morreu" from="Player" to="CanvasLayer/Pause" method="_on_Player_player_morreu"]
-[connection signal="pressed" from="CanvasLayer/Pause/Btn_Opcoes" to="CanvasLayer/Pause" method="_on_Btn_Opcoes_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Btn_continuar" to="CanvasLayer/Pause" method="_on_Btn_continuar_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause/Btn_Reiniciar" to="CanvasLayer/Pause" method="_on_Btn_Reiniciar_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause/Btn_Opcoes" to="CanvasLayer/Pause" method="_on_Btn_Opcoes_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause/Btn_Voltar" to="CanvasLayer/Pause" method="_on_Btn_Voltar_pressed"]
 [connection signal="timeout" from="Timer" to="GameStats" method="_on_Timer_timeout"]
 
 [editable path="GameInterface"]
