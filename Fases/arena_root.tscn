@@ -168,6 +168,7 @@ __meta__ = {
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
 [connection signal="acabou_inimigos" from="GameStats" to="CanvasLayer/Pause" method="_on_GameStats_acabou_inimigos"]
 [connection signal="acabou_municao" from="GameStats" to="CanvasLayer/Pause" method="_on_GameStats_acabou_municao"]
 [connection signal="pressed" from="GameInterface/Control/Btn_centralizar" to="camera" method="_on_Btn_centralizar_pressed"]
@@ -178,5 +179,4 @@ autostart = true
 [connection signal="timeout" from="Timer" to="GameStats" method="_on_Timer_timeout"]
 
 [editable path="GameInterface"]
-
 [editable path="camera"]

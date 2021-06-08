@@ -90,6 +90,7 @@ margin_top = 410.0
 margin_right = -518.0
 margin_bottom = -171.0
 texture_normal = ExtResource( 5 )
+
 [connection signal="timeout" from="Timer_animacao" to="." method="_on_Timer_animacao_timeout"]
 [connection signal="pressed" from="Btn_jogar" to="." method="_on_Btn_jogar_pressed"]
 [connection signal="pressed" from="Btn_opcoes" to="." method="_on_Btn_opcoes_pressed"]

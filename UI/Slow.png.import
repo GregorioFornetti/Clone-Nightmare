@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Slow.png-664e392ef4db9755d1087be91d47f083.stex"
+path="res://.import/Slow.png-1f5b0549221fd98bbb556090c68d00e8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Slow.png"
-dest_files=[ "res://.import/Slow.png-664e392ef4db9755d1087be91d47f083.stex" ]
+source_file="res://UI/Slow.png"
+dest_files=[ "res://.import/Slow.png-1f5b0549221fd98bbb556090c68d00e8.stex" ]
 
 [params]
 
