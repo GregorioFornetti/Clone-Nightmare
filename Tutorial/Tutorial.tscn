@@ -13,7 +13,7 @@ script = ExtResource( 3 )
 QUANT_INICIAL_BULLETS = 100
 QUANT_INICIAL_INIMIGOS = 3
 
-[node name="ProgressBar" parent="GameInterface/Control" index="3"]
+[node name="ProgressBar" parent="GameInterface/Control" index="7"]
 visible = false
 
 [node name="TileMap-piso&paredes" parent="." index="2"]
@@ -145,7 +145,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="CanvasTutorialInterface/Tut_interface/Tut_municao" index="2"]
-position = Vector2( 828.018, 78.2379 )
+position = Vector2( 828.018, 46.2379 )
 texture = ExtResource( 2 )
 
 [node name="Tut_inimigos" type="Control" parent="CanvasTutorialInterface/Tut_interface" index="4"]
@@ -157,20 +157,20 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="CanvasTutorialInterface/Tut_interface/Tut_inimigos" index="0"]
-margin_left = 618.0
-margin_top = 73.0
-margin_right = 857.0
-margin_bottom = 206.0
+margin_left = 597.26
+margin_top = 45.0
+margin_right = 836.26
+margin_bottom = 178.0
 color = Color( 1, 1, 1, 0.784314 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="CanvasTutorialInterface/Tut_interface/Tut_inimigos" index="1"]
-margin_left = 628.0
-margin_top = 77.0
-margin_right = 861.0
-margin_bottom = 199.0
+margin_left = 603.37
+margin_top = 51.1597
+margin_right = 836.37
+margin_bottom = 173.16
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Aqui fica a quantidade de inimigos ainda vivos. Para ganhar, você precisa eliminar todos os inimigos !"
@@ -180,7 +180,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="CanvasTutorialInterface/Tut_interface/Tut_inimigos" index="2"]
-position = Vector2( 869.103, 124.541 )
+position = Vector2( 837.59, 97.4402 )
 texture = ExtResource( 2 )
 
 [node name="Tut_tempo" type="Control" parent="CanvasTutorialInterface/Tut_interface" index="5"]
@@ -192,20 +192,20 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="CanvasTutorialInterface/Tut_interface/Tut_tempo" index="0"]
-margin_left = 615.0
-margin_top = 107.0
-margin_right = 866.0
-margin_bottom = 240.0
+margin_left = 582.0
+margin_top = 79.0
+margin_right = 833.0
+margin_bottom = 212.0
 color = Color( 1, 1, 1, 0.784314 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="CanvasTutorialInterface/Tut_interface/Tut_tempo" index="1"]
-margin_left = 623.2
-margin_top = 110.182
-margin_right = 856.2
-margin_bottom = 232.182
+margin_left = 594.189
+margin_top = 81.1711
+margin_right = 827.189
+margin_bottom = 203.171
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Aqui fica o tempo que você ficou na fase. Não se preocupe, você não tem limite de tempo para passar as fases ! "
@@ -215,7 +215,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="CanvasTutorialInterface/Tut_interface/Tut_tempo" index="2"]
-position = Vector2( 870, 163 )
+position = Vector2( 833.841, 145.966 )
 texture = ExtResource( 2 )
 
 [node name="Tut_botao_centralizar" type="Control" parent="CanvasTutorialInterface/Tut_interface" index="6"]
@@ -321,15 +321,13 @@ collision_mask = 0
 [node name="CollisionPolygon2D" parent="StaticBody2D" index="0"]
 position = Vector2( 0, 2.20123 )
 polygon = PoolVector2Array( 1189.99, -972.98, -1200.03, -974.89, -1199.41, 907.657, 1176.77, 908.745, 1191.83, -970.521, 960.006, -738.549, 961.018, 733.774, -961.208, 733.152, -959.058, -739.299, 959.524, -738.748 )
+
 [connection signal="timeout" from="Timer_comecar" to="." method="_on_Timer_comecar_timeout"]
 [connection signal="acabou_tutorial_interface" from="CanvasTutorialInterface/Tut_interface" to="." method="_on_Tut_interface_acabou_tutorial_interface"]
 [connection signal="pressed" from="CanvasTutorialInterface/Tut_interface/Btn_proximo" to="CanvasTutorialInterface/Tut_interface" method="_on_Btn_proximo_pressed"]
 [connection signal="player_atirou" from="Player" to="GameStats" method="_on_Player_player_atirou"]
 [connection signal="timeout" from="TimerSpawnInimigoParado" to="." method="_on_TimerSpawnInimigoParado_timeout"]
 [connection signal="timeout" from="TimerSpawnInimigoComum" to="." method="_on_TimerSpawnInimigoComum_timeout"]
-[connection signal="pressed" from="CanvasLayer/Pause/Btn_Reiniciar" to="CanvasLayer/Pause" method="_on_Btn_Reiniciar_pressed"]
-[connection signal="pressed" from="CanvasLayer/Pause/Btn_Voltar" to="CanvasLayer/Pause" method="_on_Btn_Voltar_pressed"]
 
 [editable path="GameInterface"]
-
 [editable path="camera"]

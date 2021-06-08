@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://UI/BotaoCentralizarCam.gd" type="Script" id=1]
 [ext_resource path="res://UI/ReloadProgressBar.gd" type="Script" id=2]
@@ -8,7 +8,12 @@
 [ext_resource path="res://UI/GameInterface.gd" type="Script" id=6]
 [ext_resource path="res://UI/Slow.png" type="Texture" id=7]
 [ext_resource path="res://UI/Btn_slow.gd" type="Script" id=8]
+[ext_resource path="res://fontes/upheavtt.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://UI/BarraUI.png" type="Texture" id=10]
 
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 9 )
 
 [node name="GameInterface" type="CanvasLayer"]
 script = ExtResource( 6 )
@@ -20,37 +25,61 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="Control"]
+position = Vector2( 934.08, 45.2886 )
+texture = ExtResource( 10 )
+
+[node name="Sprite2" type="Sprite" parent="Control"]
+position = Vector2( 934.316, 96.2886 )
+texture = ExtResource( 10 )
+
+[node name="Sprite3" type="Sprite" parent="Control"]
+position = Vector2( 934.316, 147.289 )
+texture = ExtResource( 10 )
+
+[node name="LabelBullets" type="Label" parent="Control"]
+margin_left = 816.08
+margin_top = 35.7614
+margin_right = 1012.08
+margin_bottom = 53.7614
+custom_fonts/font = SubResource( 1 )
+text = "Place holder"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="LabelInim" type="Label" parent="Control"]
-margin_left = 814.0
-margin_top = 117.582
-margin_right = 1010.0
-margin_bottom = 131.582
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_left = 820.203
+margin_top = 87.3895
+margin_right = 1016.2
+margin_bottom = 105.389
+custom_fonts/font = SubResource( 1 )
 text = "Place_holder"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LabelBullets" type="Label" parent="Control"]
-margin_left = 814.0
-margin_top = 72.0
-margin_right = 1010.0
-margin_bottom = 86.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+[node name="LabelTempo" type="Label" parent="Control"]
+margin_left = 816.663
+margin_top = 138.401
+margin_right = 1012.66
+margin_bottom = 156.401
+custom_fonts/font = SubResource( 1 )
 text = "Place holder"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LabelTempo" type="Label" parent="Control"]
-margin_left = 813.46
-margin_top = 158.458
-margin_right = 1009.46
-margin_bottom = 172.458
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Place holder"
+[node name="Tit_tempo" type="Label" parent="Control"]
+margin_left = 756.786
+margin_top = 138.047
+margin_right = 952.786
+margin_bottom = 156.047
+custom_fonts/font = SubResource( 1 )
+text = "Tempo:"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false

@@ -1,13 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Sprites/Novossprites/cadeado2.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Screenshots_fases/Fase1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Icones/Relogio.png" type="Texture" id=3]
 [ext_resource path="res://menus/Btn_fase.gd" type="Script" id=4]
 [ext_resource path="res://Sprites/Buttons/butao-fase.png" type="Texture" id=5]
 [ext_resource path="res://fontes/RobotoMono-SemiBold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Sprites/Icones/Inimigos..png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Bullets/bullet.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
-size = 14
+size = 15
 font_data = ExtResource( 6 )
 
 [node name="Btn_fase" type="TextureButton"]
@@ -24,6 +27,19 @@ __meta__ = {
 [node name="Teaser" type="Sprite" parent="."]
 position = Vector2( 149, 115 )
 texture = ExtResource( 2 )
+
+[node name="Ico_relogio" type="Sprite" parent="."]
+position = Vector2( 27.0163, 230.314 )
+texture = ExtResource( 3 )
+
+[node name="Ico_inimigos" type="Sprite" parent="."]
+position = Vector2( 79.157, 225.489 )
+texture = ExtResource( 7 )
+
+[node name="Ico_tiros" type="Sprite" parent="."]
+position = Vector2( 134, 233 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 8 )
 
 [node name="Label_titulo_fase" type="Label" parent="."]
 anchor_left = 0.5
@@ -67,9 +83,9 @@ __meta__ = {
 
 [node name="Label_tempo" type="Label" parent="."]
 margin_left = 3.0
-margin_top = 240.0
+margin_top = 239.0
 margin_right = 51.0
-margin_bottom = 259.0
+margin_bottom = 260.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "10:20"
@@ -97,5 +113,6 @@ __meta__ = {
 [node name="Cadeado" type="Sprite" parent="Trancar"]
 position = Vector2( 150.599, 121.365 )
 texture = ExtResource( 1 )
+
 [connection signal="mouse_entered" from="." to="." method="_on_Btn_fase_mouse_entered"]
 [connection signal="pressed" from="." to="." method="_on_Btn_fase_pressed"]
