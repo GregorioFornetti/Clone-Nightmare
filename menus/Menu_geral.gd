@@ -58,6 +58,7 @@ func _on_Btn_tutorial_pressed():
 		get_tree().change_scene("res://Fases/Fase_secreta.tscn")
 
 func _on_Timer_anim_timeout(): 
+	Sist_som.play("Trovao")
 	if background.frame == FRAME_BACKGROUND_NORMAL:
 		if rand_range(1, 100) <= 75:
 			animation_player.play("Transic_normal")

@@ -33,7 +33,7 @@ position = Vector2( -0.949951, 1.89999 )
 
 [node name="GameInterface" parent="." instance=ExtResource( 10 )]
 
-[node name="Btn_slow" parent="GameInterface/Control" index="6"]
+[node name="Btn_slow" parent="GameInterface/Control" index="8"]
 focus_mode = 0
 toggle_mode = true
 enabled_focus_mode = 0
@@ -156,8 +156,8 @@ autostart = true
 
 [connection signal="acabou_inimigos" from="GameStats" to="CanvasLayer/Pause" method="_on_GameStats_acabou_inimigos"]
 [connection signal="acabou_municao" from="GameStats" to="CanvasLayer/Pause" method="_on_GameStats_acabou_municao"]
-[connection signal="pressed" from="GameInterface/Control/Btn_centralizar" to="camera" method="_on_Btn_centralizar_pressed"]
 [connection signal="pressed" from="GameInterface/Control/Btn_slow" to="GameStats" method="_on_Btn_slow_pressed"]
+[connection signal="pressed" from="GameInterface/Control/Btn_centralizar" to="camera" method="_on_Btn_centralizar_pressed"]
 [connection signal="player_morreu" from="Player" to="CanvasLayer/Pause" method="_on_Player_player_morreu"]
 [connection signal="pressed" from="CanvasLayer/Pause/Btn_continuar" to="CanvasLayer/Pause" method="_on_Btn_continuar_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Btn_Reiniciar" to="CanvasLayer/Pause" method="_on_Btn_Reiniciar_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Sprites/tela-pc.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Menus e Cutscene/tela-pc2.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Buttons/btn_desligar.png" type="Texture" id=2]
 [ext_resource path="res://Finais/Computador/Computador.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/Buttons/btn_registros.png" type="Texture" id=4]
@@ -83,6 +83,7 @@ align = 1
 position = Vector2( 512, 304 )
 z_index = 1000
 texture = ExtResource( 1 )
+
 [connection signal="pressed" from="Dentro/Btn_registros" to="." method="_on_Btn_registros_pressed"]
 [connection signal="pressed" from="Dentro/Btn_senha" to="." method="_on_Btn_senha_pressed"]
 [connection signal="pressed" from="Dentro/Btn_desligar" to="." method="_on_Btn_desligar_pressed"]

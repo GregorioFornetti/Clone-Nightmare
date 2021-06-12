@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/personagem1_teste.png-c9387a6f37984352ead9d9246939402b.stex"
+path="res://.import/portalbtn.png-ecd5c7e42c43f127770054db2b3eae83.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/personagem1_teste.png"
-dest_files=[ "res://.import/personagem1_teste.png-c9387a6f37984352ead9d9246939402b.stex" ]
+source_file="res://Sprites/Buttons/portalbtn.png"
+dest_files=[ "res://.import/portalbtn.png-ecd5c7e42c43f127770054db2b3eae83.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

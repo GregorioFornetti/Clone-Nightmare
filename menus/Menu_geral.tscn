@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Sprites/Screenshots_fases/Fase6.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Screenshots_fases/Fase8.png" type="Texture" id=2]
@@ -42,6 +42,7 @@
 [ext_resource path="res://Sprites/Buttons/final-2.png" type="Texture" id=40]
 [ext_resource path="res://Sprites/Buttons/final-3.png" type="Texture" id=41]
 [ext_resource path="res://Sprites/Buttons/registros.png" type="Texture" id=42]
+[ext_resource path="res://Sprites/Buttons/fase-final.png" type="Texture" id=43]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Transic_maquina"
@@ -107,7 +108,7 @@ margin_top = 15.0
 margin_right = 350.0
 margin_bottom = 275.0
 
-[node name="Label_qnt_balas" parent="Menu_fases/Pagina1/Btn_fase1" index="2"]
+[node name="Label_qnt_balas" parent="Menu_fases/Pagina1/Btn_fase1" index="5"]
 text = "3"
 
 [node name="Btn_fase2" parent="Menu_fases/Pagina1" instance=ExtResource( 23 )]
@@ -119,13 +120,13 @@ margin_bottom = 275.0
 [node name="Teaser" parent="Menu_fases/Pagina1/Btn_fase2" index="0"]
 texture = ExtResource( 12 )
 
-[node name="Label_titulo_fase" parent="Menu_fases/Pagina1/Btn_fase2" index="1"]
+[node name="Label_titulo_fase" parent="Menu_fases/Pagina1/Btn_fase2" index="4"]
 text = "Fase 2"
 
-[node name="Label_qnt_balas" parent="Menu_fases/Pagina1/Btn_fase2" index="2"]
+[node name="Label_qnt_balas" parent="Menu_fases/Pagina1/Btn_fase2" index="5"]
 text = "2"
 
-[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina1/Btn_fase2" index="3"]
+[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina1/Btn_fase2" index="6"]
 text = "2"
 
 [node name="Btn_fase3" parent="Menu_fases/Pagina1" instance=ExtResource( 23 )]
@@ -137,13 +138,13 @@ margin_bottom = 275.0
 [node name="Teaser" parent="Menu_fases/Pagina1/Btn_fase3" index="0"]
 texture = ExtResource( 5 )
 
-[node name="Label_titulo_fase" parent="Menu_fases/Pagina1/Btn_fase3" index="1"]
+[node name="Label_titulo_fase" parent="Menu_fases/Pagina1/Btn_fase3" index="4"]
 text = "Fase 3"
 
-[node name="Label_qnt_balas" parent="Menu_fases/Pagina1/Btn_fase3" index="2"]
+[node name="Label_qnt_balas" parent="Menu_fases/Pagina1/Btn_fase3" index="5"]
 text = "3"
 
-[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina1/Btn_fase3" index="3"]
+[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina1/Btn_fase3" index="6"]
 text = "3"
 
 [node name="Btn_fase4" parent="Menu_fases/Pagina1" instance=ExtResource( 23 )]
@@ -155,10 +156,10 @@ margin_bottom = 545.0
 [node name="Teaser" parent="Menu_fases/Pagina1/Btn_fase4" index="0"]
 texture = ExtResource( 7 )
 
-[node name="Label_titulo_fase" parent="Menu_fases/Pagina1/Btn_fase4" index="1"]
+[node name="Label_titulo_fase" parent="Menu_fases/Pagina1/Btn_fase4" index="4"]
 text = "Fase 4"
 
-[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina1/Btn_fase4" index="3"]
+[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina1/Btn_fase4" index="6"]
 text = "2"
 
 [node name="Btn_fase5" parent="Menu_fases/Pagina1" instance=ExtResource( 23 )]
@@ -170,10 +171,10 @@ margin_bottom = 545.0
 [node name="Teaser" parent="Menu_fases/Pagina1/Btn_fase5" index="0"]
 texture = ExtResource( 9 )
 
-[node name="Label_titulo_fase" parent="Menu_fases/Pagina1/Btn_fase5" index="1"]
+[node name="Label_titulo_fase" parent="Menu_fases/Pagina1/Btn_fase5" index="4"]
 text = "Fase 5"
 
-[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina1/Btn_fase5" index="3"]
+[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina1/Btn_fase5" index="6"]
 text = "4"
 
 [node name="Pagina2" type="Control" parent="Menu_fases"]
@@ -193,10 +194,10 @@ margin_bottom = 275.0
 [node name="Teaser" parent="Menu_fases/Pagina2/Btn_fase6" index="0"]
 texture = ExtResource( 1 )
 
-[node name="Label_titulo_fase" parent="Menu_fases/Pagina2/Btn_fase6" index="1"]
+[node name="Label_titulo_fase" parent="Menu_fases/Pagina2/Btn_fase6" index="4"]
 text = "Fase 6"
 
-[node name="Label_qnt_balas" parent="Menu_fases/Pagina2/Btn_fase6" index="2"]
+[node name="Label_qnt_balas" parent="Menu_fases/Pagina2/Btn_fase6" index="5"]
 text = "2"
 
 [node name="Btn_fase7" parent="Menu_fases/Pagina2" instance=ExtResource( 23 )]
@@ -208,10 +209,10 @@ margin_bottom = 275.0
 [node name="Teaser" parent="Menu_fases/Pagina2/Btn_fase7" index="0"]
 texture = ExtResource( 6 )
 
-[node name="Label_titulo_fase" parent="Menu_fases/Pagina2/Btn_fase7" index="1"]
+[node name="Label_titulo_fase" parent="Menu_fases/Pagina2/Btn_fase7" index="4"]
 text = "Fase 7"
 
-[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina2/Btn_fase7" index="3"]
+[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina2/Btn_fase7" index="6"]
 text = "4"
 
 [node name="Btn_fase8" parent="Menu_fases/Pagina2" instance=ExtResource( 23 )]
@@ -223,10 +224,10 @@ margin_bottom = 275.0
 [node name="Teaser" parent="Menu_fases/Pagina2/Btn_fase8" index="0"]
 texture = ExtResource( 2 )
 
-[node name="Label_titulo_fase" parent="Menu_fases/Pagina2/Btn_fase8" index="1"]
+[node name="Label_titulo_fase" parent="Menu_fases/Pagina2/Btn_fase8" index="4"]
 text = "Fase 8"
 
-[node name="Label_qnt_balas" parent="Menu_fases/Pagina2/Btn_fase8" index="2"]
+[node name="Label_qnt_balas" parent="Menu_fases/Pagina2/Btn_fase8" index="5"]
 text = "3"
 
 [node name="Btn_fase9" parent="Menu_fases/Pagina2" instance=ExtResource( 23 )]
@@ -238,7 +239,7 @@ margin_bottom = 545.0
 [node name="Teaser" parent="Menu_fases/Pagina2/Btn_fase9" index="0"]
 texture = ExtResource( 3 )
 
-[node name="Label_titulo_fase" parent="Menu_fases/Pagina2/Btn_fase9" index="1"]
+[node name="Label_titulo_fase" parent="Menu_fases/Pagina2/Btn_fase9" index="4"]
 text = "Fase 9"
 
 [node name="Btn_fase10" parent="Menu_fases/Pagina2" instance=ExtResource( 23 )]
@@ -250,14 +251,14 @@ margin_bottom = 545.0
 [node name="Teaser" parent="Menu_fases/Pagina2/Btn_fase10" index="0"]
 texture = ExtResource( 11 )
 
-[node name="Label_titulo_fase" parent="Menu_fases/Pagina2/Btn_fase10" index="1"]
+[node name="Label_titulo_fase" parent="Menu_fases/Pagina2/Btn_fase10" index="4"]
 margin_left = 10.9815
 margin_top = 232.797
 margin_right = 73.9815
 margin_bottom = 253.797
 text = "Fase 10"
 
-[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina2/Btn_fase10" index="3"]
+[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina2/Btn_fase10" index="6"]
 text = "2"
 
 [node name="Pagina3" type="Control" parent="Menu_fases"]
@@ -277,12 +278,12 @@ margin_bottom = 275.0
 [node name="Teaser" parent="Menu_fases/Pagina3/Btn_fase11" index="0"]
 texture = ExtResource( 10 )
 
-[node name="Label_titulo_fase" parent="Menu_fases/Pagina3/Btn_fase11" index="1"]
+[node name="Label_titulo_fase" parent="Menu_fases/Pagina3/Btn_fase11" index="4"]
 margin_left = 11.3582
 margin_right = 74.3582
 text = "Fase 11"
 
-[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina3/Btn_fase11" index="3"]
+[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina3/Btn_fase11" index="6"]
 text = "6"
 
 [node name="Btn_fase12" parent="Menu_fases/Pagina3" instance=ExtResource( 23 )]
@@ -294,12 +295,12 @@ margin_bottom = 275.0
 [node name="Teaser" parent="Menu_fases/Pagina3/Btn_fase12" index="0"]
 texture = ExtResource( 15 )
 
-[node name="Label_titulo_fase" parent="Menu_fases/Pagina3/Btn_fase12" index="1"]
+[node name="Label_titulo_fase" parent="Menu_fases/Pagina3/Btn_fase12" index="4"]
 margin_left = 11.0998
 margin_right = 74.0998
 text = "Fase 12"
 
-[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina3/Btn_fase12" index="3"]
+[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina3/Btn_fase12" index="6"]
 text = "4"
 
 [node name="Btn_fase13" parent="Menu_fases/Pagina3" instance=ExtResource( 23 )]
@@ -311,14 +312,14 @@ margin_bottom = 275.0
 [node name="Teaser" parent="Menu_fases/Pagina3/Btn_fase13" index="0"]
 texture = ExtResource( 21 )
 
-[node name="Label_titulo_fase" parent="Menu_fases/Pagina3/Btn_fase13" index="1"]
+[node name="Label_titulo_fase" parent="Menu_fases/Pagina3/Btn_fase13" index="4"]
 margin_left = 11.291
 margin_top = 233.289
 margin_right = 74.291
 margin_bottom = 254.289
 text = "Fase 13"
 
-[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina3/Btn_fase13" index="3"]
+[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina3/Btn_fase13" index="6"]
 text = "18"
 
 [node name="Btn_fase14" parent="Menu_fases/Pagina3" instance=ExtResource( 23 )]
@@ -330,14 +331,14 @@ margin_bottom = 545.0
 [node name="Teaser" parent="Menu_fases/Pagina3/Btn_fase14" index="0"]
 texture = ExtResource( 16 )
 
-[node name="Label_titulo_fase" parent="Menu_fases/Pagina3/Btn_fase14" index="1"]
+[node name="Label_titulo_fase" parent="Menu_fases/Pagina3/Btn_fase14" index="4"]
 margin_left = 10.741
 margin_top = 233.278
 margin_right = 73.741
 margin_bottom = 254.278
 text = "Fase 14"
 
-[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina3/Btn_fase14" index="3"]
+[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina3/Btn_fase14" index="6"]
 margin_left = 54.2262
 margin_right = 103.226
 text = "4"
@@ -351,17 +352,17 @@ margin_bottom = 545.0
 [node name="Teaser" parent="Menu_fases/Pagina3/Btn_fase15" index="0"]
 texture = ExtResource( 13 )
 
-[node name="Label_titulo_fase" parent="Menu_fases/Pagina3/Btn_fase15" index="1"]
+[node name="Label_titulo_fase" parent="Menu_fases/Pagina3/Btn_fase15" index="4"]
 margin_left = 11.2836
 margin_top = 233.203
 margin_right = 74.2836
 margin_bottom = 255.203
 text = "Fase 15"
 
-[node name="Label_qnt_balas" parent="Menu_fases/Pagina3/Btn_fase15" index="2"]
+[node name="Label_qnt_balas" parent="Menu_fases/Pagina3/Btn_fase15" index="5"]
 text = "3"
 
-[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina3/Btn_fase15" index="3"]
+[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina3/Btn_fase15" index="6"]
 text = "6"
 
 [node name="Pagina4" type="Control" parent="Menu_fases"]
@@ -381,17 +382,17 @@ margin_bottom = 275.0
 [node name="Teaser" parent="Menu_fases/Pagina4/Btn_fase16" index="0"]
 texture = ExtResource( 18 )
 
-[node name="Label_titulo_fase" parent="Menu_fases/Pagina4/Btn_fase16" index="1"]
+[node name="Label_titulo_fase" parent="Menu_fases/Pagina4/Btn_fase16" index="4"]
 margin_left = 10.708
 margin_top = 232.609
 margin_right = 73.708
 margin_bottom = 253.609
 text = "Fase 16"
 
-[node name="Label_qnt_balas" parent="Menu_fases/Pagina4/Btn_fase16" index="2"]
+[node name="Label_qnt_balas" parent="Menu_fases/Pagina4/Btn_fase16" index="5"]
 text = "2"
 
-[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina4/Btn_fase16" index="3"]
+[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina4/Btn_fase16" index="6"]
 text = "5"
 
 [node name="Btn_fase17" parent="Menu_fases/Pagina4" instance=ExtResource( 23 )]
@@ -403,12 +404,12 @@ margin_bottom = 275.0
 [node name="Teaser" parent="Menu_fases/Pagina4/Btn_fase17" index="0"]
 texture = ExtResource( 20 )
 
-[node name="Label_titulo_fase" parent="Menu_fases/Pagina4/Btn_fase17" index="1"]
+[node name="Label_titulo_fase" parent="Menu_fases/Pagina4/Btn_fase17" index="4"]
 margin_left = 10.9808
 margin_right = 73.9808
 text = "Fase 17"
 
-[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina4/Btn_fase17" index="3"]
+[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina4/Btn_fase17" index="6"]
 text = "3"
 
 [node name="Btn_fase18" parent="Menu_fases/Pagina4" instance=ExtResource( 23 )]
@@ -420,17 +421,17 @@ margin_bottom = 275.0
 [node name="Teaser" parent="Menu_fases/Pagina4/Btn_fase18" index="0"]
 texture = ExtResource( 17 )
 
-[node name="Label_titulo_fase" parent="Menu_fases/Pagina4/Btn_fase18" index="1"]
+[node name="Label_titulo_fase" parent="Menu_fases/Pagina4/Btn_fase18" index="4"]
 margin_left = 11.1132
 margin_top = 232.919
 margin_right = 74.1132
 margin_bottom = 253.919
 text = "Fase 18"
 
-[node name="Label_qnt_balas" parent="Menu_fases/Pagina4/Btn_fase18" index="2"]
+[node name="Label_qnt_balas" parent="Menu_fases/Pagina4/Btn_fase18" index="5"]
 text = "2"
 
-[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina4/Btn_fase18" index="3"]
+[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina4/Btn_fase18" index="6"]
 text = "8"
 
 [node name="Btn_fase19" parent="Menu_fases/Pagina4" instance=ExtResource( 23 )]
@@ -442,17 +443,17 @@ margin_bottom = 545.0
 [node name="Teaser" parent="Menu_fases/Pagina4/Btn_fase19" index="0"]
 texture = ExtResource( 14 )
 
-[node name="Label_titulo_fase" parent="Menu_fases/Pagina4/Btn_fase19" index="1"]
+[node name="Label_titulo_fase" parent="Menu_fases/Pagina4/Btn_fase19" index="4"]
 margin_left = 10.6668
 margin_top = 233.32
 margin_right = 73.6668
 margin_bottom = 254.32
 text = "Fase 19"
 
-[node name="Label_qnt_balas" parent="Menu_fases/Pagina4/Btn_fase19" index="2"]
+[node name="Label_qnt_balas" parent="Menu_fases/Pagina4/Btn_fase19" index="5"]
 text = "2"
 
-[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina4/Btn_fase19" index="3"]
+[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina4/Btn_fase19" index="6"]
 text = "8"
 
 [node name="Btn_fase20" parent="Menu_fases/Pagina4" instance=ExtResource( 23 )]
@@ -464,14 +465,14 @@ margin_bottom = 545.0
 [node name="Teaser" parent="Menu_fases/Pagina4/Btn_fase20" index="0"]
 texture = ExtResource( 19 )
 
-[node name="Label_titulo_fase" parent="Menu_fases/Pagina4/Btn_fase20" index="1"]
+[node name="Label_titulo_fase" parent="Menu_fases/Pagina4/Btn_fase20" index="4"]
 margin_left = 10.6687
 margin_top = 233.022
 margin_right = 73.6687
 margin_bottom = 254.022
 text = "Fase 20"
 
-[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina4/Btn_fase20" index="3"]
+[node name="Label_qnt_inimigos" parent="Menu_fases/Pagina4/Btn_fase20" index="6"]
 text = "8"
 
 [node name="PagSecreta" type="Control" parent="Menu_fases"]
@@ -492,20 +493,20 @@ margin_bottom = 400.096
 [node name="Teaser" parent="Menu_fases/PagSecreta/Btn_fase_secreta" index="0"]
 texture = ExtResource( 36 )
 
-[node name="Label_titulo_fase" parent="Menu_fases/PagSecreta/Btn_fase_secreta" index="1"]
+[node name="Label_titulo_fase" parent="Menu_fases/PagSecreta/Btn_fase_secreta" index="4"]
 margin_left = -54.9864
 margin_top = 90.9283
 margin_right = 53.0136
 margin_bottom = 112.928
 text = "Fase Secreta"
 
-[node name="Label_qnt_balas" parent="Menu_fases/PagSecreta/Btn_fase_secreta" index="2"]
+[node name="Label_qnt_balas" parent="Menu_fases/PagSecreta/Btn_fase_secreta" index="5"]
 text = "5"
 
-[node name="Label_qnt_inimigos" parent="Menu_fases/PagSecreta/Btn_fase_secreta" index="3"]
+[node name="Label_qnt_inimigos" parent="Menu_fases/PagSecreta/Btn_fase_secreta" index="6"]
 text = "40"
 
-[node name="Label_tempo" parent="Menu_fases/PagSecreta/Btn_fase_secreta" index="4"]
+[node name="Label_tempo" parent="Menu_fases/PagSecreta/Btn_fase_secreta" index="7"]
 visible = false
 
 [node name="Btn_prox" parent="Menu_fases" instance=ExtResource( 27 )]
@@ -1641,19 +1642,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Btn_fase_final" type="Button" parent="Menu_finais"]
-visible = false
-margin_left = 477.62
-margin_top = 130.02
-margin_right = 549.62
-margin_bottom = 150.02
-text = "Fase final"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Btn_fase_final" parent="Menu_finais" instance=ExtResource( 27 )]
+margin_left = 434.5
+margin_top = 103.0
+margin_right = 469.5
+margin_bottom = 90.0
+texture_normal = ExtResource( 43 )
 
 [node name="Btn_final_bom" parent="Menu_finais" instance=ExtResource( 27 )]
-visible = false
 margin_left = 326.472
 margin_top = 175.0
 margin_right = 344.472
@@ -1661,7 +1657,6 @@ margin_bottom = 162.0
 texture_normal = ExtResource( 39 )
 
 [node name="Btn_final_suicidio" parent="Menu_finais" instance=ExtResource( 27 )]
-visible = false
 margin_left = 452.598
 margin_top = 175.0
 margin_right = 471.598
@@ -1669,7 +1664,6 @@ margin_bottom = 162.0
 texture_normal = ExtResource( 40 )
 
 [node name="Btn_final_ignorar" parent="Menu_finais" instance=ExtResource( 27 )]
-visible = false
 margin_left = 585.0
 margin_top = 175.0
 margin_right = 604.0
@@ -1677,7 +1671,6 @@ margin_bottom = 162.0
 texture_normal = ExtResource( 41 )
 
 [node name="Btn_final_secreto" parent="Menu_finais" instance=ExtResource( 27 )]
-visible = false
 margin_left = 436.846
 margin_top = 249.476
 margin_right = 471.846
